@@ -133,6 +133,8 @@ NSUserDefaults *userDefault;
         
         NSDictionary *item = [jAry objectAtIndex:0];
         
+        NSLog(@"%@", item);
+        
         username = [item objectForKey:@"listMbrName"];
         profileImage = [item objectForKey:@"Profile"];
         profileImage = [profileImage stringByReplacingOccurrencesOfString:@".." withString:@""];
@@ -204,58 +206,56 @@ NSUserDefaults *userDefault;
                 NSDictionary *offerItem = [offerAry objectAtIndex:i];
                 
                 NSString *desc = [offerItem objectForKey:@"SvcDescr"];
-                desc = [desc stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-                desc = [desc stringByReplacingOccurrencesOfString:@"<br>" withString:@"\n"];
-                desc = [desc stringByReplacingOccurrencesOfString:@"<span class='cat'> " withString:@"\n"];
-                desc = [desc stringByReplacingOccurrencesOfString:@" </span>" withString:@""];
                 
-                if ([[offerItem objectForKey:@"SvcDescr"] length] < 5) {
-                    continue;
-                }
-                
-                if ([desc isEqualToString:@"Please add a description!"]) {
-                    continue;
-                }
-                
-                if (i == [offerAry count] - 1) {
-                    offerList = [offerList stringByAppendingString:[NSString stringWithFormat:@"%@", desc]];
-                }
-                else {
-                    offerList = [offerList stringByAppendingString:[NSString stringWithFormat:@"%@\n\n", desc]];
-                }
-                
-                if ([specializedArray count] == 0) {
-                    NSMutableDictionary *newObj = [[NSMutableDictionary alloc] init];
-                    [newObj setObject:[NSString stringWithFormat:@"%@", [offerItem objectForKey:@"SvcCat"]] forKey:@"SvcCat"];
-                    [newObj setObject:[NSString stringWithFormat:@"%d", [[offerItem objectForKey:@"SvcCatID"] intValue]] forKey:@"SvcCatID"];
-                    [newObj setObject:[NSString stringWithFormat:@"%d", 0] forKey:@"SvcCatCnt"];
+                if (![desc isEqual:[NSNull null]] && [desc length] > 5 && ![desc isEqualToString:@"Please add a description!"]) {
+                    desc = [desc stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+                    desc = [desc stringByReplacingOccurrencesOfString:@"<br>" withString:@"\n"];
+                    desc = [desc stringByReplacingOccurrencesOfString:@"<span class='cat'> " withString:@"\n"];
+                    desc = [desc stringByReplacingOccurrencesOfString:@" </span>" withString:@""];
                     
-                    [specializedArray addObject:newObj];
-                }
-                
-                int count = 0;
-                
-                for (int j = 0 ; j < [specializedArray count] ; j++) {
-                    
-                    if ([[[specializedArray objectAtIndex:j] objectForKey:@"SvcCatID"] isEqualToString:[offerItem objectForKey:@"SvcCatID"]]) {
-                        int keyCount = [[[specializedArray objectAtIndex:j] objectForKey:@"SvcCatCnt"] intValue];
-                        [[specializedArray objectAtIndex:j] setObject:[NSString stringWithFormat:@"%d", keyCount+1] forKey:@"SvcCatCnt"];
+                    if (i == [offerAry count] - 1) {
+                        offerList = [offerList stringByAppendingString:[NSString stringWithFormat:@"%@", desc]];
                     }
                     else {
-                        count++;
+                        offerList = [offerList stringByAppendingString:[NSString stringWithFormat:@"%@\n\n", desc]];
+                    }
+                    
+                    if ([specializedArray count] == 0) {
+                        NSMutableDictionary *newObj = [[NSMutableDictionary alloc] init];
+                        [newObj setObject:[NSString stringWithFormat:@"%@", [offerItem objectForKey:@"SvcCat"]] forKey:@"SvcCat"];
+                        [newObj setObject:[NSString stringWithFormat:@"%d", [[offerItem objectForKey:@"SvcCatID"] intValue]] forKey:@"SvcCatID"];
+                        [newObj setObject:[NSString stringWithFormat:@"%d", 0] forKey:@"SvcCatCnt"];
+                        
+                        [specializedArray addObject:newObj];
+                    }
+                    
+                    int count = 0;
+                    
+                    for (int j = 0 ; j < [specializedArray count] ; j++) {
+                        
+                        if ([[[specializedArray objectAtIndex:j] objectForKey:@"SvcCatID"] isEqualToString:[offerItem objectForKey:@"SvcCatID"]]) {
+                            int keyCount = [[[specializedArray objectAtIndex:j] objectForKey:@"SvcCatCnt"] intValue];
+                            [[specializedArray objectAtIndex:j] setObject:[NSString stringWithFormat:@"%d", keyCount+1] forKey:@"SvcCatCnt"];
+                        }
+                        else {
+                            count++;
+                        }
+                    }
+                    
+                    if (count == [specializedArray count]) {
+                        NSMutableDictionary *newObj = [[NSMutableDictionary alloc] init];
+                        [newObj setObject:[NSString stringWithFormat:@"%@", [offerItem objectForKey:@"SvcCat"]] forKey:@"SvcCat"];
+                        [newObj setObject:[NSString stringWithFormat:@"%d", [[offerItem objectForKey:@"SvcCatID"] intValue]] forKey:@"SvcCatID"];
+                        [newObj setObject:[NSString stringWithFormat:@"%d", 0] forKey:@"SvcCatCnt"];
+                        
+                        [specializedArray addObject:newObj];
                     }
                 }
-                
-                if (count == [specializedArray count]) {
-                    NSMutableDictionary *newObj = [[NSMutableDictionary alloc] init];
-                    [newObj setObject:[NSString stringWithFormat:@"%@", [offerItem objectForKey:@"SvcCat"]] forKey:@"SvcCat"];
-                    [newObj setObject:[NSString stringWithFormat:@"%d", [[offerItem objectForKey:@"SvcCatID"] intValue]] forKey:@"SvcCatID"];
-                    [newObj setObject:[NSString stringWithFormat:@"%d", 0] forKey:@"SvcCatCnt"];
-                    
-                    [specializedArray addObject:newObj];
+                else {
+                    // continue
                 }
             }
-            
+        
             [self stringHTMLHandler:offerList];
         }
         else {
@@ -269,55 +269,53 @@ NSUserDefaults *userDefault;
                 NSDictionary *requestItem = [requestAry objectAtIndex:i];
                 
                 NSString *desc = [requestItem objectForKey:@"SvcDescr"];
-                desc = [desc stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-                desc = [desc stringByReplacingOccurrencesOfString:@"<br>" withString:@"\n"];
-                desc = [desc stringByReplacingOccurrencesOfString:@"<span class='cat'> " withString:@"\n"];
-                desc = [desc stringByReplacingOccurrencesOfString:@" </span>" withString:@""];
                 
-                if ([[requestItem objectForKey:@"SvcDescr"] length] < 5) {
-                    continue;
-                }
-                
-                if ([desc isEqualToString:@"Please add a description!"]) {
-                    continue;
-                }
-                
-                if (i == [requestAry count] - 1) {
-                    requestList = [requestList stringByAppendingString:[NSString stringWithFormat:@"%@", desc]];
-                }
-                else {
-                    requestList = [requestList stringByAppendingString:[NSString stringWithFormat:@"%@\n\n", desc]];
-                }
-                
-                if ([specializedArray count] == 0) {
-                    NSMutableDictionary *newObj = [[NSMutableDictionary alloc] init];
-                    [newObj setObject:[NSString stringWithFormat:@"%@", [requestItem objectForKey:@"SvcCatID"]] forKey:@"SvcCatID"];
-                    [newObj setObject:[NSString stringWithFormat:@"%d", [[requestItem objectForKey:@"SvcID"] intValue]] forKey:@"SvcID"];
-                    [newObj setObject:[NSString stringWithFormat:@"%d", 0] forKey:@"SvcCatCnt"];
+                if (![desc isEqual:[NSNull null]] && [desc length] > 5 && ![desc isEqualToString:@"Please add a description!"]) {
+                    desc = [desc stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+                    desc = [desc stringByReplacingOccurrencesOfString:@"<br>" withString:@"\n"];
+                    desc = [desc stringByReplacingOccurrencesOfString:@"<span class='cat'> " withString:@"\n"];
+                    desc = [desc stringByReplacingOccurrencesOfString:@" </span>" withString:@""];
                     
-                    [specializedArray addObject:newObj];
-                }
-                
-                int count = 0;
-                
-                for (int j = 0 ; j < [specializedArray count] ; j++) {
-                    
-                    if ([[[specializedArray objectAtIndex:j] objectForKey:@"SvcCatID"] isEqualToString:[requestItem objectForKey:@"SvcCatID"]]) {
-                        int keyCount = [[[specializedArray objectAtIndex:j] objectForKey:@"SvcCatCnt"] intValue];
-                        [[specializedArray objectAtIndex:j] setObject:[NSString stringWithFormat:@"%d", keyCount+1] forKey:@"SvcCatCnt"];
+                    if (i == [requestAry count] - 1) {
+                        requestList = [requestList stringByAppendingString:[NSString stringWithFormat:@"%@", desc]];
                     }
                     else {
-                        count++;
+                        requestList = [requestList stringByAppendingString:[NSString stringWithFormat:@"%@\n\n", desc]];
+                    }
+                    
+                    if ([specializedArray count] == 0) {
+                        NSMutableDictionary *newObj = [[NSMutableDictionary alloc] init];
+                        [newObj setObject:[NSString stringWithFormat:@"%@", [requestItem objectForKey:@"SvcCatID"]] forKey:@"SvcCatID"];
+                        [newObj setObject:[NSString stringWithFormat:@"%d", [[requestItem objectForKey:@"SvcID"] intValue]] forKey:@"SvcID"];
+                        [newObj setObject:[NSString stringWithFormat:@"%d", 0] forKey:@"SvcCatCnt"];
+                        
+                        [specializedArray addObject:newObj];
+                    }
+                    
+                    int count = 0;
+                    
+                    for (int j = 0 ; j < [specializedArray count] ; j++) {
+                        
+                        if ([[[specializedArray objectAtIndex:j] objectForKey:@"SvcCatID"] isEqualToString:[requestItem objectForKey:@"SvcCatID"]]) {
+                            int keyCount = [[[specializedArray objectAtIndex:j] objectForKey:@"SvcCatCnt"] intValue];
+                            [[specializedArray objectAtIndex:j] setObject:[NSString stringWithFormat:@"%d", keyCount+1] forKey:@"SvcCatCnt"];
+                        }
+                        else {
+                            count++;
+                        }
+                    }
+                    
+                    if (count == [specializedArray count]) {
+                        NSMutableDictionary *newObj = [[NSMutableDictionary alloc] init];
+                        [newObj setObject:[NSString stringWithFormat:@"%@", [requestItem objectForKey:@"SvcCat"]] forKey:@"SvcCat"];
+                        [newObj setObject:[NSString stringWithFormat:@"%d", [[requestItem objectForKey:@"SvcID"] intValue]] forKey:@"SvcID"];
+                        [newObj setObject:[NSString stringWithFormat:@"%d", 0] forKey:@"SvcCatCnt"];
+                        
+                        [specializedArray addObject:newObj];
                     }
                 }
-                
-                if (count == [specializedArray count]) {
-                    NSMutableDictionary *newObj = [[NSMutableDictionary alloc] init];
-                    [newObj setObject:[NSString stringWithFormat:@"%@", [requestItem objectForKey:@"SvcCat"]] forKey:@"SvcCat"];
-                    [newObj setObject:[NSString stringWithFormat:@"%d", [[requestItem objectForKey:@"SvcID"] intValue]] forKey:@"SvcID"];
-                    [newObj setObject:[NSString stringWithFormat:@"%d", 0] forKey:@"SvcCatCnt"];
-                    
-                    [specializedArray addObject:newObj];
+                else {
+                    //continue
                 }
             }
             [self stringHTMLHandler:requestList];
@@ -326,31 +324,37 @@ NSUserDefaults *userDefault;
             requestList = @"No request";
         }
         
-        // have array sorted
-        NSArray *sortedspecializedArray;
-        sortedspecializedArray = [specializedArray sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
-            NSString *first = [a objectForKey:@"SvcCatCnt"];
-            NSString *second = [b objectForKey:@"SvcCatCnt"];
-            return [first compare:second];
-        }];
-        
-        NSLog(@"%@", sortedspecializedArray);
-        int sortedspecializedArrayLength = [sortedspecializedArray count];
         NSString *specials;
-        if (sortedspecializedArrayLength >= 3) {
-            specials = [NSString stringWithFormat:@"\u2022 %@\n\u2022 %@\n\u2022 %@",
-                                  [[sortedspecializedArray objectAtIndex:(sortedspecializedArrayLength-1)] objectForKey:@"SvcCat"],
-                                  [[sortedspecializedArray objectAtIndex:(sortedspecializedArrayLength-2)] objectForKey:@"SvcCat"],
-                                  [[sortedspecializedArray objectAtIndex:(sortedspecializedArrayLength-3)] objectForKey:@"SvcCat"]];
-        }
-        else if (sortedspecializedArrayLength == 2) {
-            specials = [NSString stringWithFormat:@"\u2022 %@\n\u2022 %@\n",
-                                  [[sortedspecializedArray objectAtIndex:(sortedspecializedArrayLength-1)] objectForKey:@"SvcCat"],
-                                  [[sortedspecializedArray objectAtIndex:(sortedspecializedArrayLength-2)] objectForKey:@"SvcCat"]];
+        // have array sorted
+        if ([specializedArray count] == 0) {
+            specials = @"No information";
         }
         else {
-            specials = [NSString stringWithFormat:@"\u2022 %@\n",
-                                  [[sortedspecializedArray objectAtIndex:(sortedspecializedArrayLength-1)] objectForKey:@"SvcCat"]];
+            NSArray *sortedspecializedArray;
+            sortedspecializedArray = [specializedArray sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+                NSString *first = [a objectForKey:@"SvcCatCnt"];
+                NSString *second = [b objectForKey:@"SvcCatCnt"];
+                return [first compare:second];
+            }];
+            
+            NSLog(@"%@", sortedspecializedArray);
+            int sortedspecializedArrayLength = [sortedspecializedArray count];
+            
+            if (sortedspecializedArrayLength >= 3) {
+                specials = [NSString stringWithFormat:@"\u2022 %@\n\u2022 %@\n\u2022 %@",
+                            [[sortedspecializedArray objectAtIndex:(sortedspecializedArrayLength-1)] objectForKey:@"SvcCat"],
+                            [[sortedspecializedArray objectAtIndex:(sortedspecializedArrayLength-2)] objectForKey:@"SvcCat"],
+                            [[sortedspecializedArray objectAtIndex:(sortedspecializedArrayLength-3)] objectForKey:@"SvcCat"]];
+            }
+            else if (sortedspecializedArrayLength == 2) {
+                specials = [NSString stringWithFormat:@"\u2022 %@\n\u2022 %@\n",
+                            [[sortedspecializedArray objectAtIndex:(sortedspecializedArrayLength-1)] objectForKey:@"SvcCat"],
+                            [[sortedspecializedArray objectAtIndex:(sortedspecializedArrayLength-2)] objectForKey:@"SvcCat"]];
+            }
+            else {
+                specials = [NSString stringWithFormat:@"\u2022 %@\n",
+                            [[sortedspecializedArray objectAtIndex:(sortedspecializedArrayLength-1)] objectForKey:@"SvcCat"]];
+            }
         }
         
         usernameLabel.text = username;
@@ -562,7 +566,7 @@ NSUserDefaults *userDefault;
         height += contactInfo.frame.size.height;
         height += offersLabel.frame.size.height;
         height += requestsLabel.frame.size.height;
-        height += 200;
+        //height += 200;
         
         offersLabel.frame = CGRectMake(offersLabel.frame.origin.x,
                                        offersLabel.frame.origin.y + bioLabel.frame.size.height,

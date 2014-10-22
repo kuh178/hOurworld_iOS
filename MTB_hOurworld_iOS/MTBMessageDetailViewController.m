@@ -237,7 +237,7 @@ NSUserDefaults *userDefault;
 }
 
 - (void)imageTapped:(UITapGestureRecognizer *)gesture {
-    NSLog(@"%d", mItem.mListMbrID);
+    //NSLog(@"%d", mItem.mListMbrID);
     
     if(mItem.mListMbrID == 0) {
         // do nothing

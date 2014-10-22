@@ -98,6 +98,8 @@
 
     // handling eBlast
     taskInfoTextView.frame = [self calculateSize2:mItem.mDescription TextView:taskInfoTextView];
+    //taskInfoTextView.layer.borderWidth = 1.0f;
+    //taskInfoTextView.layer.borderColor = [UIColor blackColor].CGColor;
     if (mItem.mDescription != (id)[NSNull null] && [mItem.mDescription length] != 0) {
         taskInfoTextView.text = mItem.mDescription;
     }
@@ -167,6 +169,12 @@
         
         scrollView.contentSize = CGSizeMake(320, taskInfoTextView.frame.size.height + locationLabel.frame.size.height + mapView.frame.size.height + 230);
     }
+    
+    [[mapView layer] setMasksToBounds:NO];
+    [[mapView layer] setShadowColor:[UIColor blackColor].CGColor];
+    [[mapView layer] setShadowOpacity:1.0f];
+    [[mapView layer] setShadowRadius:1.0f];
+    [[mapView layer] setShadowOffset:CGSizeMake(0, 1)];
 }
 
 - (void)showPan
@@ -298,7 +306,7 @@
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-    NSDictionary *params = @{@"requestType"     :[NSString stringWithFormat:@"DelTask,%d:%d", mItem.mSvcCatID, mItem.mSvcID],
+    NSDictionary *params = @{@"requestType"     :[NSString stringWithFormat:@"DelTask,%ld:%ld", (long)mItem.mSvcCatID, (long)mItem.mSvcID],
                              @"accessToken"     :[userDefault objectForKey:@"access_token"],
                              @"EID"             :[userDefault objectForKey:@"EID"],
                              @"memID"           :[userDefault objectForKey:@"memID"]};

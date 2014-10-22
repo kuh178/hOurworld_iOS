@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>764B9C5C-5DAC-437B-A4D5-9F8872FE3A3F</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MTB_hOurworld_iOS</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>109BF003BDAEF14198AA324AEA9BE7FEDB4111AA</key>
+		<string>https://github.com/kuh178/hOurworld_iOS.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>MTB_hOurworld_iOS.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>109BF003BDAEF14198AA324AEA9BE7FEDB4111AA</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/kuh178/hOurworld_iOS.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>109BF003BDAEF14198AA324AEA9BE7FEDB4111AA</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>109BF003BDAEF14198AA324AEA9BE7FEDB4111AA</string>
+			<key>IDESourceControlWCCName</key>
+			<string>hOurworld_iOS</string>
+		</dict>
+	</array>
+</dict>
+</plist>

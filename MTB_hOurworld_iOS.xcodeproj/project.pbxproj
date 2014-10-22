@@ -281,6 +281,7 @@
 		FACF4AE819E78970002BBE0A /* MTBReportHourTaskCategoryServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FACF4AE719E78970002BBE0A /* MTBReportHourTaskCategoryServiceViewController.m */; };
 		FACF4AEA19E81F30002BBE0A /* hours_large.png in Resources */ = {isa = PBXBuildFile; fileRef = FACF4AE919E81F30002BBE0A /* hours_large.png */; };
 		FACF4AEF19E8D978002BBE0A /* StoryBoard_3.5inch_iOS7.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FACF4AEE19E8D978002BBE0A /* StoryBoard_3.5inch_iOS7.storyboard */; };
+		FADDF5A919F488D30095CBEE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FADDF5A819F488D30095CBEE /* Crashlytics.framework */; };
 		FAE8D81C178B87A200A8AA1F /* question_mark.png in Resources */ = {isa = PBXBuildFile; fileRef = FAE8D81B178B87A200A8AA1F /* question_mark.png */; };
 		FAF8D699178602EF002FEC0E /* MTBAddPushpinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF8D698178602EF002FEC0E /* MTBAddPushpinViewController.m */; };
 		FAF8D6A517871B05002FEC0E /* MTBAddGroupMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF8D6A417871B05002FEC0E /* MTBAddGroupMessageViewController.m */; };
@@ -636,6 +637,7 @@
 		FACF4AE719E78970002BBE0A /* MTBReportHourTaskCategoryServiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTBReportHourTaskCategoryServiceViewController.m; sourceTree = "<group>"; };
 		FACF4AE919E81F30002BBE0A /* hours_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hours_large.png; sourceTree = "<group>"; };
 		FACF4AEE19E8D978002BBE0A /* StoryBoard_3.5inch_iOS7.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StoryBoard_3.5inch_iOS7.storyboard; sourceTree = "<group>"; };
+		FADDF5A819F488D30095CBEE /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		FAE8D81B178B87A200A8AA1F /* question_mark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = question_mark.png; sourceTree = "<group>"; };
 		FAF8D697178602EE002FEC0E /* MTBAddPushpinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTBAddPushpinViewController.h; sourceTree = "<group>"; };
 		FAF8D698178602EF002FEC0E /* MTBAddPushpinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTBAddPushpinViewController.m; sourceTree = "<group>"; };
@@ -650,6 +652,7 @@
 			files = (
 				FA9E101A19DA31E000A494A0 /* libPods.a in Frameworks */,
 				FA8EB6CF19D79C5B00888C49 /* libsqlite3.dylib in Frameworks */,
+				FADDF5A919F488D30095CBEE /* Crashlytics.framework in Frameworks */,
 				FA22476E176A615C00CE7C89 /* MessageUI.framework in Frameworks */,
 				FA224764176A613A00CE7C89 /* QuartzCore.framework in Frameworks */,
 				FAC5AA0D180F24BE00A96E1B /* MediaPlayer.framework in Frameworks */,
@@ -962,6 +965,7 @@
 		FA49C9ED175F8514009C74AD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FADDF5A819F488D30095CBEE /* Crashlytics.framework */,
 				FACF4AE919E81F30002BBE0A /* hours_large.png */,
 				FA43979A19CB6C0500EAB8D0 /* ic_action_icons */,
 				FA43DD2519A5C45B003B7EB2 /* red-cross-logo.jpg */,
@@ -1251,6 +1255,7 @@
 				FA49C9DF175F8514009C74AD /* Frameworks */,
 				FA49C9E0175F8514009C74AD /* Resources */,
 				67E1A4BCEFCA43899AB7BA00 /* Copy Pods Resources */,
+				FADDF5A519F488450095CBEE /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1549,6 +1554,19 @@
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
+		FADDF5A519F488450095CBEE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run d57bf4c7e3f0cdc0ce35831e43ea329c168571b5 363a6fd9caff1eff542a49583ab28778b605f7c2a50f80cd124ae7071e4a77ed";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1729,13 +1747,16 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 18B132671B1442A98AEA7B75 /* Pods.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				CODE_SIGN_IDENTITY = "iPhone Developer: John Carroll (QR98EQ97WG)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: John Carroll (QR98EQ97WG)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\\\"$(SRCROOT)/../../../Desktop/Projects/MTB/AppleDeveloper/lookback-0.4.6\\\"",
-					"/Users/kyungsikhan/Keith/iPhone\\ Dev/MTB_hOurworld_iOS\\ 2",
+					/Users/kyungsikhan/Keith/iPhone,
+					Dev/MTB_hOurworld_iOS,
+					2,
+					"$(PROJECT_DIR)/MTB_hOurworld_iOS",
 				);
 				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
@@ -1760,9 +1781,9 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = hOurworld;
-				PROVISIONING_PROFILE = "9608205D-0107-4355-95AC-D41C52C518A5";
-				"PROVISIONING_PROFILE[sdk=*]" = "9608205D-0107-4355-95AC-D41C52C518A5";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "9608205D-0107-4355-95AC-D41C52C518A5";
+				PROVISIONING_PROFILE = "f6ce0fb4-66fc-4102-8d1a-76db922aa0fd";
+				"PROVISIONING_PROFILE[sdk=*]" = "f6ce0fb4-66fc-4102-8d1a-76db922aa0fd";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "f6ce0fb4-66fc-4102-8d1a-76db922aa0fd";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
@@ -1773,13 +1794,16 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 18B132671B1442A98AEA7B75 /* Pods.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: John Carroll (J767EA589G)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: John Carroll (J767EA589G)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\\\"$(SRCROOT)/../../../Desktop/Projects/MTB/AppleDeveloper/lookback-0.4.6\\\"",
-					"/Users/kyungsikhan/Keith/iPhone\\ Dev/MTB_hOurworld_iOS\\ 2",
+					/Users/kyungsikhan/Keith/iPhone,
+					Dev/MTB_hOurworld_iOS,
+					2,
+					"$(PROJECT_DIR)/MTB_hOurworld_iOS",
 				);
 				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
@@ -1804,8 +1828,8 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = hOurworld;
-				PROVISIONING_PROFILE = "0B47D48F-7C2A-4571-ADDD-D65064C73C34";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "0B47D48F-7C2A-4571-ADDD-D65064C73C34";
+				PROVISIONING_PROFILE = "b93cb072-2f6f-4bda-99ae-160eaf4dc4f8";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "b93cb072-2f6f-4bda-99ae-160eaf4dc4f8";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;

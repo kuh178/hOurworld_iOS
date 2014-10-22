@@ -267,7 +267,7 @@
                     [jsonArray addObjectsFromArray:[responseObject objectForKey:@"results"]];
                   
                     int i;
-                    int arrayCount = [jsonArray count];
+                    long arrayCount = [jsonArray count];
                   
                     if(arrayCount > 0) {
                         // insert new items into the table
@@ -310,7 +310,7 @@
                     UIAlertView *dialog = [[UIAlertView alloc]init];
                     [dialog setDelegate:self];
                     [dialog setTitle:@"Message"];
-                    [dialog setMessage:@"No search result."];
+                    [dialog setMessage:@"No search result. (If you see this message multiple times, try logout and re-login)"];
                     [dialog addButtonWithTitle:@"OK"];
                     [dialog show];
                 }

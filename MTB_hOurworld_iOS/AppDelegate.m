@@ -12,6 +12,7 @@
 #import "AFHTTPRequestOperationManager.h"
 #import "AFNetworkActivityIndicatorManager.h"
 #import "GAI.h"
+#import <Crashlytics/Crashlytics.h>
 
 #define SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
 #define SYSTEM_VERSION_GREATER_THAN(v)              ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)
@@ -86,6 +87,9 @@
                                                           NSFontAttributeName,
                                                           [UIColor whiteColor],
                                                           NSForegroundColorAttributeName, nil]];
+    
+    [Crashlytics startWithAPIKey:@"d57bf4c7e3f0cdc0ce35831e43ea329c168571b5"];
+    
     return YES;
 }
 
