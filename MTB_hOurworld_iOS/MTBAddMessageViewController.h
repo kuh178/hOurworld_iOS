@@ -11,6 +11,7 @@
 #import <MapKit/MKAnnotation.h>
 #import "LocationAnnotation.h"
 #import "GAITrackedViewController.h"
+#import "ActionSheetStringPicker.h"
 
 @interface MTBAddMessageViewController : GAITrackedViewController <MKMapViewDelegate, CLLocationManagerDelegate, UITextViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UIAlertViewDelegate> {
     IBOutlet UITextView *messageTxt;

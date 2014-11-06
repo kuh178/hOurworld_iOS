@@ -32,8 +32,8 @@
     IBOutlet UIScrollView *scrollView;
     
     IBOutlet UIButton *largeViewBtn;
-    IBOutlet UIButton *emailBtn;
-    
+
+    IBOutlet UIBarButtonItem *emailBtn;
     IBOutlet UIBarButtonItem *replyBarBtn;
     IBOutlet UIBarButtonItem *reportHourBarBtn;
     IBOutlet UIBarButtonItem *removeBarBtn;
@@ -56,8 +56,8 @@
 @property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
 
 @property (nonatomic, retain) IBOutlet UIButton *largeViewBtn;
-@property (nonatomic, retain) IBOutlet UIButton *emailBtn;
 
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *emailBtn;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *replyBarBtn;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *reportHourBarBtn;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *removeBarBtn;

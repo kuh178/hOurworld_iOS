@@ -10,8 +10,6 @@
 #import "AFHTTPRequestOperationManager.h"
 #import "MTBItem.h"
 #import "JSON.h"
-#import "TDSemiModal.h"
-#import "TDDatePickerController.h"
 #import "MTBReportHourTaskCategoryViewController.h"
 
 @interface MTBReportHourFromMainViewController ()
@@ -20,7 +18,7 @@
 
 @implementation MTBReportHourFromMainViewController
 
-@synthesize note, addDateBtn, addHourBtn, chooseRecipientBtn, chooseCategoryBtn, submitBtn, isProvider, isReceiver, setDatePickerView;
+@synthesize note, addDateBtn, addHourBtn, chooseRecipientBtn, chooseCategoryBtn, submitBtn, isProvider, isReceiver;
 @synthesize satisfactionLabel, referenceLabel, satisfactionSwitch, referenceSwitch;
 
 NSString *mListMemName;
@@ -72,11 +70,6 @@ int mSvcID = 0;
     addDate = false;
     addHour = false;
     
-    // initialize datepicker view
-    setDatePickerView = [[TDDatePickerController alloc] initWithNibName:@"TDDatePickerController" bundle:nil];
-    setDatePickerView.delegate = self;
-    setDatePickerView.datePicker.backgroundColor = [UIColor whiteColor];
-    
     if ([isReceiver isEqualToString:@"F"]) {
         [satisfactionLabel setHidden:YES];
         [satisfactionSwitch setHidden:YES];
@@ -102,38 +95,116 @@ int mSvcID = 0;
     // Dispose of any resources that can be recreated.
 }
 
-
 -(IBAction)pressAddDateBtn:(id)sender {
     
-    flag = YES;
-    
-    setDatePickerView.datePicker.datePickerMode = UIDatePickerModeDate;
-    setDatePickerView.datePicker.backgroundColor = [UIColor whiteColor];
-    
-    [self presentSemiModalViewController:setDatePickerView];
+    [ActionSheetDatePicker showPickerWithTitle:@"Select Date"
+                                datePickerMode:UIDatePickerModeDate
+                                  selectedDate:[NSDate date]
+                                     doneBlock:^(ActionSheetDatePicker *picker, id selectedDate, id origin) {
+                                         
+                                         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+                                         [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+                                         
+                                         NSDate *completedDate = selectedDate;
+                                         date = [dateFormatter stringFromDate:completedDate];
+                                         
+                                         [addDateBtn setTitle:[NSString stringWithFormat:@"%@", date] forState:UIControlStateNormal];
+                                         
+                                         addDate = true;
+                                         
+                                     }
+                                   cancelBlock:^(ActionSheetDatePicker *picker) {
+                                       
+                                   }
+                                    origin:sender];
 }
+
 
 -(IBAction)pressAddHourBtn:(id)sender {
     
-    flag = NO;
+    NSArray *hourArray = [NSArray arrayWithObjects:
+                          @"15 mins", @"30 mins", @"45 mins", @"60 mins",
+                          @"75 mins", @"90 mins", @"105 mins", @"120 mins",
+                          @"135 mins", @"150 mins", @"165 mins", @"180 mins",
+                          @"195 mins", @"210 mins", @"225 mins", @"240 mins",
+                          @"255 mins", @"270 mins", @"285 mins", @"300 mins", nil];
     
-    countDownDuration = 0.0;
-    
-    setDatePickerView.datePicker.datePickerMode = UIDatePickerModeCountDownTimer;
-    setDatePickerView.datePicker.minuteInterval = 15;
-    setDatePickerView.datePicker.backgroundColor = [UIColor whiteColor];
-    
-    [self presentSemiModalViewController:setDatePickerView];
-}
-
--(IBAction)pressSubmitBtn:(id)sender {
-    
-    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Message"
-                                                      message:@"Report hours?"
-                                                     delegate:self
-                                            cancelButtonTitle:@"Report"
-                                            otherButtonTitles:@"Cancel", nil];
-    [message show];
+    [ActionSheetStringPicker showPickerWithTitle:@"Select Hours"
+                                            rows:hourArray
+                                initialSelection:0
+                                       doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
+                                           
+                                           NSString *hourString = [NSString stringWithFormat:@"%@", selectedValue];
+                                           [addHourBtn setTitle:hourString forState:UIControlStateNormal];
+                                           
+                                           if ([hourString isEqualToString:@"15 mins"]) {
+                                               hour = @"0.15";
+                                           }
+                                           else if ([hourString isEqualToString:@"30 mins"]) {
+                                               hour = @"0.30";
+                                           }
+                                           else if ([hourString isEqualToString:@"45 mins"]) {
+                                               hour = @"0.45";
+                                           }
+                                           else if ([hourString isEqualToString:@"60 mins"]) {
+                                               hour = @"1.00";
+                                           }
+                                           else if ([hourString isEqualToString:@"75 mins"]) {
+                                               hour = @"1.15";
+                                           }
+                                           else if ([hourString isEqualToString:@"90 mins"]) {
+                                               hour = @"1.30";
+                                           }
+                                           else if ([hourString isEqualToString:@"105 mins"]) {
+                                               hour = @"1.45";
+                                           }
+                                           else if ([hourString isEqualToString:@"120 mins"]) {
+                                               hour = @"2.00";
+                                           }
+                                           else if ([hourString isEqualToString:@"135 mins"]) {
+                                               hour = @"2.15";
+                                           }
+                                           else if ([hourString isEqualToString:@"150 mins"]) {
+                                               hour = @"2.30";
+                                           }
+                                           else if ([hourString isEqualToString:@"165 mins"]) {
+                                               hour = @"2.45";
+                                           }
+                                           else if ([hourString isEqualToString:@"180 mins"]) {
+                                               hour = @"3.00";
+                                           }
+                                           else if ([hourString isEqualToString:@"195 mins"]) {
+                                               hour = @"3.15";
+                                           }
+                                           else if ([hourString isEqualToString:@"210 mins"]) {
+                                               hour = @"3.30";
+                                           }
+                                           else if ([hourString isEqualToString:@"225 mins"]) {
+                                               hour = @"3.45";
+                                           }
+                                           else if ([hourString isEqualToString:@"240 mins"]) {
+                                               hour = @"4.00";
+                                           }
+                                           else if ([hourString isEqualToString:@"255 mins"]) {
+                                               hour = @"4.15";
+                                           }
+                                           else if ([hourString isEqualToString:@"270 mins"]) {
+                                               hour = @"4.30";
+                                           }
+                                           else if ([hourString isEqualToString:@"285 mins"]) {
+                                               hour = @"4.45";
+                                           }
+                                           else if ([hourString isEqualToString:@"300 mins"]) {
+                                               hour = @"5.00";
+                                           }
+                                           
+                                           addHour = true;
+                                           
+                                       }
+                                     cancelBlock:^(ActionSheetStringPicker *picker) {
+                                         NSLog(@"Block Picker Canceled");
+                                     }
+                                          origin:sender];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
@@ -141,6 +212,8 @@ int mSvcID = 0;
     NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
     
     if([title isEqualToString:@"Report"]) {
+        
+        NSLog(@"%@ %@", hour, date);
         
         // check the fields first
         if (addDate != true || addHour != true || mListMemID == 0 || mSvcCatID == 0 || mSvcID == 0) {
@@ -152,7 +225,6 @@ int mSvcID = 0;
             [message show];
         }
         else {
-            
             // start downloading
             NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
             
@@ -196,141 +268,35 @@ int mSvcID = 0;
                            @"SvcID"           :[NSString stringWithFormat:@"%d", mSvcID]};
             }
             
+            
             [manager POST:@"http://www.hourworld.org/db_mob/auth.php" parameters:params
-constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-} success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+                } success:^(AFHTTPRequestOperation *operation, id responseObject) {
     
-    if([responseObject objectForKey:@"success"]) {
-        NSLog(@"Complete reporting hour");
+                    if([responseObject objectForKey:@"success"]) {
+                        NSLog(@"Complete reporting hour");
         
-        UIAlertView *dialog = [[UIAlertView alloc]init];
-        [dialog setDelegate:self];
-        [dialog setTitle:@"Message"];
-        [dialog setMessage:@"Your hour has been reported"];
-        [dialog addButtonWithTitle:@"Close"];
-        [dialog show];
+                        UIAlertView *dialog = [[UIAlertView alloc]init];
+                        [dialog setDelegate:self];
+                        [dialog setTitle:@"Message"];
+                        [dialog setMessage:@"Your hour has been reported"];
+                        [dialog addButtonWithTitle:@"Close"];
+                        [dialog show];
         
-        NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-        [userDefault setInteger:1 forKey:@"reload"];
-        [self.navigationController popViewControllerAnimated:YES];
-    }
-    else {
-        NSLog(@"Fail to report hour");
-    }
+                        NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+                        [userDefault setInteger:1 forKey:@"reload"];
+                        [self.navigationController popViewControllerAnimated:YES];
+                    }
+                    else {
+                        NSLog(@"Fail to report hour");
+                    }
     
-} failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-    NSLog(@"Error: %@", operation);
-}];
-        }
-    }
-}
-
--(void)datePickerSetDate:(TDDatePickerController*)viewController {
-    
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
-    
-    // date
-    if(flag) {
-        NSDate *completedDate = viewController.datePicker.date;
-        date = [dateFormatter stringFromDate:completedDate];
-        
-        [addDateBtn setTitle:[NSString stringWithFormat:@"%@", date] forState:UIControlStateNormal];
-        
-        addDate = true;
-        
-        [self dismissSemiModalViewController:setDatePickerView];
-        
-    }
-    // hour
-    else {
-        countDownDuration = viewController.datePicker.countDownDuration;
-        
-        countDownDuration = (int)(countDownDuration / 60);
-        
-        if(countDownDuration == 0.0) {
-            
-        }
-        else {
-            
-            NSString *hourString = [NSString stringWithFormat:@"%4.0f mins", countDownDuration];
-            hourString = [hourString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-            
-            [addHourBtn setTitle:hourString forState:UIControlStateNormal];
-            
-            if ([hourString isEqualToString:@"15 mins"]) {
-                hour = @"0.15";
+                } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                    NSLog(@"Error: %@", operation);
+                }];
             }
-            else if ([hourString isEqualToString:@"30 mins"]) {
-                hour = @"0.30";
-            }
-            else if ([hourString isEqualToString:@"45 mins"]) {
-                hour = @"0.45";
-            }
-            else if ([hourString isEqualToString:@"60 mins"]) {
-                hour = @"1.00";
-            }
-            else if ([hourString isEqualToString:@"75 mins"]) {
-                hour = @"1.15";
-            }
-            else if ([hourString isEqualToString:@"90 mins"]) {
-                hour = @"1.30";
-            }
-            else if ([hourString isEqualToString:@"105 mins"]) {
-                hour = @"1.45";
-            }
-            else if ([hourString isEqualToString:@"120 mins"]) {
-                hour = @"2.00";
-            }
-            else if ([hourString isEqualToString:@"135 mins"]) {
-                hour = @"2.15";
-            }
-            else if ([hourString isEqualToString:@"150 mins"]) {
-                hour = @"2.30";
-            }
-            else if ([hourString isEqualToString:@"165 mins"]) {
-                hour = @"2.45";
-            }
-            else if ([hourString isEqualToString:@"180 mins"]) {
-                hour = @"3.00";
-            }
-            else if ([hourString isEqualToString:@"195 mins"]) {
-                hour = @"3.15";
-            }
-            else if ([hourString isEqualToString:@"210 mins"]) {
-                hour = @"3.30";
-            }
-            else if ([hourString isEqualToString:@"225 mins"]) {
-                hour = @"3.45";
-            }
-            else if ([hourString isEqualToString:@"240 mins"]) {
-                hour = @"4.00";
-            }
-            else if ([hourString isEqualToString:@"255 mins"]) {
-                hour = @"4.15";
-            }
-            else if ([hourString isEqualToString:@"270 mins"]) {
-                hour = @"4.30";
-            }
-            else if ([hourString isEqualToString:@"285 mins"]) {
-                hour = @"4.45";
-            }
-            else if ([hourString isEqualToString:@"300 mins"]) {
-                hour = @"5.00";
-            }
-            
-            addHour = true;
-            
-            [self dismissSemiModalViewController:setDatePickerView];
-        }
     }
 }
-
--(void)datePickerCancel:(TDDatePickerController*)viewController {
-    
-    [self dismissSemiModalViewController:setDatePickerView];
-}
-
 
 - (BOOL)textViewShouldReturn:(UITextField *)textView
 {
@@ -422,6 +388,15 @@ constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
     NSLog(@"%d %d", pSvcCatID, pSvcID);
     
     [chooseCategoryBtn setTitle:[NSString stringWithFormat:@"%@ > %@", SvcCat, pService] forState:UIControlStateNormal];
+}
+
+-(IBAction)pressSubmitBtn:(id)sender {
+    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Message"
+                                                      message:@"Report hours?"
+                                                     delegate:self
+                                            cancelButtonTitle:@"Report"
+                                            otherButtonTitles:@"Cancel", nil];
+    [message show];
 }
 
 @end

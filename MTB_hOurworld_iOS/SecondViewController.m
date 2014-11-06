@@ -253,6 +253,7 @@
                   
                   int i;
                   int arrayCount = [jsonArray count];
+                  bool hasItem = false;
                   
                   if(arrayCount > 0) {
                       // insert new items into the table
@@ -261,7 +262,7 @@
                           NSDictionary *item = [jsonArray objectAtIndex:i];
                           NSDictionary *locObj = [item objectForKey:@"mobLatLon"];
                           
-                          if ([[item objectForKey:@"Eblast"] isEqualToString:@""]) {
+                          if ([[item objectForKey:@"Eblast"] isEqualToString:@""] || [[item objectForKey:@"Eblast"] isEqual:@"No messages found"]) {
                               continue;
                           }
                           
@@ -286,6 +287,8 @@
                               tItem = [[MTBItem alloc] initToTask:[[item objectForKey:@"listMbrID"] intValue] Edescr:[item objectForKey:@"Descr"] ESvcCat:[item objectForKey:@"SvcCat"] EMemName:memName ESvcCatID:[[item objectForKey:@"SvcCatID"] intValue] ESvcID:[[item objectForKey:@"SvcID"] intValue] EService:[item objectForKey:@"Service"] ETimestamp:[item objectForKey:@"timestamp"] EProlfileImage:[item objectForKey:@"Profile"] EOLat:[[locObj objectForKey:@"oLat"] doubleValue] EOLon:[[locObj objectForKey:@"oLon"] doubleValue] EDLat:[[locObj objectForKey:@"dLat"] doubleValue] EDLon:[[locObj objectForKey:@"dLon"] doubleValue] EXDays:xDays EEmail1:[item objectForKey:@"Email1"]];
                           }
                           
+                          hasItem = true;
+                          
                           [scheduleList addObject:tItem];
                       }
                   }
@@ -293,6 +296,14 @@
                       NSLog(@"No data available");
                   }
                   
+                  if (hasItem == false) {
+                      UIAlertView *dialog = [[UIAlertView alloc]init];
+                      [dialog setDelegate:nil];
+                      [dialog setTitle:@"Message"];
+                      [dialog setMessage:@"No result."];
+                      [dialog addButtonWithTitle:@"OK"];
+                      [dialog show];
+                  }
                   
                   [tableViewList reloadData];
               }
@@ -300,7 +311,7 @@
                   UIAlertView *dialog = [[UIAlertView alloc]init];
                   [dialog setDelegate:self];
                   [dialog setTitle:@"Message"];
-                  [dialog setMessage:@"No search result."];
+                  [dialog setMessage:@"No result."];
                   [dialog addButtonWithTitle:@"OK"];
                   [dialog show];
               }

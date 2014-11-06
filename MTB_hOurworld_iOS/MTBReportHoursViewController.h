@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "MTBItem.h"
-#import "TDDatePickerController.h"
 #import "GAITrackedViewController.h"
+#import "ActionSheetStringPicker.h"
+#import "ActionSheetDatePicker.h"
 
 @interface MTBReportHoursViewController : GAITrackedViewController <UITextViewDelegate> {
     IBOutlet UITextView *note;
@@ -29,8 +30,6 @@
     NSString *isProvider;
     NSString *isReceiver;
     MTBItem *mItem;
-    
-    TDDatePickerController* setDatePickerView;
     
     Boolean flag;
     Boolean addDate;
@@ -61,7 +60,6 @@
 @property (nonatomic, retain) NSString *isProvider;
 @property (nonatomic, retain) NSString *isReceiver;
 @property (nonatomic, retain) MTBItem *mItem;
-@property (nonatomic, retain) TDDatePickerController* setDatePickerView;
 
 //-(IBAction)satisfactionSwitch:(id)sender;
 //-(IBAction)referenceSwitch:(id)sender;

@@ -146,7 +146,7 @@
 
 -(IBAction)reportHoursBtnPressed:(id)sender {
     UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Message"
-                                                      message:@"Did you provide or receive this service?"
+                                                      message:@"Did you provide or receive the service?"
                                                      delegate:self
                                             cancelButtonTitle:@"Cancel"
                                             otherButtonTitles:@"Provided", @"Received", nil];

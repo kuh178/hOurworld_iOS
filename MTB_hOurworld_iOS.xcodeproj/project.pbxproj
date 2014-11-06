@@ -145,14 +145,6 @@
 		FA2E02D419A537050076EBDA /* hours_04G.png in Resources */ = {isa = PBXBuildFile; fileRef = FA2E02CA19A537050076EBDA /* hours_04G.png */; };
 		FA2E02D519A537050076EBDA /* hours_05.png in Resources */ = {isa = PBXBuildFile; fileRef = FA2E02CB19A537050076EBDA /* hours_05.png */; };
 		FA2E02D619A537050076EBDA /* hours_05G.png in Resources */ = {isa = PBXBuildFile; fileRef = FA2E02CC19A537050076EBDA /* hours_05G.png */; };
-		FA3AE5B617722BBE0009DA34 /* TDSemiModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3AE5B117722BBE0009DA34 /* TDSemiModalViewController.m */; };
-		FA3AE5B717722BBE0009DA34 /* UIViewController+TDSemiModalExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3AE5B217722BBE0009DA34 /* UIViewController+TDSemiModalExtension.m */; };
-		FA3AE5B817722BBE0009DA34 /* TDDatePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3AE5B317722BBE0009DA34 /* TDDatePickerController.m */; };
-		FA3AE5B917722BBE0009DA34 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = FA3AE5B417722BBE0009DA34 /* Readme.md */; };
-		FA3AE5BA17722BBE0009DA34 /* License.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA3AE5B517722BBE0009DA34 /* License.txt */; };
-		FA3AE5BC17722BD50009DA34 /* UIViewController+TDSemiModalExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3AE5B217722BBE0009DA34 /* UIViewController+TDSemiModalExtension.m */; };
-		FA3AE5BD17722BD50009DA34 /* TDDatePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3AE5B317722BBE0009DA34 /* TDDatePickerController.m */; };
-		FA3AE5BF17722D960009DA34 /* TDDatePickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA3AE5BE17722D960009DA34 /* TDDatePickerController.xib */; };
 		FA4236FA17F0D0430089DE95 /* exclamation_yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = FA4236F917F0D0430089DE95 /* exclamation_yellow.png */; };
 		FA42370617F131540089DE95 /* LargeMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA42370517F131540089DE95 /* LargeMapViewController.m */; };
 		FA42370B17F13BAA0089DE95 /* expand.png in Resources */ = {isa = PBXBuildFile; fileRef = FA42370A17F13BAA0089DE95 /* expand.png */; };
@@ -265,7 +257,6 @@
 		FAC5AA09180F24A500A96E1B /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC5AA08180F24A500A96E1B /* CoreVideo.framework */; };
 		FAC5AA0B180F24AD00A96E1B /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC5AA0A180F24AD00A96E1B /* CoreMedia.framework */; };
 		FAC5AA0D180F24BE00A96E1B /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC5AA0C180F24BE00A96E1B /* MediaPlayer.framework */; };
-		FACCF8AE1772536A00CD98BD /* TDSemiModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3AE5B117722BBE0009DA34 /* TDSemiModalViewController.m */; };
 		FACCF8B81772558B00CD98BD /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FACCF8B71772558B00CD98BD /* CoreText.framework */; };
 		FACCF8BD17726E8C00CD98BD /* TSAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = FACCF8BC17726E8C00CD98BD /* TSAlertView.m */; };
 		FACCF8C217726EA400CD98BD /* TSAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = FACCF8BC17726E8C00CD98BD /* TSAlertView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -298,7 +289,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		18B132671B1442A98AEA7B75 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		3CA25A4547B7FAD1EA32424F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		DFE34FCE8EF61CD3FF127CD9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		FA0B346F1851BAE200C34E0F /* hourworld_icon_120_120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hourworld_icon_120_120.png; sourceTree = "<group>"; };
 		FA0B34731851DBA100C34E0F /* StoryBoard_4inch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StoryBoard_4inch.storyboard; sourceTree = "<group>"; };
 		FA224744176A4F2500CE7C89 /* banner_guardians4_flat.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = banner_guardians4_flat.jpg; sourceTree = "<group>"; };
@@ -439,16 +431,6 @@
 		FA2E02CA19A537050076EBDA /* hours_04G.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hours_04G.png; sourceTree = "<group>"; };
 		FA2E02CB19A537050076EBDA /* hours_05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hours_05.png; sourceTree = "<group>"; };
 		FA2E02CC19A537050076EBDA /* hours_05G.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hours_05G.png; sourceTree = "<group>"; };
-		FA3AE5AD17722BBE0009DA34 /* TDSemiModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDSemiModal.h; sourceTree = "<group>"; };
-		FA3AE5AE17722BBE0009DA34 /* TDSemiModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDSemiModalViewController.h; sourceTree = "<group>"; };
-		FA3AE5AF17722BBE0009DA34 /* TDDatePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDDatePickerController.h; sourceTree = "<group>"; };
-		FA3AE5B017722BBE0009DA34 /* UIViewController+TDSemiModalExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TDSemiModalExtension.h"; sourceTree = "<group>"; };
-		FA3AE5B117722BBE0009DA34 /* TDSemiModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDSemiModalViewController.m; sourceTree = "<group>"; };
-		FA3AE5B217722BBE0009DA34 /* UIViewController+TDSemiModalExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TDSemiModalExtension.m"; sourceTree = "<group>"; };
-		FA3AE5B317722BBE0009DA34 /* TDDatePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDDatePickerController.m; sourceTree = "<group>"; };
-		FA3AE5B417722BBE0009DA34 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Readme.md; sourceTree = "<group>"; };
-		FA3AE5B517722BBE0009DA34 /* License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = License.txt; sourceTree = "<group>"; };
-		FA3AE5BE17722D960009DA34 /* TDDatePickerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDDatePickerController.xib; sourceTree = "<group>"; };
 		FA4236F917F0D0430089DE95 /* exclamation_yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exclamation_yellow.png; sourceTree = "<group>"; };
 		FA42370417F131540089DE95 /* LargeMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LargeMapViewController.h; sourceTree = "<group>"; };
 		FA42370517F131540089DE95 /* LargeMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LargeMapViewController.m; sourceTree = "<group>"; };
@@ -692,6 +674,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B43068BD4825CE06199A59E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DFE34FCE8EF61CD3FF127CD9 /* Pods.debug.xcconfig */,
+				3CA25A4547B7FAD1EA32424F /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E2BE463B185102E2000BC763 /* GoogleAnalytics */ = {
 			isa = PBXGroup;
 			children = (
@@ -845,23 +836,6 @@
 			name = badges;
 			sourceTree = "<group>";
 		};
-		FA3AE5AB17722BA70009DA34 /* DateTimeView */ = {
-			isa = PBXGroup;
-			children = (
-				FA3AE5BE17722D960009DA34 /* TDDatePickerController.xib */,
-				FA3AE5AD17722BBE0009DA34 /* TDSemiModal.h */,
-				FA3AE5AE17722BBE0009DA34 /* TDSemiModalViewController.h */,
-				FA3AE5AF17722BBE0009DA34 /* TDDatePickerController.h */,
-				FA3AE5B017722BBE0009DA34 /* UIViewController+TDSemiModalExtension.h */,
-				FA3AE5B117722BBE0009DA34 /* TDSemiModalViewController.m */,
-				FA3AE5B217722BBE0009DA34 /* UIViewController+TDSemiModalExtension.m */,
-				FA3AE5B317722BBE0009DA34 /* TDDatePickerController.m */,
-				FA3AE5B417722BBE0009DA34 /* Readme.md */,
-				FA3AE5B517722BBE0009DA34 /* License.txt */,
-			);
-			name = DateTimeView;
-			sourceTree = "<group>";
-		};
 		FA43979A19CB6C0500EAB8D0 /* ic_action_icons */ = {
 			isa = PBXGroup;
 			children = (
@@ -886,7 +860,7 @@
 				FA49CA1B175F8515009C74AD /* MTB_hOurworld_iOSTests */,
 				FA49C9E5175F8514009C74AD /* Frameworks */,
 				FA49C9E3175F8514009C74AD /* Products */,
-				18B132671B1442A98AEA7B75 /* Pods.xcconfig */,
+				9B43068BD4825CE06199A59E /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -943,7 +917,6 @@
 				FA581ABA1782FC1200175CC4 /* Account */,
 				FA581AA7177F5B6D00175CC4 /* Group */,
 				FACCF8BA17726E8100CD98BD /* TSAlertView */,
-				FA3AE5AB17722BA70009DA34 /* DateTimeView */,
 				FA85C477176D015E002DB170 /* OfferRequestViews */,
 				FA85C46B176BCBF3002DB170 /* Profile */,
 				FA8B28AB176A982A00216C5C /* MessageTaskViews */,
@@ -1439,7 +1412,6 @@
 				FA2E023919A536D80076EBDA /* sch_06.png in Resources */,
 				FA2E02D619A537050076EBDA /* hours_05G.png in Resources */,
 				FA2E02B919A536FC0076EBDA /* months_05.png in Resources */,
-				FA3AE5BF17722D960009DA34 /* TDDatePickerController.xib in Resources */,
 				FA2E027819A536EE0076EBDA /* rcv_01.png in Resources */,
 				FA2E028619A536EE0076EBDA /* rcv_08G.png in Resources */,
 				FACCF8C9177275FE00CD98BD /* TSAlertViewMessageListViewShadow.png in Resources */,
@@ -1503,8 +1475,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA49CA20175F8515009C74AD /* InfoPlist.strings in Resources */,
-				FA3AE5B917722BBE0009DA34 /* Readme.md in Resources */,
-				FA3AE5BA17722BBE0009DA34 /* License.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1523,7 +1493,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		6B2A92C130C54FC9BACBBCD4 /* Check Pods Manifest.lock */ = {
@@ -1576,9 +1546,6 @@
 			files = (
 				FACCF8C217726EA400CD98BD /* TSAlertView.m in Sources */,
 				FA6B60D919C89F3A00CC9E79 /* MTBTaskEditViewController.m in Sources */,
-				FACCF8AE1772536A00CD98BD /* TDSemiModalViewController.m in Sources */,
-				FA3AE5BC17722BD50009DA34 /* UIViewController+TDSemiModalExtension.m in Sources */,
-				FA3AE5BD17722BD50009DA34 /* TDDatePickerController.m in Sources */,
 				FA6FFD03188F65540008D323 /* MainPageViewController.m in Sources */,
 				FA85C43B176BAACB002DB170 /* LocationAnnotation.m in Sources */,
 				FA8B28B3176A9A0400216C5C /* MTBItem.m in Sources */,
@@ -1651,9 +1618,6 @@
 				FA49CA66175F85F4009C74AD /* LocationAnnotation.m in Sources */,
 				FA224795176A813600CE7C89 /* ImageViewController.m in Sources */,
 				FA224798176A823F00CE7C89 /* MTBItem.m in Sources */,
-				FA3AE5B617722BBE0009DA34 /* TDSemiModalViewController.m in Sources */,
-				FA3AE5B717722BBE0009DA34 /* UIViewController+TDSemiModalExtension.m in Sources */,
-				FA3AE5B817722BBE0009DA34 /* TDDatePickerController.m in Sources */,
 				FACCF8BD17726E8C00CD98BD /* TSAlertView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1745,7 +1709,7 @@
 		};
 		FA49CA27175F8515009C74AD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 18B132671B1442A98AEA7B75 /* Pods.xcconfig */;
+			baseConfigurationReference = DFE34FCE8EF61CD3FF127CD9 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				CODE_SIGN_IDENTITY = "iPhone Developer: John Carroll (QR98EQ97WG)";
@@ -1779,7 +1743,10 @@
 					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
 				);
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"$(inherited)",
+				);
 				PRODUCT_NAME = hOurworld;
 				PROVISIONING_PROFILE = "f6ce0fb4-66fc-4102-8d1a-76db922aa0fd";
 				"PROVISIONING_PROFILE[sdk=*]" = "f6ce0fb4-66fc-4102-8d1a-76db922aa0fd";
@@ -1792,7 +1759,7 @@
 		};
 		FA49CA28175F8515009C74AD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 18B132671B1442A98AEA7B75 /* Pods.xcconfig */;
+			baseConfigurationReference = 3CA25A4547B7FAD1EA32424F /* Pods.release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: John Carroll (J767EA589G)";
@@ -1826,7 +1793,10 @@
 					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
 				);
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"$(inherited)",
+				);
 				PRODUCT_NAME = hOurworld;
 				PROVISIONING_PROFILE = "b93cb072-2f6f-4bda-99ae-160eaf4dc4f8";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "b93cb072-2f6f-4bda-99ae-160eaf4dc4f8";

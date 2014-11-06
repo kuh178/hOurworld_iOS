@@ -61,7 +61,7 @@
     for (int i = 0 ; i < 80 ; i++) {
         NSInteger randNum = rand() % (15-0) + 0;
 
-        NSString *randNumStr = [NSString stringWithFormat:@"%d", randNum];
+        NSString *randNumStr = [NSString stringWithFormat:@"%ld", (long)randNum];
         
         returnVal = [returnVal stringByAppendingString:randNumStr];
     }
@@ -172,14 +172,18 @@ constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
 {
     NSLog(@"textFieldDidEndEditing");
     
-    CGRect rect = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    if (textField.frame.origin.y + textField.frame.size.height > 480 - 216) {
+        CGSize iOSDeviceScreenSize = [[UIScreen mainScreen] bounds].size;
+        CGRect rect = CGRectMake(0, 64, self.view.frame.size.width, iOSDeviceScreenSize.height);
+        
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationDuration:0.3];
+        
+        self.view.frame = rect;
+        
+        [UIView commitAnimations];
+    }
     
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:0.3];
-    
-    self.view.frame = rect;
-    
-    [UIView commitAnimations];
 }
 
 

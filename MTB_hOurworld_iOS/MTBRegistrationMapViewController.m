@@ -120,7 +120,7 @@
     CLLocation * currentLocation = (CLLocation *)[locations lastObject];
     NSLog(@"Location: %@", currentLocation);
     
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(currentLocation.coordinate, 1500, 1500);
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(currentLocation.coordinate, 9000, 9000);
     //MKCoordinateRegion adjustedRegion = [mapView regionThatFits:viewRegion];
     [mapView setRegion:viewRegion animated:YES];
     
@@ -264,7 +264,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [self.navigationController setNavigationBarHidden:NO animated:animated];
-    [[self navigationItem] setTitle:@"Pick an exchange [1/3]"];
+    [[self navigationItem] setTitle:@"Pick an Exchange [1/3]"];
     
     
     UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: @"Back" style: UIBarButtonItemStyleBordered target:nil action:nil];

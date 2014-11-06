@@ -216,7 +216,7 @@
 }
 
 - (void)imageTapped:(UITapGestureRecognizer *)gesture {
-    NSLog(@"%d", mItem.mListMbrID);
+    NSLog(@"%ld", (long)mItem.mListMbrID);
     
     if(mItem.mListMbrID == 0) {
         // do nothing
@@ -354,13 +354,22 @@
 }
 
 -(IBAction)pressReplyBtn:(id)sender {
-    NSString *emailTitle = @"Download the hOurworld mobile app now!";
+    
+    NSString *emailTitle;
+    
+    if ([mIsOffer isEqualToString:@"T"]) {
+        emailTitle = [NSString stringWithFormat:@"Response to your offer"];
+    }
+    else {
+        emailTitle = [NSString stringWithFormat:@"Response to your request"];
+    }
+    
     // Email Content
     //    NSString *messageBody = @"Here are the links to download either an Android or an iOS hOurworld app.\n\nAndroid : https://play.google.com/store/apps/details?id=edu.psu.ist.mtb_hourworld&hl=en \n\niOS : https://itunes.apple.com/us/app/hourworld/id671499452?mt=8 \n\n";
 
     NSLog(@"%@ %@ %@ %@", mItem.mSvcCat, mItem.mService, mItem.mDescription, mItem.mEmail);
     
-    NSString *messageBody = [NSString stringWithFormat:@"Hi there,\nI'm inquiring about your listing: %@ %@, %@", mItem.mSvcCat, mItem.mService, mItem.mDescription];
+    NSString *messageBody = [NSString stringWithFormat:@"Hi there,\nI'm inquiring about your listing: \"%@ %@, %@\"", mItem.mSvcCat, mItem.mService, mItem.mDescription];
 
     // To address
     if ([mItem.mEmail isEqual:[NSNull null]]) {

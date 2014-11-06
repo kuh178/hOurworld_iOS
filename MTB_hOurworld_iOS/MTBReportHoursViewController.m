@@ -10,8 +10,6 @@
 #import "AFHTTPRequestOperationManager.h"
 #import "MTBItem.h"
 #import "JSON.h"
-#import "TDSemiModal.h"
-#import "TDDatePickerController.h"
 
 @interface MTBReportHoursViewController ()
 
@@ -19,7 +17,7 @@
 
 @implementation MTBReportHoursViewController
 
-@synthesize note, addDateBtn, addHourBtn, chooseRecipientBtn, submitBtn, isProvider, isReceiver, mItem, setDatePickerView;
+@synthesize note, addDateBtn, addHourBtn, chooseRecipientBtn, submitBtn, isProvider, isReceiver, mItem;
 @synthesize satisfactionLabel, referenceLabel, satisfactionSwitch, referenceSwitch;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -66,11 +64,6 @@
     addDate = false;
     addHour = false;
     
-    // initialize datepicker view
-    setDatePickerView = [[TDDatePickerController alloc] initWithNibName:@"TDDatePickerController" bundle:nil];
-    setDatePickerView.delegate = self;
-    setDatePickerView.datePicker.backgroundColor = [UIColor whiteColor];
-    
     if ([isReceiver isEqualToString:@"F"]) {
         [satisfactionLabel setHidden:YES];
         [satisfactionSwitch setHidden:YES];
@@ -99,25 +92,115 @@
 
 -(IBAction)pressAddDateBtn:(id)sender {
     
-    flag = YES;
+    [ActionSheetDatePicker showPickerWithTitle:@"Select Date"
+                                datePickerMode:UIDatePickerModeDate
+                                  selectedDate:[NSDate date]
+                                     doneBlock:^(ActionSheetDatePicker *picker, id selectedDate, id origin) {
+                                         
+                                         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+                                         [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+                                        
+                                         NSDate *completedDate = selectedDate;
+                                         date = [dateFormatter stringFromDate:completedDate];
+                                         
+                                         [addDateBtn setTitle:[NSString stringWithFormat:@"%@", date] forState:UIControlStateNormal];
+                                         
+                                         addDate = true;
+
+                                     }
+                                    cancelBlock:^(ActionSheetDatePicker *picker) {
+                                       
+                                    }
+                                    origin:sender];
     
-    setDatePickerView.datePicker.datePickerMode = UIDatePickerModeDate;
-    setDatePickerView.datePicker.backgroundColor = [UIColor whiteColor];
     
-    [self presentSemiModalViewController:setDatePickerView];
 }
 
 -(IBAction)pressAddHourBtn:(id)sender {
     
-    flag = NO;
+    NSArray *hourArray = [NSArray arrayWithObjects:
+                     @"15 mins", @"30 mins", @"45 mins", @"60 mins",
+                     @"75 mins", @"90 mins", @"105 mins", @"120 mins",
+                     @"135 mins", @"150 mins", @"165 mins", @"180 mins",
+                     @"195 mins", @"210 mins", @"225 mins", @"240 mins",
+                     @"255 mins", @"270 mins", @"285 mins", @"300 mins", nil];
     
-    countDownDuration = 0.0;
-    
-    setDatePickerView.datePicker.datePickerMode = UIDatePickerModeCountDownTimer;
-    setDatePickerView.datePicker.minuteInterval = 15;
-    setDatePickerView.datePicker.backgroundColor = [UIColor whiteColor];
-    
-    [self presentSemiModalViewController:setDatePickerView];
+    [ActionSheetStringPicker showPickerWithTitle:@"Select Hours"
+                                            rows:hourArray
+                                initialSelection:0
+                                       doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
+                                           
+                                           NSString *hourString = [NSString stringWithFormat:@"%@", selectedValue];
+                                           [addHourBtn setTitle:hourString forState:UIControlStateNormal];
+                                           
+                                           if ([hourString isEqualToString:@"15 mins"]) {
+                                               hour = @"0.15";
+                                           }
+                                           else if ([hourString isEqualToString:@"30 mins"]) {
+                                               hour = @"0.30";
+                                           }
+                                           else if ([hourString isEqualToString:@"45 mins"]) {
+                                               hour = @"0.45";
+                                           }
+                                           else if ([hourString isEqualToString:@"60 mins"]) {
+                                               hour = @"1.00";
+                                           }
+                                           else if ([hourString isEqualToString:@"75 mins"]) {
+                                               hour = @"1.15";
+                                           }
+                                           else if ([hourString isEqualToString:@"90 mins"]) {
+                                               hour = @"1.30";
+                                           }
+                                           else if ([hourString isEqualToString:@"105 mins"]) {
+                                               hour = @"1.45";
+                                           }
+                                           else if ([hourString isEqualToString:@"120 mins"]) {
+                                               hour = @"2.00";
+                                           }
+                                           else if ([hourString isEqualToString:@"135 mins"]) {
+                                               hour = @"2.15";
+                                           }
+                                           else if ([hourString isEqualToString:@"150 mins"]) {
+                                               hour = @"2.30";
+                                           }
+                                           else if ([hourString isEqualToString:@"165 mins"]) {
+                                               hour = @"2.45";
+                                           }
+                                           else if ([hourString isEqualToString:@"180 mins"]) {
+                                               hour = @"3.00";
+                                           }
+                                           else if ([hourString isEqualToString:@"195 mins"]) {
+                                               hour = @"3.15";
+                                           }
+                                           else if ([hourString isEqualToString:@"210 mins"]) {
+                                               hour = @"3.30";
+                                           }
+                                           else if ([hourString isEqualToString:@"225 mins"]) {
+                                               hour = @"3.45";
+                                           }
+                                           else if ([hourString isEqualToString:@"240 mins"]) {
+                                               hour = @"4.00";
+                                           }
+                                           else if ([hourString isEqualToString:@"255 mins"]) {
+                                               hour = @"4.15";
+                                           }
+                                           else if ([hourString isEqualToString:@"270 mins"]) {
+                                               hour = @"4.30";
+                                           }
+                                           else if ([hourString isEqualToString:@"285 mins"]) {
+                                               hour = @"4.45";
+                                           }
+                                           else if ([hourString isEqualToString:@"300 mins"]) {
+                                               hour = @"5.00";
+                                           }
+                                           
+                                           addHour = true;
+
+                                       }
+                                     cancelBlock:^(ActionSheetStringPicker *picker) {
+                                         NSLog(@"Block Picker Canceled");
+                                     }
+                                          origin:sender];
 }
 
 -(IBAction)pressSubmitBtn:(id)sender {
@@ -217,113 +300,6 @@
         }
     }    
 }
-
--(void)datePickerSetDate:(TDDatePickerController*)viewController {
-    
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-	[dateFormatter setDateFormat:@"yyyy-MM-dd"];
-	
-    // date
-    if(flag) {
-        NSDate *completedDate = viewController.datePicker.date;
-        date = [dateFormatter stringFromDate:completedDate];
-        
-        [addDateBtn setTitle:[NSString stringWithFormat:@"%@", date] forState:UIControlStateNormal];
-        
-        addDate = true;
-        
-        [self dismissSemiModalViewController:setDatePickerView];
-
-    }
-    // hour
-    else {
-        countDownDuration = viewController.datePicker.countDownDuration;
-    
-        countDownDuration = (int)(countDownDuration / 60);
-        
-        if(countDownDuration == 0.0) {
-            
-        }
-        else {
-            
-            NSString *hourString = [NSString stringWithFormat:@"%4.0f mins", countDownDuration];
-            hourString = [hourString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-            
-            [addHourBtn setTitle:hourString forState:UIControlStateNormal];
-            
-            if ([hourString isEqualToString:@"15 mins"]) {
-                hour = @"0.15";
-            }
-            else if ([hourString isEqualToString:@"30 mins"]) {
-                hour = @"0.30";
-            }
-            else if ([hourString isEqualToString:@"45 mins"]) {
-                hour = @"0.45";
-            }
-            else if ([hourString isEqualToString:@"60 mins"]) {
-                hour = @"1.00";
-            }
-            else if ([hourString isEqualToString:@"75 mins"]) {
-                hour = @"1.15";
-            }
-            else if ([hourString isEqualToString:@"90 mins"]) {
-                hour = @"1.30";
-            }
-            else if ([hourString isEqualToString:@"105 mins"]) {
-                hour = @"1.45";
-            }
-            else if ([hourString isEqualToString:@"120 mins"]) {
-                hour = @"2.00";
-            }
-            else if ([hourString isEqualToString:@"135 mins"]) {
-                hour = @"2.15";
-            }
-            else if ([hourString isEqualToString:@"150 mins"]) {
-                hour = @"2.30";
-            }
-            else if ([hourString isEqualToString:@"165 mins"]) {
-                hour = @"2.45";
-            }
-            else if ([hourString isEqualToString:@"180 mins"]) {
-                hour = @"3.00";
-            }
-            else if ([hourString isEqualToString:@"195 mins"]) {
-                hour = @"3.15";
-            }
-            else if ([hourString isEqualToString:@"210 mins"]) {
-                hour = @"3.30";
-            }
-            else if ([hourString isEqualToString:@"225 mins"]) {
-                hour = @"3.45";
-            }
-            else if ([hourString isEqualToString:@"240 mins"]) {
-                hour = @"4.00";
-            }
-            else if ([hourString isEqualToString:@"255 mins"]) {
-                hour = @"4.15";
-            }
-            else if ([hourString isEqualToString:@"270 mins"]) {
-                hour = @"4.30";
-            }
-            else if ([hourString isEqualToString:@"285 mins"]) {
-                hour = @"4.45";
-            }
-            else if ([hourString isEqualToString:@"300 mins"]) {
-                hour = @"5.00";
-            }
-            
-            addHour = true;
-            
-            [self dismissSemiModalViewController:setDatePickerView];
-        }
-    }
-}
-
--(void)datePickerCancel:(TDDatePickerController*)viewController {
-    
-	[self dismissSemiModalViewController:setDatePickerView];
-}
-
 
 - (BOOL)textViewShouldReturn:(UITextField *)textView
 {

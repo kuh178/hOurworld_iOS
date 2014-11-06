@@ -61,15 +61,12 @@ NSUserDefaults *userDefault;
     // display "remove" btn
     userDefault = [NSUserDefaults standardUserDefaults];
     
-    NSLog(@"%d", mItem.mListMbrID);
-    NSLog(@"memID: %d", [[userDefault objectForKey:@"memID"] intValue]);
-    
     if (mItem.mListMbrID == 0) {
-        [replyBarBtn setEnabled:NO];
+        //[replyBarBtn setEnabled:NO];
         [reportHourBarBtn setEnabled:NO];
     }
     else {
-        [replyBarBtn setEnabled:YES];
+        //[replyBarBtn setEnabled:YES];
         [reportHourBarBtn setEnabled:YES];
     }
     
@@ -204,6 +201,12 @@ NSUserDefaults *userDefault;
         
         scrollView.contentSize = CGSizeMake(320, locationLabel.frame.size.height + mapView.frame.size.height + 230);
     }
+    
+    [[mapView layer] setMasksToBounds:NO];
+    [[mapView layer] setShadowColor:[UIColor blackColor].CGColor];
+    [[mapView layer] setShadowOpacity:1.0f];
+    [[mapView layer] setShadowRadius:1.0f];
+    [[mapView layer] setShadowOffset:CGSizeMake(0, 1)];
 }
 
 - (CGRect) calculateSize:(NSString *)pInput Label:(UILabel *)pLabel {
@@ -505,9 +508,81 @@ NSUserDefaults *userDefault;
                     NSLog(@"Error: %@", operation);
                 }];
             }
+    }
+    else if ([title isEqualToString:@"Email"]) {
+        // To address
+        if ([mItem.mEmail isEqual:[NSNull null]]) {
+            UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Message"
+                                                              message:@"This member did not provide an email address."
+                                                             delegate:nil
+                                                    cancelButtonTitle:@"Close"
+                                                    otherButtonTitles:nil, nil];
+            [message show];
         }
+        else {
+            NSString *emailTitle = @"About your listing";
+            
+            // Email Content
+            NSString *messageBody = [NSString stringWithFormat:@"Hi there,\nI'm inquiring about your listing: %@", mItem.mEblast];
+            
+            // To address
+            NSArray *toRecipents = [NSArray arrayWithObject:[NSString stringWithFormat:@"%@", mItem.mEmail]];
+            
+            NSLog(@"%@", [toRecipents objectAtIndex:0]);
+            
+            MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
+            
+            if ([MFMailComposeViewController canSendMail]) {
+                mc.mailComposeDelegate = self;
+                [mc setSubject:emailTitle];
+                [mc setMessageBody:messageBody isHTML:YES];
+                [mc setToRecipients:toRecipents];
+                
+                // Present mail view controller on screen
+                [self presentViewController:mc animated:YES completion:NULL];
+            }
+        }
+    }
+    else if([title isEqualToString:@"Text"]) {
+        //check if the device can send text messages
+        if(![MFMessageComposeViewController canSendText] || [mItem.mPhone isEqual:[NSNull null]]) {
+            UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Your device cannot send text messages" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
+            return;
+        }
+        
+        //set receipients
+        NSArray *recipients = [NSArray arrayWithObjects:mItem.mPhone, nil];
+        
+        //set message text
+        NSString * message = @"";
+        
+        MFMessageComposeViewController *messageController = [[MFMessageComposeViewController alloc] init];
+        messageController.messageComposeDelegate = self;
+        [messageController setRecipients:recipients];
+        [messageController setBody:message];
+        
+        // Present message view controller on screen
+        [self presentViewController:messageController animated:YES completion:nil];
+    }
 }
 
+#pragma mark - MFMailComposeViewControllerDelegate methods
+- (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult) result {
+    switch (result) {
+        case MessageComposeResultCancelled: break;
+            
+        case MessageComposeResultFailed:
+            // handle an error message
+            break;
+            
+        case MessageComposeResultSent: break;
+            
+        default: break;
+    }
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -526,29 +601,13 @@ NSUserDefaults *userDefault;
 }
 
 -(IBAction)pressEmailBtn:(id)sender {
-    NSString *emailTitle = @"Download the hOurworld mobile app now!";
-
-    // Email Content
-    NSString *messageBody = [NSString stringWithFormat:@"Hi there,\nI'm inquiring about your listing: %@", mItem.mEblast];
     
-    NSLog(@"%@ %@", mItem.mEblast, mItem.mEmail);
-    
-    // To address
-    NSArray *toRecipents = [NSArray arrayWithObject:[NSString stringWithFormat:@"%@", mItem.mEmail]];
-    
-    NSLog(@"%@", [toRecipents objectAtIndex:0]);
-    
-    MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
-    
-    if ([MFMailComposeViewController canSendMail]) {
-        mc.mailComposeDelegate = self;
-        [mc setSubject:emailTitle];
-        [mc setMessageBody:messageBody isHTML:YES];
-        [mc setToRecipients:toRecipents];
-        
-        // Present mail view controller on screen
-        [self presentViewController:mc animated:YES completion:NULL];
-    }
+    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Message"
+                                                      message:@"Select the type that you want to reply"
+                                                     delegate:self
+                                            cancelButtonTitle:@"Cancel"
+                                            otherButtonTitles:@"Text", @"Email", nil];
+    [message show];
 }
 
 - (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
@@ -581,11 +640,9 @@ NSUserDefaults *userDefault;
         MTBProfileViewController *viewController = (MTBProfileViewController *)[segue destinationViewController];
         [viewController setMemID:mItem.mListMbrID];
     }
-    
     else {
         
     }
 }
-
 
 @end

@@ -182,10 +182,6 @@ NSUserDefaults *userDefault;
                     website = [contactItem objectForKey:@"contactInfo"];
                 }
                 
-                if(i == 2) {
-                    break;
-                }
-                
                 contact = [contact stringByAppendingString:[NSString stringWithFormat:@"%@  ", [contactItem objectForKey:@"contactInfo"]]];
             }
         }
@@ -338,7 +334,7 @@ NSUserDefaults *userDefault;
             }];
             
             NSLog(@"%@", sortedspecializedArray);
-            int sortedspecializedArrayLength = [sortedspecializedArray count];
+            unsigned long sortedspecializedArrayLength = [sortedspecializedArray count];
             
             if (sortedspecializedArrayLength >= 3) {
                 specials = [NSString stringWithFormat:@"\u2022 %@\n\u2022 %@\n\u2022 %@",
@@ -357,31 +353,21 @@ NSUserDefaults *userDefault;
             }
         }
         
+        // username
         usernameLabel.text = username;
-        
-        //[profileImageView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.hourworld.org/%@", profileImage]] placeholderImage:[UIImage imageNamed:@"who_checkin_default.png"]];
+
+        // profile image
         [profileImageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.hourworld.org/%@", profileImage]] placeholderImage:[UIImage imageNamed:@"who_checkin_default.png"]];
-        
         
         self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width / 2;
         self.profileImageView.clipsToBounds = YES;
         self.profileImageView.layer.borderWidth = 1.0f;
         self.profileImageView.layer.borderColor = [UIColor whiteColor].CGColor;
         
-        NSString *activity = [NSString stringWithFormat:@"\u2022 Posted %d requests and %d offers\n\u2022 Completed %d exchanges with %d members\n\u2022 Donated 3 gifts to 3 members\n\u2022 %d%% user satisfaction\n\nSpecialized in\n%@", totalTrans, totalMbrs, [requestAry count], [offerAry count], satPct, specials];
+        // activity
+        NSString *activity = [NSString stringWithFormat:@"\u2022 Posted %d requests and %d offers\n\u2022 Completed %lu exchanges with %lu members\n\u2022 Donated 3 gifts to 3 members\n\u2022 %d%% user satisfaction\n\nSpecialized in\n%@", totalTrans, totalMbrs, (unsigned long)[requestAry count], (unsigned long)[offerAry count], satPct, specials];
         
-        /*
-        NSString *activity = [NSString stringWithFormat:@"Specialized in\n%@\n\n%C Hours spent: 17h to 10 members\n%C Hours earned: 12.0h from 8 members\n%C Volunteer work performed: 2.5h to 2 members\n%C Volunteer work received: 2.0h from 1 member\n%C Gifts donated: 4.0h to 3 members\n%C Gifts received: 2.0h from 2 members\n\n100%% user satisfaction",
-                              specials,
-                              (unichar) 0x2022,
-                              (unichar) 0x2022,
-                              (unichar) 0x2022,
-                              (unichar) 0x2022,
-                              (unichar) 0x2022,
-                              (unichar) 0x2022];
-        */
-        
-        // badges
+        // badges (we only use 6 types in the app)
         if (![[item objectForKey:@"BadgeArray"] isEqual:[NSNull null]]) {
             
             badgeArray = [item objectForKey:@"BadgeArray"];
@@ -560,13 +546,15 @@ NSUserDefaults *userDefault;
         offersLabel.text = offerList;
         requestsLabel.text = requestList;
         
+        NSLog(@"contact : %@", contact);
+        
         height += bioLabel.frame.size.height;
         height += addressLabel.frame.size.height;
         height += summaryLabel.frame.size.height;
         height += contactInfo.frame.size.height;
         height += offersLabel.frame.size.height;
         height += requestsLabel.frame.size.height;
-        //height += 200;
+        height += 200;
         
         offersLabel.frame = CGRectMake(offersLabel.frame.origin.x,
                                        offersLabel.frame.origin.y + bioLabel.frame.size.height,
@@ -695,6 +683,7 @@ NSUserDefaults *userDefault;
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
     if ([[userDefault objectForKey:@"reload"] integerValue] == 1) {
         [self loadProfileInfo]; // need to reload the page
+        [userDefault setInteger:0 forKey:@"reload"];
     }
     else {
         

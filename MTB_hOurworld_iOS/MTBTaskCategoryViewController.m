@@ -163,19 +163,29 @@
                 jsonArray = [NSMutableArray arrayWithCapacity:0];
                 scheduleList = [NSMutableArray arrayWithCapacity:0];
                 
-                NSLog(@"responseObject : %@", responseObject);
-                
-                [jsonArray addObjectsFromArray:[responseObject objectForKey:@"results"]];
-                
-                // sort the categoryList : http://stackoverflow.com/questions/805547/how-to-sort-an-nsmutablearray-with-custom-objects-in-it
-                NSArray *sortedArray;
-                sortedArray = [jsonArray sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
-                    return [[a objectForKey:@"SvcCat"] compare:[b objectForKey:@"SvcCat"]];
-                }];
-                [jsonArray removeAllObjects];
-                [jsonArray addObjectsFromArray:sortedArray];
-                
-                [tableViewList reloadData];
+                if ([responseObject isEqual:[NSNull null]]) {
+                    UIAlertView *dialog = [[UIAlertView alloc]init];
+                    [dialog setDelegate:nil];
+                    [dialog setTitle:@"Message"];
+                    [dialog setMessage:@"Cannot get the data from the server. Please try again."];
+                    [dialog addButtonWithTitle:@"OK"];
+                    [dialog show];
+                }
+                else {
+                    NSLog(@"responseObject : %@", responseObject);
+                    
+                    [jsonArray addObjectsFromArray:[responseObject objectForKey:@"results"]];
+                    
+                    // sort the categoryList : http://stackoverflow.com/questions/805547/how-to-sort-an-nsmutablearray-with-custom-objects-in-it
+                    NSArray *sortedArray;
+                    sortedArray = [jsonArray sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+                        return [[a objectForKey:@"SvcCat"] compare:[b objectForKey:@"SvcCat"]];
+                    }];
+                    [jsonArray removeAllObjects];
+                    [jsonArray addObjectsFromArray:sortedArray];
+                    
+                    [tableViewList reloadData];
+                }
             }
               
           } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

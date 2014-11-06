@@ -20,6 +20,11 @@
     IBOutlet UIButton *homeBtn;
     IBOutlet UIButton *websiteBtn;
     
+    IBOutlet UIButton *emailDelBtn;
+    IBOutlet UIButton *mobileDelBtn;
+    IBOutlet UIButton *homeDelBtn;
+    IBOutlet UIButton *websiteDelBtn;
+    
     NSString *email1;
     NSString *home1;
     NSString *mobile;
@@ -36,6 +41,11 @@
 @property (nonatomic, retain) IBOutlet UIButton *homeBtn;
 @property (nonatomic, retain) IBOutlet UIButton *websiteBtn;
 
+@property (nonatomic, retain) IBOutlet UIButton *emailDelBtn;
+@property (nonatomic, retain) IBOutlet UIButton *mobileDelBtn;
+@property (nonatomic, retain) IBOutlet UIButton *homeDelBtn;
+@property (nonatomic, retain) IBOutlet UIButton *websiteDelBtn;
+
 @property (nonatomic, retain) NSString *email1;
 @property (nonatomic, retain) NSString *home1;
 @property (nonatomic, retain) NSString *mobile;
@@ -45,5 +55,10 @@
 -(IBAction)pressMobileBtn:(id)sender;
 -(IBAction)pressHomeBtn:(id)sender;
 -(IBAction)pressWebsiteBtn:(id)sender;
+
+-(IBAction)pressEmailDelBtn:(id)sender;
+-(IBAction)pressMobileDelBtn:(id)sender;
+-(IBAction)pressHomeDelBtn:(id)sender;
+-(IBAction)pressWebsiteDelBtn:(id)sender;
 
 @end

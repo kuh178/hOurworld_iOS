@@ -268,12 +268,20 @@
                   
                     int i;
                     long arrayCount = [jsonArray count];
+                    
+                    bool hasItem = false;
                   
                     if(arrayCount > 0) {
                         // insert new items into the table
                         for (i = 0 ; i < arrayCount; i++) {
                             // get an item
                             NSDictionary *item = [jsonArray objectAtIndex:i];
+                            
+                            // if the description contains "No messages found." continue
+                            if ([[item objectForKey:@"Eblast"] isEqual:@"No messages found."]) {
+                                continue;
+                            }
+                            
                             NSDictionary *locObj = [item objectForKey:@"mobLatLon"];
                           
                             if ([[item objectForKey:@"Eblast"] isEqualToString:@""]) {
@@ -298,19 +306,31 @@
                                 tItem = [[MTBItem alloc] initToMessage:[item objectForKey:@"Exp"] Eblast:[item objectForKey:@"Eblast"] ListMbrID:[[item objectForKey:@"listMbrID"] intValue] PostNum:[[item objectForKey:@"PostNum"] intValue] ProfileImage:[item objectForKey:@"Profile"] TimeStamp:[item objectForKey:@"timestamp"] Email:[item objectForKey:@"Email1"] Phone:[item objectForKey:@"Phone"] ListMbrName:[item objectForKey:@"Name"] EOLat:0.0 EOLon:0.0 EDLat:0.0 EDLon:0.0    EXDays:xDays];
                             }
                           
+                            
+                            hasItem = true;
                             [scheduleList addObject:tItem];
                         }
                     }
                     else {
                         NSLog(@"No data available");
                     }
+                    
+                    if (hasItem == false) {
+                        UIAlertView *dialog = [[UIAlertView alloc]init];
+                        [dialog setDelegate:nil];
+                        [dialog setTitle:@"Message"];
+                        [dialog setMessage:@"No result."];
+                        [dialog addButtonWithTitle:@"OK"];
+                        [dialog show];
+                    }
+                    
                     [tableViewList reloadData];
                 }
                 else {
                     UIAlertView *dialog = [[UIAlertView alloc]init];
                     [dialog setDelegate:self];
                     [dialog setTitle:@"Message"];
-                    [dialog setMessage:@"No search result. (If you see this message multiple times, try logout and re-login)"];
+                    [dialog setMessage:@"No result. (If you see this message multiple times, try logout and re-login)"];
                     [dialog addButtonWithTitle:@"OK"];
                     [dialog show];
                 }

@@ -175,45 +175,25 @@
 }
 
 -(IBAction)pressxDaysBtn:(id)sender {
-    self.actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:nil cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil, nil];
-    self.actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
     
-    self.pickerView = [[UIPickerView alloc]initWithFrame:CGRectMake(0, 40, 320, 210)];
-    self.pickerView.showsSelectionIndicator = YES;
-    self.pickerView.dataSource = self;
-    self.pickerView.delegate = self;
-    [self.actionSheet addSubview:self.pickerView];
-    
-    UIToolbar *pickerToolbar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 44)];
-    pickerToolbar.barStyle = UIBarStyleBlackOpaque;
-    [pickerToolbar setTintColor:[UIColor blackColor]];
-    [pickerToolbar sizeToFit];
-    
-    UIBarButtonItem *flexSpaceItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
-    UIBarButtonItem *cancelBtnItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelActionSheet)];
-    UIBarButtonItem *doneBtnItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneActionSheet)];
-    [pickerToolbar setItems:[NSArray arrayWithObjects:flexSpaceItem, cancelBtnItem, doneBtnItem, nil]];
-    [self.actionSheet addSubview:pickerToolbar];
-    
-    [self.actionSheet showInView:self.view];
-    [self.actionSheet setBounds:CGRectMake(0, 0, 320, 485)];
-}
-
--(void)cancelActionSheet {
-    [actionSheet dismissWithClickedButtonIndex:0 animated:YES];
-}
-
--(void)doneActionSheet {
-    xDays = [[data objectAtIndex:[pickerView selectedRowInComponent:0]]intValue];
-    
-    if (xDays == 1) {
-        [xDaysBtn setTitle:[NSString stringWithFormat:@"%d day", xDays] forState:UIControlStateNormal];
-    }
-    else {
-        [xDaysBtn setTitle:[NSString stringWithFormat:@"%d days", xDays] forState:UIControlStateNormal];
-    }
-    
-    [actionSheet dismissWithClickedButtonIndex:0 animated:YES];
+    [ActionSheetStringPicker showPickerWithTitle:@"Select Expiration"
+                                            rows:data
+                                initialSelection:0
+                                       doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
+                                           
+                                           xDays = [selectedValue intValue];
+                                           
+                                           if (xDays == 1) {
+                                               [xDaysBtn setTitle:[NSString stringWithFormat:@"%d day", xDays] forState:UIControlStateNormal];
+                                           }
+                                           else {
+                                               [xDaysBtn setTitle:[NSString stringWithFormat:@"%d days", xDays] forState:UIControlStateNormal];
+                                           }
+                                       }
+                                     cancelBlock:^(ActionSheetStringPicker *picker) {
+                                         NSLog(@"Block Picker Canceled");
+                                     }
+                                          origin:sender];
 }
 
 -(IBAction)pressSubmitBtn:(id)sender {
