@@ -67,7 +67,7 @@
         for (int k=0; k<self.arryData.count; k++) {
             NSIndexPath *path=[self.arryData objectAtIndex:k];
             [arryResponceData addObject:[_kDropDownOption objectAtIndex:path.row]];
-            NSLog(@"pathRow=%d",path.row);
+            NSLog(@"pathRow=%ld",(long)path.row);
         }
     
         [self.delegate DropDownListView:self Datalist:arryResponceData];

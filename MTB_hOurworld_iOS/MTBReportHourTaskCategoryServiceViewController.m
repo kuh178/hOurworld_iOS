@@ -53,7 +53,7 @@
         [self downloadContent];
     }
     
-    NSLog(@"serviceCatID: %d", svcCatID);
+    NSLog(@"serviceCatID: %ld", (long)svcCatID);
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -128,7 +128,7 @@
                              @"accessToken"     :[userDefault objectForKey:@"access_token"],
                              @"EID"             :[userDefault objectForKey:@"EID"],
                              @"memID"           :[userDefault objectForKey:@"memID"],
-                             @"SvcCatID"        :[NSString stringWithFormat:@"%d", svcCatID]};
+                             @"SvcCatID"        :[NSString stringWithFormat:@"%ld", (long)svcCatID]};
     
     [manager POST:@"http://www.hourworld.org/db_mob/auth.php" parameters:params
 constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {

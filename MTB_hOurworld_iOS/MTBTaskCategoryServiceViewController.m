@@ -152,19 +152,19 @@
     
     if ([isOffer isEqualToString:@"T"]) {
         
-        params = @{@"requestType"     :[NSString stringWithFormat:@"OfferCatsC,%d",svcCatID],
+        params = @{@"requestType"     :[NSString stringWithFormat:@"OfferCatsC,%ld",(long)svcCatID],
                    @"accessToken"     :[userDefault objectForKey:@"access_token"],
                    @"EID"             :[userDefault objectForKey:@"EID"],
                    @"memID"           :[userDefault objectForKey:@"memID"],
-                   @"SvcCatID"        :[NSString stringWithFormat:@"%d", svcCatID]};
+                   @"SvcCatID"        :[NSString stringWithFormat:@"%ld", (long)svcCatID]};
     }
     else {
         
-        params = @{@"requestType"     :[NSString stringWithFormat:@"RequestCatsC,%d",svcCatID],
+        params = @{@"requestType"     :[NSString stringWithFormat:@"RequestCatsC,%ld",(long)svcCatID],
                    @"accessToken"     :[userDefault objectForKey:@"access_token"],
                    @"EID"             :[userDefault objectForKey:@"EID"],
                    @"memID"           :[userDefault objectForKey:@"memID"],
-                   @"SvcCatID"        :[NSString stringWithFormat:@"%d", svcCatID]};
+                   @"SvcCatID"        :[NSString stringWithFormat:@"%ld", (long)svcCatID]};
     }
     
     [manager POST:@"http://www.hourworld.org/db_mob/auth.php" parameters:params

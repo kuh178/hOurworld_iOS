@@ -98,8 +98,6 @@
 
     // handling eBlast
     taskInfoTextView.frame = [self calculateSize2:mItem.mDescription TextView:taskInfoTextView];
-    //taskInfoTextView.layer.borderWidth = 1.0f;
-    //taskInfoTextView.layer.borderColor = [UIColor blackColor].CGColor;
     if (mItem.mDescription != (id)[NSNull null] && [mItem.mDescription length] != 0) {
         taskInfoTextView.text = mItem.mDescription;
     }
@@ -107,25 +105,7 @@
         taskInfoTextView.text = @"No description found";
     }
     
-    
-    // update other IBOutlets as well.
-    /*
-    locationLabel.frame = CGRectMake(locationLabel.frame.origin.x,
-                                     locationLabel.frame.origin.y + taskInfoLabel.frame.size.height,
-                                     locationLabel.frame.size.width,
-                                     locationLabel.frame.size.height);
-    mapView.frame = CGRectMake(mapView.frame.origin.x,
-                               mapView.frame.origin.y + taskInfoLabel.frame.size.height - 25,
-                               mapView.frame.size.width,
-                               mapView.frame.size.height);
-    
-    largeMapViewBtn.frame = CGRectMake(largeMapViewBtn.frame.origin.x,
-                                       largeMapViewBtn.frame.origin.y + taskInfoLabel.frame.size.height - 25,
-                                       largeMapViewBtn.frame.size.width,
-                                       largeMapViewBtn.frame.size.height);
-    */
-    
-    scrollView.contentSize = CGSizeMake(320, taskInfoTextView.frame.size.height);
+    scrollView.contentSize = CGSizeMake(320, taskInfoTextView.frame.size.height + 100);
     
     // handling user profile image
     //[profileImage setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.hourworld.org/%@", mItem.mProfileImage]] placeholderImage:[UIImage imageNamed:@"who_checkin_default.png"]];
@@ -188,10 +168,6 @@
 }
 
 - (CGRect) calculateSize:(NSString *)pInput Label:(UILabel *)pLabel {
-    
-    // FLT_MAX here simply means no constraint in height
-    //CGSize maximumLabelSize = CGSizeMake(296, FLT_MAX);
-    //CGSize expectedLabelSize = [pInput sizeWithFont:pLabel.font constrainedToSize:maximumLabelSize lineBreakMode:pLabel.lineBreakMode];
     CGSize expectedLabelSize = [pInput sizeWithAttributes:@{NSFontAttributeName:pLabel.font}];
     
     //adjust the label the the new height.
@@ -202,15 +178,11 @@
 }
 
 - (CGRect) calculateSize2:(NSString *)pInput TextView:(UITextView *)pTextView {
-    
-    // FLT_MAX here simply means no constraint in height
-    //CGSize maximumTextViewSize = CGSizeMake(296, FLT_MAX);
-    //CGSize expectedTextViewSize = [pInput sizeWithFont:pTextView.font constrainedToSize:maximumTextViewSize lineBreakMode:NSLineBreakByWordWrapping];
     CGSize expectedTextViewSize = [pInput sizeWithAttributes:@{NSFontAttributeName:pTextView.font}];
     
     //adjust the label the the new height.
     CGRect newFrame = pTextView.frame;
-    newFrame.size.height = expectedTextViewSize.height + 200;
+    newFrame.size.height = expectedTextViewSize.height + 300;
     
     return newFrame;
 }

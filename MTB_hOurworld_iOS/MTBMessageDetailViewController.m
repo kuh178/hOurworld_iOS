@@ -234,7 +234,7 @@ NSUserDefaults *userDefault;
     
     //adjust the label the the new height.
     CGRect newFrame = pTextView.frame;
-    newFrame.size.height = expectedTextViewSize.height + 25;
+    newFrame.size.height = expectedTextViewSize.height + 100;
     
     return newFrame;
 }
@@ -396,7 +396,7 @@ NSUserDefaults *userDefault;
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     
-    NSDictionary *params = @{@"requestType"     :[NSString stringWithFormat:@"DelMsg,%d:%d", mItem.mPostNum, mItem.mListMbrID],
+    NSDictionary *params = @{@"requestType"     :[NSString stringWithFormat:@"DelMsg,%ld:%ld", (long)mItem.mPostNum, (long)mItem.mListMbrID],
                              @"accessToken"     :[userDefault objectForKey:@"access_token"],
                              @"EID"             :[userDefault objectForKey:@"EID"],
                              @"memID"           :[userDefault objectForKey:@"memID"]};
@@ -475,7 +475,7 @@ NSUserDefaults *userDefault;
             AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
             manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
             
-            NSDictionary *params = @{@"requestType"     :[NSString stringWithFormat:@"ReplyMsg,%d:%d", mItem.mPostNum, mItem.mListMbrID],
+            NSDictionary *params = @{@"requestType"     :[NSString stringWithFormat:@"ReplyMsg,%ld:%ld", (long)mItem.mPostNum, (long)mItem.mListMbrID],
                                      @"accessToken"     :[userDefault objectForKey:@"access_token"],
                                      @"EID"             :[userDefault objectForKey:@"EID"],
                                      @"memID"           :[userDefault objectForKey:@"memID"],

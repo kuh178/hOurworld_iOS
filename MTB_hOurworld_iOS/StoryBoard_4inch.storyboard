@@ -247,6 +247,16 @@
                                     <action selector="announcementBtnPressed:" destination="cPE-Gd-wSt" eventType="touchUpInside" id="cy1-sL-8Gq"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="yxC-kI-83P">
+                                <rect key="frame" x="287" y="534" width="22" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="infoBtnPressed:" destination="cPE-Gd-wSt" eventType="touchUpInside" id="xfP-rN-XIh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -255,6 +265,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="announcementBtn" destination="ytL-aA-d8C" id="6Bx-jk-yzq"/>
+                        <outlet property="infoBtn" destination="yxC-kI-83P" id="C2Z-W8-IoV"/>
                         <outlet property="reportHoursBtn" destination="H8p-kl-k0N" id="HcA-gu-k5t"/>
                     </connections>
                 </viewController>
@@ -2708,14 +2719,14 @@ We are guided by seven fundamental principles: humanity, impartiality, neutralit
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="TopLeft" text="Bio" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iIc-dF-G3w">
-                                                <rect key="frame" x="8" y="352" width="305" height="20"/>
+                                                <rect key="frame" x="8" y="351" width="305" height="20"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="blue_bar.png" id="UUq-IF-LMl">
-                                                <rect key="frame" x="6" y="346" width="315" height="1"/>
+                                                <rect key="frame" x="6" y="345" width="315" height="1"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="blue_bar.png" id="aRj-0V-h7d">
@@ -2733,16 +2744,8 @@ We are guided by seven fundamental principles: humanity, impartiality, neutralit
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Contact info" id="eWW-KD-4hU">
-                                                <rect key="frame" x="2" y="91" width="287" height="46"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
-                                            </textView>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TOL-f9-SCu">
-                                                <rect key="frame" x="269" y="20" width="43" height="51"/>
+                                                <rect key="frame" x="269" y="20" width="43" height="54"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                                 <state key="normal" backgroundImage="report_hours.png">
@@ -2763,19 +2766,8 @@ We are guided by seven fundamental principles: humanity, impartiality, neutralit
                                                     <action selector="pressLogoutBtn:" destination="Cpr-FV-Pcu" eventType="touchUpInside" id="Bni-cM-85t"/>
                                                 </connections>
                                             </button>
-                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="UBE-kS-KRq">
-                                                <rect key="frame" x="231" y="2" width="78" height="27"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                                <state key="normal" title="Credit History">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="pressCreditHistoryBtn:" destination="Cpr-FV-Pcu" eventType="touchUpInside" id="fEr-wM-CIA"/>
-                                                </connections>
-                                            </button>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Pjg-p6-wQh">
-                                                <rect key="frame" x="292" y="350" width="25" height="25"/>
+                                                <rect key="frame" x="292" y="348" width="25" height="25"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Edit" image="ic_action_edit.png">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -2809,17 +2801,84 @@ We are guided by seven fundamental principles: humanity, impartiality, neutralit
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" id="nPd-WD-6P2">
-                                                <rect key="frame" x="149" y="238" width="20" height="20"/>
+                                                <rect key="frame" x="150" y="238" width="20" height="20"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </activityIndicatorView>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5Z8-kT-978">
-                                                <rect key="frame" x="292" y="96" width="25" height="25"/>
+                                                <rect key="frame" x="292" y="104" width="25" height="25"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Edit" image="ic_action_edit.png">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
                                                     <segue destination="eKw-Hl-MRK" kind="push" identifier="MTBProfileEditContactViewController" id="XmW-0N-Zi5"/>
+                                                </connections>
+                                            </button>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="UBE-kS-KRq">
+                                                <rect key="frame" x="238" y="204" width="78" height="27"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                <state key="normal" title="Credit History">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pressCreditHistoryBtn:" destination="Cpr-FV-Pcu" eventType="touchUpInside" id="fEr-wM-CIA"/>
+                                                </connections>
+                                            </button>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="GOg-BD-Uh9">
+                                                <rect key="frame" x="8" y="103" width="50" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.070588235289999995" green="0.64705882349999999" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <color key="tintColor" red="0.070588235289999995" green="0.64705882349999999" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Home">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="contactHomeBtnPressed:" destination="Cpr-FV-Pcu" eventType="touchUpInside" id="YoC-Y6-Mfu"/>
+                                                </connections>
+                                            </button>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="F4M-x7-lCj">
+                                                <rect key="frame" x="70" y="103" width="50" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.070588235289999995" green="0.64705882349999999" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <color key="tintColor" red="0.070588235289999995" green="0.64705882349999999" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Mobile">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="contactMobileBtnPressed:" destination="Cpr-FV-Pcu" eventType="touchUpInside" id="Ywr-X9-aT6"/>
+                                                </connections>
+                                            </button>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gNu-lh-otb">
+                                                <rect key="frame" x="132" y="103" width="50" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.070588235289999995" green="0.64705882349999999" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <color key="tintColor" red="0.070588235289999995" green="0.64705882349999999" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Email">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="contactEmailBtnPressed:" destination="Cpr-FV-Pcu" eventType="touchUpInside" id="KuA-vm-GXd"/>
+                                                </connections>
+                                            </button>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7fv-A1-bO4">
+                                                <rect key="frame" x="192" y="103" width="50" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.070588235289999995" green="0.64705882349999999" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <color key="tintColor" red="0.070588235289999995" green="0.64705882349999999" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Web">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="contactWebBtnPressed:" destination="Cpr-FV-Pcu" eventType="touchUpInside" id="o0e-wT-xcg"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -2883,7 +2942,10 @@ We are guided by seven fundamental principles: humanity, impartiality, neutralit
                         <outlet property="badgeImageView5" destination="4u9-RS-CDe" id="1fx-yS-aBJ"/>
                         <outlet property="badgeImageView6" destination="pBA-E1-jcB" id="Q5L-VP-Uuc"/>
                         <outlet property="bioLabel" destination="iIc-dF-G3w" id="ryq-s2-27T"/>
-                        <outlet property="contactInfo" destination="eWW-KD-4hU" id="bMH-Kw-kCl"/>
+                        <outlet property="contactEmailBtn" destination="gNu-lh-otb" id="3So-s2-GO5"/>
+                        <outlet property="contactHomeBtn" destination="GOg-BD-Uh9" id="9nS-Ha-0XS"/>
+                        <outlet property="contactMobileBtn" destination="F4M-x7-lCj" id="xL6-hA-ILV"/>
+                        <outlet property="contactWebBtn" destination="7fv-A1-bO4" id="gto-cL-Yjh"/>
                         <outlet property="creditHistoryBtn" destination="UBE-kS-KRq" id="VvB-17-1Bt"/>
                         <outlet property="editBio" destination="Pjg-p6-wQh" id="5hc-cu-3NW"/>
                         <outlet property="editContact" destination="5Z8-kT-978" id="J6V-XJ-LLT"/>
@@ -3955,9 +4017,9 @@ We are guided by seven fundamental principles: humanity, impartiality, neutralit
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="5uK-3d-5Yb"/>
         <segue reference="IkM-W3-bya"/>
-        <segue reference="XUi-eD-5Q9"/>
+        <segue reference="5uK-3d-5Yb"/>
+        <segue reference="6P6-Sg-2Ue"/>
         <segue reference="vij-m8-HAJ"/>
     </inferredMetricsTieBreakers>
 </document>

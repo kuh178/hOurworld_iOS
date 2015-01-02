@@ -203,13 +203,13 @@
     NSDictionary *params;
     
     if ([isOffer isEqualToString:@"T"]) {
-        params = @{@"requestType"     :[NSString stringWithFormat:@"OfferSvc,%d:%d", svcCatID, svcID],
+        params = @{@"requestType"     :[NSString stringWithFormat:@"OfferSvc,%ld:%ld", (long)svcCatID, (long)svcID],
                    @"accessToken"     :[userDefault objectForKey:@"access_token"],
                    @"EID"             :[userDefault objectForKey:@"EID"],
                    @"memID"           :[userDefault objectForKey:@"memID"]};
     }
     else {
-        params = @{@"requestType"     :[NSString stringWithFormat:@"RequestSvc,%d:%d", svcCatID, svcID],
+        params = @{@"requestType"     :[NSString stringWithFormat:@"RequestSvc,%ld:%ld", (long)svcCatID, (long)svcID],
                    @"accessToken"     :[userDefault objectForKey:@"access_token"],
                    @"EID"             :[userDefault objectForKey:@"EID"],
                    @"memID"           :[userDefault objectForKey:@"memID"]};

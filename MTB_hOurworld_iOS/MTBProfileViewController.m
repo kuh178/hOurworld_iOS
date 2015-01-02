@@ -35,6 +35,11 @@
 @synthesize badgeImageView1, badgeImageView2, badgeImageView3, badgeImageView4, badgeImageView5,badgeImageView6;
 @synthesize activityIndicator;
 
+@synthesize contactHomeBtn;
+@synthesize contactMobileBtn;
+@synthesize contactEmailBtn;
+@synthesize contactWebBtn;
+
 NSMutableArray *offerAry, *requestAry, *badgeArray;
 NSString *creditProvided, *creditReceived;
 NSUserDefaults *userDefault;
@@ -56,6 +61,22 @@ NSUserDefaults *userDefault;
     activityIndicator.startAnimating;
     
     height = 0;
+    
+    contactHomeBtn.layer.cornerRadius = 5;
+    contactHomeBtn.clipsToBounds = YES;
+    contactHomeBtn.alpha = 0.2;
+    
+    contactMobileBtn.layer.cornerRadius = 5;
+    contactMobileBtn.clipsToBounds = YES;
+    contactMobileBtn.alpha = 0.2;
+    
+    contactEmailBtn.layer.cornerRadius = 5;
+    contactEmailBtn.clipsToBounds = YES;
+    contactEmailBtn.alpha = 0.2;
+    
+    contactWebBtn.layer.cornerRadius = 5;
+    contactWebBtn.clipsToBounds = YES;
+    contactWebBtn.alpha = 0.2;
     
     userDefault = [NSUserDefaults standardUserDefaults];
     if ([userDefault integerForKey:@"memID"] == memID) {
@@ -166,23 +187,73 @@ NSUserDefaults *userDefault;
             
             email1 = home1 = mobile = website = @"";
             
+            bool emailExist = false;
+            bool homeExist = false;
+            bool mobileExist = false;
+            bool webExist = false;
+            
             for (int i = 0 ; i < [contactAry count] ; i++) {
                 NSDictionary *contactItem = [contactAry objectAtIndex:i];
                 
                 if([[contactItem objectForKey:@"contactType"] isEqualToString:@"Email1"]) {
                     email1 = [contactItem objectForKey:@"contactInfo"];
+                    emailExist = true;
                 }
-                else if([[contactItem objectForKey:@"contactType"] isEqualToString:@"Home1"]) {
+                if([[contactItem objectForKey:@"contactType"] isEqualToString:@"Home1"]) {
                     home1 = [contactItem objectForKey:@"contactInfo"];
+                    homeExist = true;
                 }
-                else if([[contactItem objectForKey:@"contactType"] isEqualToString:@"Mobile"]) {
+                if([[contactItem objectForKey:@"contactType"] isEqualToString:@"Mobile"]) {
                     mobile = [contactItem objectForKey:@"contactInfo"];
+                    mobileExist = true;
                 }
-                else if([[contactItem objectForKey:@"contactType"] isEqualToString:@"Website"]) {
+                if([[contactItem objectForKey:@"contactType"] isEqualToString:@"Website"]) {
                     website = [contactItem objectForKey:@"contactInfo"];
+                    webExist = true;
                 }
                 
-                contact = [contact stringByAppendingString:[NSString stringWithFormat:@"%@  ", [contactItem objectForKey:@"contactInfo"]]];
+                contact = [contact stringByAppendingString:[NSString stringWithFormat:@"%@\n", [contactItem objectForKey:@"contactInfo"]]];
+            }
+            
+            [contactEmailBtn setHidden:NO];
+            [contactHomeBtn setHidden:NO];
+            [contactMobileBtn setHidden:NO];
+            [contactWebBtn setHidden:NO];
+            
+            if (emailExist) {
+                [contactEmailBtn setEnabled:YES];
+                [contactEmailBtn setAlpha:1.0];
+            }
+            else {
+                [contactEmailBtn setEnabled:NO];
+                [contactEmailBtn setAlpha:0.2];
+            }
+            
+            if (homeExist) {
+                [contactHomeBtn setEnabled:YES];
+                [contactHomeBtn setAlpha:1.0];
+            }
+            else {
+                [contactHomeBtn setEnabled:NO];
+                [contactHomeBtn setAlpha:0.2];
+            }
+            
+            if (mobileExist) {
+                [contactMobileBtn setEnabled:YES];
+                [contactMobileBtn setAlpha:1.0];
+            }
+            else {
+                [contactMobileBtn setEnabled:NO];
+                [contactMobileBtn setAlpha:0.2];
+            }
+            
+            if (webExist) {
+                [contactWebBtn setEnabled:YES];
+                [contactWebBtn setAlpha:1.0];
+            }
+            else {
+                [contactWebBtn setEnabled:NO];
+                [contactWebBtn setAlpha:0.2];
             }
         }
        
@@ -364,8 +435,58 @@ NSUserDefaults *userDefault;
         self.profileImageView.layer.borderWidth = 1.0f;
         self.profileImageView.layer.borderColor = [UIColor whiteColor].CGColor;
         
+        NSString *balanceStr = @"";
+        NSString *requestStr = @"";
+        NSString *offerStr = @"";
+        NSString *exchangeStr = @"";
+        NSString *completedMemberStr = @"";
+        
+        if ([creditProvided floatValue]-[creditReceived floatValue] > 1.0
+            || [creditProvided floatValue]-[creditReceived floatValue] < -1.0) {
+            balanceStr = [NSString stringWithFormat:@"%.1f hours",[creditProvided floatValue]-[creditReceived floatValue]];
+        }
+        else {
+            balanceStr = [NSString stringWithFormat:@"%.1f hour",[creditProvided floatValue]-[creditReceived floatValue]];
+        }
+        
+        if ([requestAry count] > 1) {
+            requestStr = [NSString stringWithFormat:@"%lu requests",(unsigned long)[requestAry count]];
+        }
+        else {
+            requestStr = [NSString stringWithFormat:@"%lu request",(unsigned long)[requestAry count]];
+        }
+        
+        if ([offerAry count] > 1) {
+            offerStr = [NSString stringWithFormat:@"%lu offers",(unsigned long)[offerAry count]];
+        }
+        else {
+            offerStr = [NSString stringWithFormat:@"%lu offer",(unsigned long)[offerAry count]];
+        }
+        
+        if (totalTrans > 1) {
+            exchangeStr = [NSString stringWithFormat:@"%d exchanges",totalTrans];
+        }
+        else {
+            exchangeStr = [NSString stringWithFormat:@"%d exchange",totalTrans];
+        }
+        
+        if (totalMbrs > 1) {
+            completedMemberStr = [NSString stringWithFormat:@"%d members",totalMbrs];
+        }
+        else {
+            completedMemberStr = [NSString stringWithFormat:@"%d member",totalMbrs];
+        }
+        
         // activity
-        NSString *activity = [NSString stringWithFormat:@"\u2022 Posted %d requests and %d offers\n\u2022 Completed %lu exchanges with %lu members\n\u2022 Donated 3 gifts to 3 members\n\u2022 %d%% user satisfaction\n\nSpecialized in\n%@", totalTrans, totalMbrs, (unsigned long)[requestAry count], (unsigned long)[offerAry count], satPct, specials];
+        NSString *activity = [NSString stringWithFormat:
+                              @"\u2022 Balance: %@\n\u2022 Posted %@ and %@\n\u2022 Completed %@ with %@\n\u2022 %d%% user satisfaction\n\nSpecialized in\n%@",
+                              balanceStr,
+                              requestStr,
+                              offerStr,
+                              exchangeStr,
+                              completedMemberStr,
+                              satPct,
+                              specials];
         
         // badges (we only use 6 types in the app)
         if (![[item objectForKey:@"BadgeArray"] isEqual:[NSNull null]]) {
@@ -814,6 +935,48 @@ NSUserDefaults *userDefault;
     else {
         [userDefault setBool:NO forKey:@"location"];
     }
+}
+
+-(IBAction)contactHomeBtnPressed:(id)sender {
+    
+    NSLog(@"%@", home1);
+    home1 = [home1 stringByReplacingOccurrencesOfString:@"(" withString:@""];
+    home1 = [home1 stringByReplacingOccurrencesOfString:@")" withString:@""];
+    home1 = [home1 stringByReplacingOccurrencesOfString:@"-" withString:@""];
+    home1 = [home1 stringByReplacingOccurrencesOfString:@" " withString:@""];
+    NSLog(@"%@", home1);
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"telprompt:%@",home1]]];
+}
+
+-(IBAction)contactMobileBtnPressed:(id)sender {
+    
+    NSLog(@"%@", mobile);
+    mobile = [mobile stringByReplacingOccurrencesOfString:@"(" withString:@""];
+    mobile = [mobile stringByReplacingOccurrencesOfString:@")" withString:@""];
+    mobile = [mobile stringByReplacingOccurrencesOfString:@"-" withString:@""];
+    mobile = [mobile stringByReplacingOccurrencesOfString:@" " withString:@""];
+    NSLog(@"%@", mobile);
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"telprompt:%@",mobile]]];
+}
+
+-(IBAction)contactEmailBtnPressed:(id)sender {
+    
+    NSLog(@"%@", email1);
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"mailto:%@", email1]]];
+}
+
+-(IBAction)contactWebBtnPressed:(id)sender {
+    
+    NSLog(@"%@", website);
+    if ([website rangeOfString:@"http"].location == NSNotFound) {
+        website = [NSString stringWithFormat:@"http://%@", website];
+    }
+    NSLog(@"%@", website);
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:website]];
 }
 
 @end

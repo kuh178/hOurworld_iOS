@@ -126,7 +126,7 @@
     if (self.onActionSheetDone)
     {
         if (self.datePickerMode == UIDatePickerModeCountDownTimer)
-            self.onActionSheetDone(self, @(self.countDownDuration), origin);
+            self.onActionSheetDone(self, @(((UIDatePicker *)self.pickerView).countDownDuration), origin);
         else
             self.onActionSheetDone(self, self.selectedDate, origin);
 
@@ -136,7 +136,7 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
         if (self.datePickerMode == UIDatePickerModeCountDownTimer) {
-            [target performSelector:action withObject:@(self.countDownDuration) withObject:origin];
+            [target performSelector:action withObject:@(((UIDatePicker *)self.pickerView).countDownDuration) withObject:origin];
             
         } else {
             [target performSelector:action withObject:self.selectedDate withObject:origin];
@@ -185,8 +185,11 @@
             NSAssert([self.pickerView respondsToSelector:@selector(setDate:animated:)], @"Bad pickerView for ActionSheetDatePicker, doesn't respond to setDate:animated:");
             NSDate *itemValue = buttonDetails[kButtonValue];
             UIDatePicker *picker = (UIDatePicker *)self.pickerView;
-            [picker setDate:itemValue animated:YES];
-            [self eventForDatePicker:picker];
+            if (self.datePickerMode != UIDatePickerModeCountDownTimer)
+            {
+                [picker setDate:itemValue animated:YES];
+                [self eventForDatePicker:picker];
+            }
             break;
         }
             

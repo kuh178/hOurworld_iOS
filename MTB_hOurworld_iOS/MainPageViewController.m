@@ -12,6 +12,8 @@
 #import "MTBTaskCategoryViewController.h"
 #import "MTBReportHourFromMainViewController.h"
 #import "JSON.h"
+// https://github.com/workshirt/WSCoachMarksView
+#import "WSCoachMarksView.h"
 
 @interface MainPageViewController ()
 
@@ -19,7 +21,9 @@
 
 @implementation MainPageViewController
 
-@synthesize announcementBtn, reportHoursBtn, indicator, locationLabel;
+@synthesize announcementBtn, reportHoursBtn, infoBtn, indicator, locationLabel;
+WSCoachMarksView *coachMarksView;
+NSUserDefaults *userDefault;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -37,6 +41,81 @@
     //UIView *statusBarView =  [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 22)];
     //statusBarView.backgroundColor = [UIColor colorWithRed:(18/255.0) green:(165/255.0) blue:(244/255.0) alpha:1];
     //[self.view addSubview:statusBarView];
+    
+    NSArray *coachMarks;
+    userDefault = [NSUserDefaults standardUserDefaults];
+    
+    if([[userDefault objectForKey:@"size"] isEqual:@"4.0"]) {
+        coachMarks = @[
+                       @{
+                           @"rect": [NSValue valueWithCGRect:(CGRect){37.0f, 211.0f, 118.0f, 91.0f}],
+                           @"caption": @"\"Announcements\" shows a list of services that will be expired in two weeks"
+                           },
+                       @{
+                           @"rect": [NSValue valueWithCGRect:(CGRect){193.0f, 211.0f, 70.0f, 91.0f}],
+                           @"caption": @"\"Offers\" shows a list of standing offers by a category"
+                           },
+                       @{
+                           @"rect": [NSValue valueWithCGRect:(CGRect){55.0f, 322.0f, 80.0f, 91.0f}],
+                           @"caption": @"\"Requests\" shows a list of standing requests by a category"
+                           },
+                       @{
+                           @"rect": [NSValue valueWithCGRect:(CGRect){193.0f, 322.0f, 70.0f, 91.0f}],
+                           @"caption": @"\"Search\" allows you to search services and members"
+                           },
+                       @{
+                           @"rect": [NSValue valueWithCGRect:(CGRect){60.0f, 433.0f, 70.0f, 91.0f}],
+                           @"caption": @"\"Hours\" allows you to report hours"
+                           },
+                       @{
+                           @"rect": [NSValue valueWithCGRect:(CGRect){193.0f, 433.0f, 70.0f, 91.0f}],
+                           @"caption": @"\"More\" includes a Group feature, My profile, About this app and Version"
+                           },
+                       ];
+    }
+    else {
+        
+        coachMarks = @[
+                       @{
+                           @"rect": [NSValue valueWithCGRect:(CGRect){38.0f, 191.0f, 118.0f, 83.0f}],
+                           @"caption": @"\"Announcements\" shows a list of services that will be expired in two weeks"
+                           },
+                       @{
+                           @"rect": [NSValue valueWithCGRect:(CGRect){197.0f, 191.0f, 60.0f, 83.0f}],
+                           @"caption": @"\"Offers\" shows a list of standing offers by a category"
+                           },
+                       @{
+                           @"rect": [NSValue valueWithCGRect:(CGRect){61.0f, 287.0f, 70.0f, 83.0f}],
+                           @"caption": @"\"Requests\" shows a list of standing requests by a category"
+                           },
+                       @{
+                           @"rect": [NSValue valueWithCGRect:(CGRect){197.0f, 287.0f, 60.0f, 83.0f}],
+                           @"caption": @"\"Search\" allows you to search services and members"
+                           },
+                       @{
+                           @"rect": [NSValue valueWithCGRect:(CGRect){65.0f, 383.0f, 60.0f, 83.0f}],
+                           @"caption": @"\"Hours\" allows you to report hours"
+                           },
+                       @{
+                           @"rect": [NSValue valueWithCGRect:(CGRect){197.0f, 383.0f, 60.0f, 83.0f}],
+                           @"caption": @"\"More\" includes a Group feature, My profile, About this app and Version"
+                           },
+                       ];
+
+    }
+    
+    coachMarksView = [[WSCoachMarksView alloc] initWithFrame:self.navigationController.view.bounds coachMarks:coachMarks];
+    
+    /*
+    if([[userDefault objectForKey:@"size"] isEqual:@"4.0"] &&
+       [[userDefault objectForKey:@"firstTime"] isEqual:@"T"]) {
+        
+        [userDefault setValue:@"F" forKey:@"firstTime"];
+        
+        [self.navigationController.view addSubview:coachMarksView];
+        [coachMarksView start];
+    }
+    */
 }
 
 /*
@@ -62,11 +141,15 @@
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
     if ([[userDefault objectForKey:@"logged_in"] isEqualToString:@"1"]) {
         // do nothing...
+        [self checkUserLoggedIn];
     }
     else {
         MTBLoginViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MTBLoginViewController"];
         [self.navigationController pushViewController:viewController animated:YES];
     }
+    
+    // check if the user logged-in
+    
     
     [super viewWillAppear:animated];
 }
@@ -74,9 +157,62 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     self.screenName = @"MainPageViewController";
+    
+    // Show coach marks
+    BOOL coachMarksShown = [[NSUserDefaults standardUserDefaults] boolForKey:@"WSCoachMarksShown"];
+    if (coachMarksShown == NO) {
+        // Don't show again
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"WSCoachMarksShown"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        // Show coach marks
+        [coachMarksView start];
+        
+        // Or show coach marks after a second delay
+        // [coachMarksView performSelector:@selector(start) withObject:nil afterDelay:1.0f];
+    }
 }
 
-- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+- (void) checkUserLoggedIn {
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    
+    NSDictionary *params = @{@"requestType"     :@"Messages,0",
+                             @"accessToken"     :[userDefault objectForKey:@"access_token"],
+                             @"EID"             :[userDefault objectForKey:@"EID"],
+                             @"memID"           :[userDefault objectForKey:@"memID"]};
+    
+    [manager POST:@"http://www.hourworld.org/db_mob/auth.php" parameters:params
+        constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+        } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+            NSLog(@"responseObject : %@", responseObject);
+            
+            
+            if([[responseObject objectForKey:@"success"] intValue] == 1) {
+                NSLog(@"success : %@", [responseObject objectForKey:@"success"]);
+            }
+            else {
+                NSLog(@"Account expired need to re-login");
+                
+                UIAlertView *dialog = [[UIAlertView alloc]init];
+                [dialog setDelegate:self];
+                [dialog setTitle:@"Message"];
+                [dialog setMessage:@"Your account has been expired. Please login again"];
+                [dialog addButtonWithTitle:@"Login"];
+                [dialog show];
+            }
+            
+    
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            NSLog(@"Error: %@", operation);
+        }];
+
+}
+
+- (void) alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
     
 }
 
@@ -201,6 +337,32 @@
         // report hours
         [self reportHours];
     }
+    else if([title isEqualToString:@"Login"]) {
+
+        // reset everything
+        NSString *domainName = [[NSBundle mainBundle] bundleIdentifier];
+        [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:domainName];
+        
+        NSArray *viewControllers = [[self navigationController] viewControllers];
+        for(int i=0 ; i<[viewControllers count] ; i++){
+            
+            id obj=[viewControllers objectAtIndex:i];
+            
+            NSLog(@"%@", [obj class]);
+            
+            if([obj isKindOfClass:[MTBLoginViewController class]]){
+                [[self navigationController] popToViewController:obj animated:YES];
+                return;
+            }
+        }
+        
+        // go to the login page
+        MTBLoginViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MTBLoginViewController"];
+        [self.navigationController pushViewController:viewController animated:YES];
+    }
+    else {
+        
+    }
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -217,6 +379,14 @@
         [viewController setIsOffer:@"F"];
         [viewController setIsRequest:@"T"];
     }
+}
+
+-(IBAction)infoBtnPressed:(id)sender {
+
+    [userDefault setValue:@"F" forKey:@"firstTime"];
+    
+    [self.navigationController.view addSubview:coachMarksView];
+    [coachMarksView start];
 }
 
 

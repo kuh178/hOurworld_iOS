@@ -82,7 +82,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    NSLog(@"length: %i", [outputArray count]);
+    NSLog(@"length: %lu", (unsigned long)[outputArray count]);
     
     return [outputArray count];
 }

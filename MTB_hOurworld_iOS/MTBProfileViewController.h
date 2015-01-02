@@ -33,6 +33,11 @@
     IBOutlet UIButton *creditHistoryBtn;
     IBOutlet UIBarButtonItem *logoutBtn;
     
+    IBOutlet UIButton *contactHomeBtn;
+    IBOutlet UIButton *contactMobileBtn;
+    IBOutlet UIButton *contactEmailBtn;
+    IBOutlet UIButton *contactWebBtn;
+    
     IBOutlet UILabel *shareMyLocLabel;
     IBOutlet UISwitch *shareMyLocSwitch;
     
@@ -99,6 +104,11 @@
 @property (nonatomic, retain) IBOutlet UITextView *contactInfo;
 @property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
 
+@property (nonatomic, retain) IBOutlet UIButton *contactHomeBtn;
+@property (nonatomic, retain) IBOutlet UIButton *contactMobileBtn;
+@property (nonatomic, retain) IBOutlet UIButton *contactEmailBtn;
+@property (nonatomic, retain) IBOutlet UIButton *contactWebBtn;
+
 @property (nonatomic, retain) IBOutlet UILabel *offersLabel;
 @property (nonatomic, retain) IBOutlet UILabel *offersTitleLabel;
 @property (nonatomic, retain) IBOutlet UIImageView *offersLine;
@@ -130,5 +140,10 @@
 -(IBAction)pressCreditHistoryBtn:(id)sender;
 -(IBAction)pressLogoutBtn:(id)sender;
 -(IBAction)toggleSwitch:(id)sender;
+
+-(IBAction)contactHomeBtnPressed:(id)sender;
+-(IBAction)contactMobileBtnPressed:(id)sender;
+-(IBAction)contactEmailBtnPressed:(id)sender;
+-(IBAction)contactWebBtnPressed:(id)sender;
 
 @end

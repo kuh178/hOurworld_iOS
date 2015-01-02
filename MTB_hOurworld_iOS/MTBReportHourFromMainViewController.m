@@ -138,61 +138,61 @@ int mSvcID = 0;
                                            [addHourBtn setTitle:hourString forState:UIControlStateNormal];
                                            
                                            if ([hourString isEqualToString:@"15 mins"]) {
-                                               hour = @"0.15";
+                                               hour = @"0.25";
                                            }
                                            else if ([hourString isEqualToString:@"30 mins"]) {
-                                               hour = @"0.30";
+                                               hour = @"0.50";
                                            }
                                            else if ([hourString isEqualToString:@"45 mins"]) {
-                                               hour = @"0.45";
+                                               hour = @"0.75";
                                            }
                                            else if ([hourString isEqualToString:@"60 mins"]) {
                                                hour = @"1.00";
                                            }
                                            else if ([hourString isEqualToString:@"75 mins"]) {
-                                               hour = @"1.15";
+                                               hour = @"1.25";
                                            }
                                            else if ([hourString isEqualToString:@"90 mins"]) {
-                                               hour = @"1.30";
+                                               hour = @"1.50";
                                            }
                                            else if ([hourString isEqualToString:@"105 mins"]) {
-                                               hour = @"1.45";
+                                               hour = @"1.75";
                                            }
                                            else if ([hourString isEqualToString:@"120 mins"]) {
                                                hour = @"2.00";
                                            }
                                            else if ([hourString isEqualToString:@"135 mins"]) {
-                                               hour = @"2.15";
+                                               hour = @"2.25";
                                            }
                                            else if ([hourString isEqualToString:@"150 mins"]) {
-                                               hour = @"2.30";
+                                               hour = @"2.50";
                                            }
                                            else if ([hourString isEqualToString:@"165 mins"]) {
-                                               hour = @"2.45";
+                                               hour = @"2.75";
                                            }
                                            else if ([hourString isEqualToString:@"180 mins"]) {
                                                hour = @"3.00";
                                            }
                                            else if ([hourString isEqualToString:@"195 mins"]) {
-                                               hour = @"3.15";
+                                               hour = @"3.25";
                                            }
                                            else if ([hourString isEqualToString:@"210 mins"]) {
-                                               hour = @"3.30";
+                                               hour = @"3.50";
                                            }
                                            else if ([hourString isEqualToString:@"225 mins"]) {
-                                               hour = @"3.45";
+                                               hour = @"3.75";
                                            }
                                            else if ([hourString isEqualToString:@"240 mins"]) {
                                                hour = @"4.00";
                                            }
                                            else if ([hourString isEqualToString:@"255 mins"]) {
-                                               hour = @"4.15";
+                                               hour = @"4.25";
                                            }
                                            else if ([hourString isEqualToString:@"270 mins"]) {
-                                               hour = @"4.30";
+                                               hour = @"4.50";
                                            }
                                            else if ([hourString isEqualToString:@"285 mins"]) {
-                                               hour = @"4.45";
+                                               hour = @"4.75";
                                            }
                                            else if ([hourString isEqualToString:@"300 mins"]) {
                                                hour = @"5.00";

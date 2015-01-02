@@ -61,7 +61,7 @@ NSArray *sortedArray;
     
     if (tableView == searchDisplayController.searchResultsTableView) {
         
-        NSLog(@"searchResult : %d", [searchResult count]);
+        NSLog(@"searchResult : %lu", (unsigned long)[searchResult count]);
         
         return [searchResult count];
     }
@@ -165,7 +165,7 @@ constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
     NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"SELF.Fname contains[c] %@ OR SELF.Lname contains[c] %@", searchText, searchText];
     searchResult = [NSMutableArray arrayWithArray:[jsonArray filteredArrayUsingPredicate:resultPredicate]];
     
-    NSLog(@"%d, %d", [jsonArray count], [searchResult count]);
+    NSLog(@"%lu, %lu", (unsigned long)[jsonArray count], (unsigned long)[searchResult count]);
 }
 
 -(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString

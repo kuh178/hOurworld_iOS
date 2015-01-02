@@ -78,7 +78,7 @@ bool emailAdd, homeAdd, mobileAdd, websiteAdd = NO;
     mobileDelBtn.layer.borderWidth=1.0f;
     
     NSLog(@"%@ %@ %@ %@", email1, home1, mobile, website);
-    NSLog(@"%d %d %d %d", [email1 length], [home1 length], [mobile length], [website length]);
+    NSLog(@"%lu %d %d %d", (unsigned long)[email1 length], [home1 length], [mobile length], [website length]);
     
     // change the button text
     if ([email1 length] == 0) {

@@ -49,11 +49,12 @@
     // Optional: set debug to YES for extra debugging information.
 
     // Initialize tracker.
-    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-45467711-1"];
-    
+    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-XXXXXXXX-1"];
     // Enable IDFA collection.
 //    [tracker setAllowIDFACollection:@YES];
 //    [tracker set:allowIDFACollection value:@YES];
+    
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
     
     UIStoryboard *storyBoard = nil;
     CGSize iOSDeviceScreenSize = [[UIScreen mainScreen] bounds].size;
@@ -67,10 +68,14 @@
         if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
             storyBoard = [UIStoryboard storyboardWithName:@"StoryBoard_3.5inch_iOS7" bundle:nil];
         }
+        
+        [userDefault setValue:@"3.5" forKey:@"size"];
     }
     if (iOSDeviceScreenSize.height == 568) {
 
         storyBoard = [UIStoryboard storyboardWithName:@"StoryBoard_4inch" bundle:nil];
+        
+        [userDefault setValue:@"4.0" forKey:@"size"];
     }
     
     UIViewController *initialViewController = [storyBoard instantiateInitialViewController];
@@ -88,7 +93,7 @@
                                                           [UIColor whiteColor],
                                                           NSForegroundColorAttributeName, nil]];
     
-    [Crashlytics startWithAPIKey:@"d57bf4c7e3f0cdc0ce35831e43ea329c168571b5"];
+    [Crashlytics startWithAPIKey:@"xxx"];
     
     return YES;
 }
@@ -135,8 +140,6 @@
     version = [version stringByReplacingOccurrencesOfString:@"." withString:@""];
     
     NSLog(@"current version of the app: %@", version);
-    
-    
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:[NSString stringWithFormat:@"http://community.ist.psu.edu/version/get_hourworld_ios_version.php?version=%@", version] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {

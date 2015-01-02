@@ -13,15 +13,19 @@
 @interface MainPageViewController : GAITrackedViewController <MFMailComposeViewControllerDelegate>{
     IBOutlet UIButton *announcementBtn;
     IBOutlet UIButton *reportHoursBtn;
+    IBOutlet UIButton *infoBtn;
     IBOutlet UIActivityIndicatorView *indicator;
     IBOutlet UILabel *locationLabel;
+    
 }
 
 @property (nonatomic, retain) IBOutlet UIButton *announcementBtn;
 @property (nonatomic, retain) IBOutlet UIButton *reportHoursBtn;
+@property (nonatomic, retain) IBOutlet UIButton *infoBtn;
 @property (nonatomic, retain) IBOutlet UIActivityIndicatorView *indicator;
 @property (nonatomic, retain) IBOutlet UILabel *locationLabel;
 
 -(IBAction)announcementBtnPressed:(id)sender;
 -(IBAction)reportHoursBtnPressed:(id)sender;
+-(IBAction)infoBtnPressed:(id)sender;
 @end

@@ -111,7 +111,7 @@
                              @"accessToken"     :[userDefault objectForKey:@"access_token"],
                              @"EID"             :[userDefault objectForKey:@"EID"],
                              @"memID"           :[userDefault objectForKey:@"memID"],
-                             @"groupID"         :[NSString stringWithFormat:@"%d", groupID]};
+                             @"groupID"         :[NSString stringWithFormat:@"%ld", (long)groupID]};
     
     [manager POST:@"http://www.hourworld.org/db_mob/auth.php" parameters:params
         constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
@@ -137,7 +137,7 @@
                              @"accessToken"     :[userDefault objectForKey:@"access_token"],
                              @"EID"             :[userDefault objectForKey:@"EID"],
                              @"memID"           :[userDefault objectForKey:@"memID"],
-                             @"groupID"         :[NSString stringWithFormat:@"%d", groupID]};
+                             @"groupID"         :[NSString stringWithFormat:@"%ld", (long)groupID]};
     
     [manager POST:@"http://www.hourworld.org/db_mob/auth.php" parameters:params
         constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
@@ -162,7 +162,7 @@
                              @"accessToken"     :[userDefault objectForKey:@"access_token"],
                              @"EID"             :[userDefault objectForKey:@"EID"],
                              @"memID"           :[userDefault objectForKey:@"memID"],
-                             @"groupID"         :[NSString stringWithFormat:@"%d", groupID]};
+                             @"groupID"         :[NSString stringWithFormat:@"%ld", (long)groupID]};
     
     [manager POST:@"http://www.hourworld.org/db_mob/auth.php" parameters:params
         constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
@@ -174,7 +174,7 @@
                   
                   NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
                   
-                  [groupMembersNumLabel setText:[NSString stringWithFormat:@"Group members (%d)", [jsonArray count]]];
+                  [groupMembersNumLabel setText:[NSString stringWithFormat:@"Group members (%lu)", (unsigned long)[jsonArray count]]];
                   
                   // check if I am a member of this group
                   for (int i = 0 ; i < [jsonArray count]; i++) {

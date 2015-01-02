@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MTB_hOurworld_iOS/MTBTaskDetailViewController.m"
-            timestampString = "435686737.129507"
+            timestampString = "437255925.506236"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
             landmarkName = "-showViews"
             landmarkType = "5">
          </BreakpointContent>

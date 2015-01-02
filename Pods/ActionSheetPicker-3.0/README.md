@@ -13,18 +13,19 @@ ActionSheetPicker-3.0
 	- [ActionSheetCustomPicker Customisation](#actionsheetcustompicker-customisation)
 - [Installation](#installation)
 - [Example Projects](#example-projects)
-- [Screen Shots](#screen-shots)
+- [Screenshots](#screen-shots)
 - [Apps using this library](#apps-using-this-library)
 - [Maintainer and Contributor](#maintainer-and-contributor)
 - [Credits](#credits)
+- [Contributing](#contributing)
 
-Since the [Tim's repo](https://github.com/TimCinel/ActionSheetPicker) is not support iOS 7+, I forked from his repo and implement iOS 7-8 support, and also bunch of UI fixes, crush-fixes and different customisation abilities.
+Since the [Tim's repo](https://github.com/TimCinel/ActionSheetPicker) is not support iOS 7+, I forked from his repo and implement iOS 7-8 support, and also bunch of UI fixes, crash-fixes and different customisation abilities.
 
 New updates will be added only in this repo.
 
 Please welcome: **ActionSheetPicker-3.0**!
 
-`pod 'ActionSheetPicker-3.0', '~> 1.3.1'` (**iOS 6-7-8** compatible!)
+`pod 'ActionSheetPicker-3.0', '~> 1.3.5'` (**iOS 6-7-8** compatible!)
 
 Improvements more than welcome - they are kindly requested :)
 
@@ -96,7 +97,7 @@ NSArray *colors = [NSArray arrayWithObjects:@"Red", @"Green", @"Blue", @"Orange"
 
 ### ActionSheetCustomPicker Customisation
 
-ActionSheetCustomPicker provides the following delegate function that can be used for customisation:
+ActionSheetCustomPicker provides the following delegate function that can be used for customization:
 
 ```obj-c
 - (void)actionSheetPicker:(AbstractActionSheetPicker *)actionSheetPicker configurePickerView:(UIPickerView *)pickerView;
@@ -192,4 +193,13 @@ Here is 4 projects:
 
 - And most of all, thanks to ActionSheetPicker-3.0's [growing list of contributors](https://github.com/skywinder/ActionSheetPicker-3.0/graphs/contributors).
 
-***Bug reports, feature requests, patches, well-wishes, and rap demo tapes are always welcome.**
+## Contributing
+
+1. Create an issue to discuss about your idea
+2. Fork it (https://github.com/skywinder/ActionSheetPicker-3.0/fork)
+3. Create your feature branch (`git checkout -b my-new-feature`)
+4. Commit your changes (`git commit -am 'Add some feature'`)
+5. Push to the branch (`git push origin my-new-feature`)
+6. Create a new Pull Request
+
+**Bug reports, feature requests, patches, well-wishes, and rap demo tapes are always welcome.**
