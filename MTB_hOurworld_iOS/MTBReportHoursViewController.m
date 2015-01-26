@@ -36,8 +36,8 @@
     //note.delegate = self;
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     
-    NSLog(@"%d", mItem.mSvcCatID);
-    NSLog(@"%d", mItem.mSvcID);
+    NSLog(@"%ld", (long)mItem.mSvcCatID);
+    NSLog(@"%ld", (long)mItem.mSvcID);
     
     // rounded corner
     addDateBtn.layer.cornerRadius = 5;
@@ -250,9 +250,9 @@
                            @"transRefer"      :[NSString stringWithFormat:@"%@", reference],
                            @"transNote"       :[NSString stringWithFormat:@"%@", note.text],
                            @"Provider"        :[NSString stringWithFormat:@"%@", [userDefault objectForKey:@"memID"]],
-                           @"Receiver"        :[NSString stringWithFormat:@"%d", mItem.mListMbrID],
-                           @"SvcCatID"        :[NSString stringWithFormat:@"%d", mItem.mSvcCatID],
-                           @"SvcID"           :[NSString stringWithFormat:@"%d", mItem.mSvcID]};
+                           @"Receiver"        :[NSString stringWithFormat:@"%ld", (long)mItem.mListMbrID],
+                           @"SvcCatID"        :[NSString stringWithFormat:@"%ld", (long)mItem.mSvcCatID],
+                           @"SvcID"           :[NSString stringWithFormat:@"%ld", (long)mItem.mSvcID]};
                 
             }
             else {
@@ -266,10 +266,10 @@
                            @"transHappy"      :[NSString stringWithFormat:@"%@", satisfaction],
                            @"transRefer"      :[NSString stringWithFormat:@"%@", reference],
                            @"transNote"       :[NSString stringWithFormat:@"%@", note.text],
-                           @"Provider"        :[NSString stringWithFormat:@"%d", mItem.mListMbrID],
+                           @"Provider"        :[NSString stringWithFormat:@"%ld", (long)mItem.mListMbrID],
                            @"Receiver"        :[NSString stringWithFormat:@"%@", [userDefault objectForKey:@"memID"]],
-                           @"SvcCatID"        :[NSString stringWithFormat:@"%d", mItem.mSvcCatID],
-                           @"SvcID"           :[NSString stringWithFormat:@"%d", mItem.mSvcID]};
+                           @"SvcCatID"        :[NSString stringWithFormat:@"%ld", (long)mItem.mSvcCatID],
+                           @"SvcID"           :[NSString stringWithFormat:@"%ld", (long)mItem.mSvcID]};
             }
             
             [manager POST:@"http://www.hourworld.org/db_mob/auth.php" parameters:params

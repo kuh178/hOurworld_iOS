@@ -1662,7 +1662,6 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: John Carroll (QR98EQ97WG)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1677,6 +1676,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = NO;
+				PROVISIONING_PROFILE = "e6d413f2-04e3-4f9c-b361-9a0fa98b1b03";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1690,8 +1690,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: John Carroll (QR98EQ97WG)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: John Carroll (J767EA589G)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -1700,7 +1699,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "09DC9A20-1C78-4A9A-948A-4013C3E372A2";
+				PROVISIONING_PROFILE = "4782bd87-4aa5-4a62-9fc1-dded3ee7c0fa";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1710,8 +1709,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DFE34FCE8EF61CD3FF127CD9 /* Pods.debug.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: John Carroll (QR98EQ97WG)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: John Carroll (QR98EQ97WG)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\\\"$(SRCROOT)/../../../Desktop/Projects/MTB/AppleDeveloper/lookback-0.4.6\\\"",
@@ -1746,9 +1743,7 @@
 					"$(inherited)",
 				);
 				PRODUCT_NAME = hOurworld;
-				PROVISIONING_PROFILE = "f6ce0fb4-66fc-4102-8d1a-76db922aa0fd";
-				"PROVISIONING_PROFILE[sdk=*]" = "f6ce0fb4-66fc-4102-8d1a-76db922aa0fd";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "f6ce0fb4-66fc-4102-8d1a-76db922aa0fd";
+				PROVISIONING_PROFILE = "e6d413f2-04e3-4f9c-b361-9a0fa98b1b03";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
@@ -1759,8 +1754,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3CA25A4547B7FAD1EA32424F /* Pods.release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: John Carroll (J767EA589G)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: John Carroll (J767EA589G)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\\\"$(SRCROOT)/../../../Desktop/Projects/MTB/AppleDeveloper/lookback-0.4.6\\\"",
@@ -1795,8 +1788,7 @@
 					"$(inherited)",
 				);
 				PRODUCT_NAME = hOurworld;
-				PROVISIONING_PROFILE = "b93cb072-2f6f-4bda-99ae-160eaf4dc4f8";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "b93cb072-2f6f-4bda-99ae-160eaf4dc4f8";
+				PROVISIONING_PROFILE = "4782bd87-4aa5-4a62-9fc1-dded3ee7c0fa";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;

@@ -95,10 +95,7 @@
     
     // user image
     // reference: https://github.com/rs/SDWebImage
-    //[userImage setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.hourworld.org/%@", tItem.mProfileImage]] placeholderImage:[UIImage imageNamed:@"who_checkin_default.png"]];
     [userImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.hourworld.org/%@", tItem.mProfileImage]] placeholderImage:[UIImage imageNamed:@"who_checkin_default.png"]];
-    
-    
     userImage.layer.cornerRadius = userImage.frame.size.width / 2;
     userImage.clipsToBounds = YES;
     userImage.layer.borderWidth = 1.0f;
@@ -111,7 +108,6 @@
     else{
        userNameLabel.text = @"No username found";
     }
-    
     
     // description
     if (tItem.mEblast != (id)[NSNull null] && [tItem.mEblast length] != 0) {
@@ -159,43 +155,20 @@
     return cell;
 }
 
+// Remove some of HTML tags
 -(NSString *) stringByStrippingHTML:(NSString *)inputStr {
     NSRange r;
+
     while ((r = [inputStr rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
         inputStr = [inputStr stringByReplacingCharactersInRange:r withString:@""];
+    inputStr = [inputStr stringByReplacingOccurrencesOfString:@"&#39;" withString:@"\'"];
+    inputStr = [inputStr stringByReplacingOccurrencesOfString:@"&nbsp;" withString:@"\n\n"];
+    
     return inputStr;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-	
-    /*
-    MTBItem *tItem = [scheduleList objectAtIndex:indexPath.row];
-    NSString *text = tItem.mEblast;
-    
-    UIFont *cellFont = [UIFont fontWithName:@"Helvetica" size:17.0];
-	CGSize constraintSize = CGSizeMake(280.0f, MAXFLOAT);
-	CGSize labelSize = [text sizeWithFont:cellFont constrainedToSize:constraintSize lineBreakMode:NSLineBreakByWordWrapping];
-    
-    int height = 0;
-    
-    if(text.length < 50) {
-        height = 50;
-    }
-    else if(text.length >= 50 && text.length < 100) {
-        height = 35;
-    }
-    else if(text.length > 500){
-        height = -100;
-    }
-    else {
-        height = 0;
-    }
-    
-	return labelSize.height + height;
-    */
-    
-    // let's fix the height to 90.
-    
+    // Fix the height to 90.
     return 90.0;
 }
 
@@ -214,7 +187,6 @@
         [viewController setMItem:mItem];
     }
 }
-
 
 - (IBAction)pressRefreshBtn:(id)sender {
     [self downloadContent];

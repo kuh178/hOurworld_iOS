@@ -212,7 +212,7 @@
         [_kTitleText drawInRect:titleRect withAttributes:attributes];
     }
     else
-        [_kTitleText drawInRect:titleRect withFont:[UIFont systemFontOfSize:16.]];
+        [_kTitleText drawInRect:titleRect withFont:[UIFont systemFontOfSize:16.0]];
     
     CGContextFillRect(ctx, separatorRect);
     

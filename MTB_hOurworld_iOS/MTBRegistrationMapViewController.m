@@ -240,7 +240,7 @@
     
     CGRect rect = self.view.frame;
     
-    NSLog(@"movedUp: %hhd", movedUp);
+    //NSLog(@"movedUp: %hhd", movedUp);
     
     if (movedUp)
     {

@@ -49,7 +49,7 @@
     // Optional: set debug to YES for extra debugging information.
 
     // Initialize tracker.
-    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-45467711-1"];
+    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-xxxxxxx-1"];
     // Enable IDFA collection.
 //    [tracker setAllowIDFACollection:@YES];
 //    [tracker set:allowIDFACollection value:@YES];
@@ -93,7 +93,7 @@
                                                           [UIColor whiteColor],
                                                           NSForegroundColorAttributeName, nil]];
     
-    [Crashlytics startWithAPIKey:@"d57bf4c7e3f0cdc0ce35831e43ea329c168571b5"];
+    [Crashlytics startWithAPIKey:@"xxxxxx"];
     
     return YES;
 }

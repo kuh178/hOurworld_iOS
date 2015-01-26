@@ -205,7 +205,12 @@ NSUserDefaults *userDefault;
                 }
                 if([[contactItem objectForKey:@"contactType"] isEqualToString:@"Mobile"]) {
                     mobile = [contactItem objectForKey:@"contactInfo"];
-                    mobileExist = true;
+                    if ([mobile length] < 10) { // only show the mobile number when it has a full length xxx-xxx-xxxx (length:10)
+                        mobileExist = false;
+                    }
+                    else {
+                        mobileExist = true;
+                    }
                 }
                 if([[contactItem objectForKey:@"contactType"] isEqualToString:@"Website"]) {
                     website = [contactItem objectForKey:@"contactInfo"];
@@ -478,15 +483,30 @@ NSUserDefaults *userDefault;
         }
         
         // activity
-        NSString *activity = [NSString stringWithFormat:
-                              @"\u2022 Balance: %@\n\u2022 Posted %@ and %@\n\u2022 Completed %@ with %@\n\u2022 %d%% user satisfaction\n\nSpecialized in\n%@",
-                              balanceStr,
-                              requestStr,
-                              offerStr,
-                              exchangeStr,
-                              completedMemberStr,
-                              satPct,
-                              specials];
+        // you cannot access other users' balance
+        NSString *activity;
+        if ([userDefault integerForKey:@"memID"] == memID) {
+            activity = [NSString stringWithFormat:
+                                  @"\u2022 Balance: %@\n\u2022 Posted %@ and %@\n\u2022 Completed %@ with %@\n\u2022 %d%% user satisfaction\n\nRecent exchanged categories\n%@",
+                                  balanceStr,
+                                  requestStr,
+                                  offerStr,
+                                  exchangeStr,
+                                  completedMemberStr,
+                                  satPct,
+                                  specials];
+            
+        }
+        else {
+            activity = [NSString stringWithFormat:
+                                  @"\u2022 Posted %@ and %@\n\u2022 Completed %@ with %@\n\u2022 %d%% user satisfaction\n\nRecent exchanged categories\n%@",
+                                  requestStr,
+                                  offerStr,
+                                  exchangeStr,
+                                  completedMemberStr,
+                                  satPct,
+                                  specials];
+        }
         
         // badges (we only use 6 types in the app)
         if (![[item objectForKey:@"BadgeArray"] isEqual:[NSNull null]]) {
