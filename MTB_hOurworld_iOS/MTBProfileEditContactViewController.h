@@ -15,6 +15,11 @@
     IBOutlet UITextField *homeTextField;
     IBOutlet UITextField *websiteTextField;
     
+    IBOutlet UISegmentedControl *emailSeg;
+    IBOutlet UISegmentedControl *mobileSeg;
+    IBOutlet UISegmentedControl *homeSeg;
+    IBOutlet UISegmentedControl *websiteSeg;
+    
     IBOutlet UIButton *emailBtn;
     IBOutlet UIButton *mobileBtn;
     IBOutlet UIButton *homeBtn;
@@ -24,17 +29,17 @@
     IBOutlet UIButton *mobileDelBtn;
     IBOutlet UIButton *homeDelBtn;
     IBOutlet UIButton *websiteDelBtn;
-    
-    NSString *email1;
-    NSString *home1;
-    NSString *mobile;
-    NSString *website;
 }
 
 @property (nonatomic, retain) IBOutlet UITextField *email1TextField;
 @property (nonatomic, retain) IBOutlet UITextField *homeTextField;
 @property (nonatomic, retain) IBOutlet UITextField *mobileTextField;
 @property (nonatomic, retain) IBOutlet UITextField *websiteTextField;
+
+@property (nonatomic, retain) IBOutlet UISegmentedControl *emailSeg;
+@property (nonatomic, retain) IBOutlet UISegmentedControl *mobileSeg;
+@property (nonatomic, retain) IBOutlet UISegmentedControl *homeSeg;
+@property (nonatomic, retain) IBOutlet UISegmentedControl *websiteSeg;
 
 @property (nonatomic, retain) IBOutlet UIButton *emailBtn;
 @property (nonatomic, retain) IBOutlet UIButton *mobileBtn;
@@ -45,11 +50,6 @@
 @property (nonatomic, retain) IBOutlet UIButton *mobileDelBtn;
 @property (nonatomic, retain) IBOutlet UIButton *homeDelBtn;
 @property (nonatomic, retain) IBOutlet UIButton *websiteDelBtn;
-
-@property (nonatomic, retain) NSString *email1;
-@property (nonatomic, retain) NSString *home1;
-@property (nonatomic, retain) NSString *mobile;
-@property (nonatomic, retain) NSString *website;
 
 -(IBAction)pressEmailBtn:(id)sender;
 -(IBAction)pressMobileBtn:(id)sender;

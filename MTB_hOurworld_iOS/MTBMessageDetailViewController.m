@@ -14,7 +14,6 @@
 
 #import "QuartzCore/QuartzCore.h"
 #import "AFHTTPRequestOperationManager.h"
-#import "ImageViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "AFHTTPRequestOperationManager.h"
 #import "TSAlertView.h"

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="lR9-A3-jDS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="lR9-A3-jDS">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
         <!--First View Controller-->
@@ -1812,28 +1812,49 @@ HEP, hOurworld, PARC and PSU</string>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aWj-Rc-kZm">
-                                <rect key="frame" x="11" y="15" width="64" height="21"/>
+                                <rect key="frame" x="11" y="8" width="64" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Private?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="es3-Jn-Kel">
+                                <rect key="frame" x="70" y="42" width="64" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Private?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ypc-hD-NU3">
+                                <rect key="frame" x="70" y="118" width="64" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Private?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2lo-3L-XlP">
+                                <rect key="frame" x="70" y="195" width="64" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Qhk-Cz-9St">
-                                <rect key="frame" x="11" y="138" width="64" height="21"/>
+                                <rect key="frame" x="11" y="162" width="64" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Website" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aMg-mL-sEk">
-                                <rect key="frame" x="11" y="196" width="64" height="21"/>
+                                <rect key="frame" x="11" y="241" width="64" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="abc@gmail.com" minimumFontSize="17" id="FMW-Ay-QGv">
-                                <rect key="frame" x="11" y="39" width="199" height="30"/>
+                                <rect key="frame" x="70" y="5" width="242" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1843,24 +1864,14 @@ HEP, hOurworld, PARC and PSU</string>
                                 </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RiO-Tw-YFX">
-                                <rect key="frame" x="11" y="77" width="83" height="21"/>
+                                <rect key="frame" x="11" y="84" width="83" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="123-123-1234" minimumFontSize="17" id="Oge-VF-iea">
-                                <rect key="frame" x="11" y="100" width="199" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
-                                <connections>
-                                    <outlet property="delegate" destination="eKw-Hl-MRK" id="56X-S2-gkh"/>
-                                </connections>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="123-123-1234" minimumFontSize="17" id="Y4v-h0-iaA">
-                                <rect key="frame" x="11" y="158" width="199" height="30"/>
+                                <rect key="frame" x="70" y="159" width="242" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1870,7 +1881,7 @@ HEP, hOurworld, PARC and PSU</string>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="http://www.hourworld.org/" minimumFontSize="17" id="q2V-PU-2Ob">
-                                <rect key="frame" x="11" y="219" width="199" height="30"/>
+                                <rect key="frame" x="70" y="236" width="243" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1880,7 +1891,7 @@ HEP, hOurworld, PARC and PSU</string>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="jaC-X2-tkT">
-                                <rect key="frame" x="218" y="39" width="44" height="30"/>
+                                <rect key="frame" x="268" y="38" width="44" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.070588235289999995" green="0.64705882349999999" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1893,7 +1904,7 @@ HEP, hOurworld, PARC and PSU</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Vds-Xl-Tfa">
-                                <rect key="frame" x="268" y="100" width="44" height="30"/>
+                                <rect key="frame" x="217" y="113" width="44" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.90588235289999997" green="0.29803921570000003" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1906,7 +1917,7 @@ HEP, hOurworld, PARC and PSU</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dhZ-Gk-2a9">
-                                <rect key="frame" x="268" y="158" width="44" height="30"/>
+                                <rect key="frame" x="217" y="191" width="44" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.90588235289999997" green="0.29803921570000003" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1919,7 +1930,7 @@ HEP, hOurworld, PARC and PSU</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PiH-Yc-X6v">
-                                <rect key="frame" x="268" y="219" width="44" height="30"/>
+                                <rect key="frame" x="217" y="269" width="44" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.90588235289999997" green="0.29803921570000003" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1932,7 +1943,7 @@ HEP, hOurworld, PARC and PSU</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="k75-oV-7Qd">
-                                <rect key="frame" x="218" y="100" width="44" height="30"/>
+                                <rect key="frame" x="269" y="113" width="44" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.070588235289999995" green="0.64705882349999999" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1945,7 +1956,7 @@ HEP, hOurworld, PARC and PSU</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="O9D-ld-4CH">
-                                <rect key="frame" x="218" y="158" width="44" height="30"/>
+                                <rect key="frame" x="269" y="191" width="44" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.070588235289999995" green="0.64705882349999999" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1958,7 +1969,7 @@ HEP, hOurworld, PARC and PSU</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RPL-YI-Rp2">
-                                <rect key="frame" x="218" y="219" width="44" height="30"/>
+                                <rect key="frame" x="269" y="269" width="44" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.070588235289999995" green="0.64705882349999999" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1970,6 +1981,59 @@ HEP, hOurworld, PARC and PSU</string>
                                     <action selector="pressWebsiteBtn:" destination="eKw-Hl-MRK" eventType="touchUpInside" id="F5S-PY-ESg"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" id="IcD-7g-d6L">
+                                <rect key="frame" x="120" y="39" width="73" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="T"/>
+                                    <segment title="F"/>
+                                </segments>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" id="B1U-pb-52b">
+                                <rect key="frame" x="120" y="115" width="73" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="T"/>
+                                    <segment title="F"/>
+                                </segments>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" id="N27-WG-J17">
+                                <rect key="frame" x="120" y="192" width="73" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="T"/>
+                                    <segment title="F"/>
+                                </segments>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" id="pjN-Yy-Hkn">
+                                <rect key="frame" x="120" y="270" width="73" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="T"/>
+                                    <segment title="F"/>
+                                </segments>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </segmentedControl>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="123-123-1234" minimumFontSize="17" id="Oge-VF-iea">
+                                <rect key="frame" x="70" y="81" width="242" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                <connections>
+                                    <outlet property="delegate" destination="eKw-Hl-MRK" id="56X-S2-gkh"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Private?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Rth-9k-9u3">
+                                <rect key="frame" x="70" y="273" width="64" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -1977,14 +2041,18 @@ HEP, hOurworld, PARC and PSU</string>
                     <connections>
                         <outlet property="email1TextField" destination="FMW-Ay-QGv" id="VhH-CW-xeZ"/>
                         <outlet property="emailBtn" destination="jaC-X2-tkT" id="Drt-9Z-vNh"/>
+                        <outlet property="emailSeg" destination="IcD-7g-d6L" id="gol-Go-Ozj"/>
                         <outlet property="homeBtn" destination="k75-oV-7Qd" id="Z2f-JU-EKw"/>
                         <outlet property="homeDelBtn" destination="Vds-Xl-Tfa" id="YEK-P7-Nch"/>
+                        <outlet property="homeSeg" destination="B1U-pb-52b" id="1gk-oh-rsL"/>
                         <outlet property="homeTextField" destination="Oge-VF-iea" id="eJe-KU-8q3"/>
                         <outlet property="mobileBtn" destination="O9D-ld-4CH" id="dXQ-kH-FWZ"/>
                         <outlet property="mobileDelBtn" destination="dhZ-Gk-2a9" id="rnK-wC-wsn"/>
+                        <outlet property="mobileSeg" destination="N27-WG-J17" id="5jF-0O-AHo"/>
                         <outlet property="mobileTextField" destination="Y4v-h0-iaA" id="Nbe-tz-vJg"/>
                         <outlet property="websiteBtn" destination="RPL-YI-Rp2" id="N6v-I4-122"/>
                         <outlet property="websiteDelBtn" destination="PiH-Yc-X6v" id="iWt-bG-L29"/>
+                        <outlet property="websiteSeg" destination="pjN-Yy-Hkn" id="wxU-bg-aPJ"/>
                         <outlet property="websiteTextField" destination="q2V-PU-2Ob" id="7wf-aR-oFk"/>
                     </connections>
                 </viewController>
@@ -2117,7 +2185,7 @@ HEP, hOurworld, PARC and PSU</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ver. 1.0.18" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Si5-bg-GGL">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ver. 1.0.24" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Si5-bg-GGL">
                                 <rect key="frame" x="204" y="537" width="104" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -2755,17 +2823,6 @@ We are guided by seven fundamental principles: humanity, impartiality, neutralit
                                                     <action selector="pressReportHourBtn:" destination="Cpr-FV-Pcu" eventType="touchUpInside" id="IIp-jg-Mh0"/>
                                                 </connections>
                                             </button>
-                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="JmF-bb-jUQ">
-                                                <rect key="frame" x="264" y="41" width="45" height="27"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                                <state key="normal" title="logout">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="pressLogoutBtn:" destination="Cpr-FV-Pcu" eventType="touchUpInside" id="Bni-cM-85t"/>
-                                                </connections>
-                                            </button>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Pjg-p6-wQh">
                                                 <rect key="frame" x="292" y="348" width="25" height="25"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -2840,7 +2897,7 @@ We are guided by seven fundamental principles: humanity, impartiality, neutralit
                                                 </connections>
                                             </button>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="F4M-x7-lCj">
-                                                <rect key="frame" x="70" y="103" width="50" height="30"/>
+                                                <rect key="frame" x="65" y="103" width="50" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.070588235289999995" green="0.64705882349999999" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
@@ -2854,7 +2911,7 @@ We are guided by seven fundamental principles: humanity, impartiality, neutralit
                                                 </connections>
                                             </button>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gNu-lh-otb">
-                                                <rect key="frame" x="132" y="103" width="50" height="30"/>
+                                                <rect key="frame" x="123" y="103" width="50" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.070588235289999995" green="0.64705882349999999" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
@@ -2868,7 +2925,7 @@ We are guided by seven fundamental principles: humanity, impartiality, neutralit
                                                 </connections>
                                             </button>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7fv-A1-bO4">
-                                                <rect key="frame" x="192" y="103" width="50" height="30"/>
+                                                <rect key="frame" x="181" y="103" width="50" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.070588235289999995" green="0.64705882349999999" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
@@ -2879,6 +2936,17 @@ We are guided by seven fundamental principles: humanity, impartiality, neutralit
                                                 </state>
                                                 <connections>
                                                     <action selector="contactWebBtnPressed:" destination="Cpr-FV-Pcu" eventType="touchUpInside" id="o0e-wT-xcg"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="JmF-bb-jUQ">
+                                                <rect key="frame" x="239" y="200" width="77" height="33"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <state key="normal" title="Statement">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="69d-eV-lWM" kind="push" identifier="MTBProfileStatementViewController" id="fLO-jM-Gzi"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -2955,6 +3023,7 @@ We are guided by seven fundamental principles: humanity, impartiality, neutralit
                         <outlet property="scrollView" destination="1e9-La-bSr" id="aQi-Yt-8sV"/>
                         <outlet property="shareMyLocLabel" destination="nWF-0h-H9N" id="Xa0-N0-FYp"/>
                         <outlet property="shareMyLocSwitch" destination="VlE-61-4XZ" id="Zrz-oQ-JIt"/>
+                        <outlet property="statementBtn" destination="JmF-bb-jUQ" id="QJb-u9-cS0"/>
                         <outlet property="summaryLabel" destination="Tcg-9q-Uqx" id="L7f-sI-x9O"/>
                         <outlet property="usernameLabel" destination="2MV-Xe-Tj9" id="SbF-kM-SE8"/>
                     </connections>
@@ -3030,7 +3099,165 @@ We are guided by seven fundamental principles: humanity, impartiality, neutralit
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UHR-Gg-djK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2010" y="-160"/>
+            <point key="canvasLocation" x="2020" y="-162"/>
+        </scene>
+        <!--Profile Statement View Controller-->
+        <scene sceneID="Ubh-Bg-JUE">
+            <objects>
+                <viewController storyboardIdentifier="MTBProfileStatementViewController" id="69d-eV-lWM" customClass="MTBProfileStatementViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yod-e0-pFr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="134" sectionHeaderHeight="22" sectionFooterHeight="22" id="2hT-QV-xj7">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="134" id="Pcb-kd-p7M">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Pcb-kd-p7M" id="GAt-1D-2Hk">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Provider" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tOT-g5-Uao">
+                                                    <rect key="frame" x="13" y="8" width="64" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Receiver" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mZt-zN-eZ5">
+                                                    <rect key="frame" x="13" y="31" width="64" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Service" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PFo-0V-fyg">
+                                                    <rect key="frame" x="13" y="56" width="64" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Provider name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Otb-hz-NMq">
+                                                    <rect key="frame" x="92" y="8" width="215" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Receiver name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lNa-hD-xyC">
+                                                    <rect key="frame" x="92" y="31" width="215" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Service name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="X4J-Qv-dAo">
+                                                    <rect key="frame" x="92" y="56" width="215" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Completed date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YD2-9m-1SV">
+                                                    <rect key="frame" x="13" y="80" width="106" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="103" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MDC-oU-fm2">
+                                                    <rect key="frame" x="140" y="80" width="167" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reported hours" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DrC-wx-9dx">
+                                                    <rect key="frame" x="13" y="104" width="103" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hours" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Zwx-au-WNO">
+                                                    <rect key="frame" x="140" y="104" width="167" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="69d-eV-lWM" id="FFO-If-Lkz"/>
+                                    <outlet property="delegate" destination="69d-eV-lWM" id="X3F-Gr-ysl"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ApZ-V8-ina"/>
+                    <connections>
+                        <outlet property="tableViewList" destination="2hT-QV-xj7" id="j6c-TI-fEN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yZm-aa-0US" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2412" y="-162"/>
+        </scene>
+        <!--Profile Private Email View Controller-->
+        <scene sceneID="kKv-oK-0kH">
+            <objects>
+                <viewController storyboardIdentifier="MTBProfilePrivateEmailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="obT-L3-usD" customClass="MTBProfilePrivateEmailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="glE-ju-J8m">
+                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="  Add a subject here" minimumFontSize="15" id="MiD-cJ-vSJ">
+                                <rect key="frame" x="16" y="18" width="288" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="obT-L3-usD" id="78c-zQ-29w"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="  Add an email message here" minimumFontSize="15" id="sNT-07-mGD">
+                                <rect key="frame" x="16" y="61" width="288" height="188"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="obT-L3-usD" id="C2n-fD-CFS"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="nxa-CG-OHv">
+                        <barButtonItem key="rightBarButtonItem" title="Post" id="k9O-BW-jRU">
+                            <connections>
+                                <action selector="sendEmailBtnPressed:" destination="obT-L3-usD" id="JMD-0o-0xm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="emailDescription" destination="sNT-07-mGD" id="cQp-Xu-cfI"/>
+                        <outlet property="sendEmailBtn" destination="k9O-BW-jRU" id="4Sr-kR-AgY"/>
+                        <outlet property="subject" destination="MiD-cJ-vSJ" id="jkg-kK-hre"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qHs-IP-AxM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2812" y="-164"/>
         </scene>
         <!--Search Pro Rcv View Controller-->
         <scene sceneID="ukZ-Uu-luV">
@@ -4017,9 +4244,9 @@ We are guided by seven fundamental principles: humanity, impartiality, neutralit
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="IkM-W3-bya"/>
-        <segue reference="5uK-3d-5Yb"/>
         <segue reference="6P6-Sg-2Ue"/>
-        <segue reference="vij-m8-HAJ"/>
+        <segue reference="5uK-3d-5Yb"/>
+        <segue reference="IkM-W3-bya"/>
+        <segue reference="JHH-c6-caD"/>
     </inferredMetricsTieBreakers>
 </document>

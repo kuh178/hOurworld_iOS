@@ -36,7 +36,6 @@
 		FA224789176A653600CE7C89 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FA224788176A653600CE7C89 /* libz.dylib */; };
 		FA22478B176A7B1E00CE7C89 /* hourworld_icon_57_57.png in Resources */ = {isa = PBXBuildFile; fileRef = FA22478A176A7B1E00CE7C89 /* hourworld_icon_57_57.png */; };
 		FA22478F176A7B7400CE7C89 /* hourworld_icon_114_114.png in Resources */ = {isa = PBXBuildFile; fileRef = FA22478E176A7B7400CE7C89 /* hourworld_icon_114_114.png */; };
-		FA224795176A813600CE7C89 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA224794176A813600CE7C89 /* ImageViewController.m */; };
 		FA224798176A823F00CE7C89 /* MTBItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FA224797176A823E00CE7C89 /* MTBItem.m */; };
 		FA26829817878B7D005DAA55 /* MTBRegistrationFinalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA26829717878B7D005DAA55 /* MTBRegistrationFinalViewController.m */; };
 		FA26829C1787B656005DAA55 /* MTBInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA26829B1787B656005DAA55 /* MTBInfoViewController.m */; };
@@ -240,6 +239,7 @@
 		FA8B28B8176ABBE400216C5C /* who_checkin_default.png in Resources */ = {isa = PBXBuildFile; fileRef = FA8B28B7176ABBE400216C5C /* who_checkin_default.png */; };
 		FA8EB6CD19D79B3600888C49 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA8EB6CC19D79B3600888C49 /* libGoogleAnalyticsServices.a */; };
 		FA8EB6CF19D79C5B00888C49 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FA8EB6CE19D79C5B00888C49 /* libsqlite3.dylib */; };
+		FA91DE5C1A8309910067CDB2 /* MTBProfileStatementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA91DE5B1A8309910067CDB2 /* MTBProfileStatementViewController.m */; };
 		FA9E101A19DA31E000A494A0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9E101919DA31E000A494A0 /* libPods.a */; };
 		FAA32DA019CA129100A15A90 /* MTBTaskCategoryServiceTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA32D9F19CA129100A15A90 /* MTBTaskCategoryServiceTaskViewController.m */; };
 		FAC153C51908969A004B7923 /* check_mark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAC153BE1908969A004B7923 /* check_mark@2x.png */; };
@@ -273,6 +273,7 @@
 		FACF4AEA19E81F30002BBE0A /* hours_large.png in Resources */ = {isa = PBXBuildFile; fileRef = FACF4AE919E81F30002BBE0A /* hours_large.png */; };
 		FACF4AEF19E8D978002BBE0A /* StoryBoard_3.5inch_iOS7.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FACF4AEE19E8D978002BBE0A /* StoryBoard_3.5inch_iOS7.storyboard */; };
 		FADDF5A919F488D30095CBEE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FADDF5A819F488D30095CBEE /* Crashlytics.framework */; };
+		FAE869A11A89588C0036189D /* MTBProfilePrivateEmailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE869A01A89588C0036189D /* MTBProfilePrivateEmailViewController.m */; };
 		FAE8D81C178B87A200A8AA1F /* question_mark.png in Resources */ = {isa = PBXBuildFile; fileRef = FAE8D81B178B87A200A8AA1F /* question_mark.png */; };
 		FAF8D699178602EF002FEC0E /* MTBAddPushpinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF8D698178602EF002FEC0E /* MTBAddPushpinViewController.m */; };
 		FAF8D6A517871B05002FEC0E /* MTBAddGroupMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF8D6A417871B05002FEC0E /* MTBAddGroupMessageViewController.m */; };
@@ -316,8 +317,6 @@
 		FA224788176A653600CE7C89 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		FA22478A176A7B1E00CE7C89 /* hourworld_icon_57_57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hourworld_icon_57_57.png; sourceTree = "<group>"; };
 		FA22478E176A7B7400CE7C89 /* hourworld_icon_114_114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hourworld_icon_114_114.png; sourceTree = "<group>"; };
-		FA224793176A813600CE7C89 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
-		FA224794176A813600CE7C89 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		FA224796176A823E00CE7C89 /* MTBItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTBItem.h; sourceTree = "<group>"; };
 		FA224797176A823E00CE7C89 /* MTBItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTBItem.m; sourceTree = "<group>"; };
 		FA26829617878B7D005DAA55 /* MTBRegistrationFinalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTBRegistrationFinalViewController.h; sourceTree = "<group>"; };
@@ -579,6 +578,8 @@
 		FA8EB6C919D79AF000888C49 /* GAITracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
 		FA8EB6CC19D79B3600888C49 /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
 		FA8EB6CE19D79C5B00888C49 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		FA91DE5A1A8309910067CDB2 /* MTBProfileStatementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTBProfileStatementViewController.h; sourceTree = "<group>"; };
+		FA91DE5B1A8309910067CDB2 /* MTBProfileStatementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTBProfileStatementViewController.m; sourceTree = "<group>"; };
 		FA9E101919DA31E000A494A0 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
 		FAA32D9E19CA129100A15A90 /* MTBTaskCategoryServiceTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTBTaskCategoryServiceTaskViewController.h; sourceTree = "<group>"; };
 		FAA32D9F19CA129100A15A90 /* MTBTaskCategoryServiceTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTBTaskCategoryServiceTaskViewController.m; sourceTree = "<group>"; };
@@ -620,6 +621,8 @@
 		FACF4AE919E81F30002BBE0A /* hours_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hours_large.png; sourceTree = "<group>"; };
 		FACF4AEE19E8D978002BBE0A /* StoryBoard_3.5inch_iOS7.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StoryBoard_3.5inch_iOS7.storyboard; sourceTree = "<group>"; };
 		FADDF5A819F488D30095CBEE /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		FAE8699F1A89588C0036189D /* MTBProfilePrivateEmailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTBProfilePrivateEmailViewController.h; sourceTree = "<group>"; };
+		FAE869A01A89588C0036189D /* MTBProfilePrivateEmailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTBProfilePrivateEmailViewController.m; sourceTree = "<group>"; };
 		FAE8D81B178B87A200A8AA1F /* question_mark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = question_mark.png; sourceTree = "<group>"; };
 		FAF8D697178602EE002FEC0E /* MTBAddPushpinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTBAddPushpinViewController.h; sourceTree = "<group>"; };
 		FAF8D698178602EF002FEC0E /* MTBAddPushpinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTBAddPushpinViewController.m; sourceTree = "<group>"; };
@@ -698,15 +701,6 @@
 				FA8EB6C919D79AF000888C49 /* GAITracker.h */,
 			);
 			name = GoogleAnalytics;
-			sourceTree = "<group>";
-		};
-		FA224792176A812600CE7C89 /* ImageView */ = {
-			isa = PBXGroup;
-			children = (
-				FA224793176A813600CE7C89 /* ImageViewController.h */,
-				FA224794176A813600CE7C89 /* ImageViewController.m */,
-			);
-			name = ImageView;
 			sourceTree = "<group>";
 		};
 		FA224799176A955D00CE7C89 /* TableCellViews */ = {
@@ -921,7 +915,6 @@
 				FA85C46B176BCBF3002DB170 /* Profile */,
 				FA8B28AB176A982A00216C5C /* MessageTaskViews */,
 				FA224799176A955D00CE7C89 /* TableCellViews */,
-				FA224792176A812600CE7C89 /* ImageView */,
 				FA49CA84175F862B009C74AD /* MainOptions */,
 				FA49CA60175F85ED009C74AD /* MapView */,
 				FA49CA2C175F85A7009C74AD /* JSONTools */,
@@ -1151,6 +1144,10 @@
 				FA4397A219CB7EB800EAB8D0 /* MTBProfileEditBioViewController.m */,
 				FA4397A419CB85E000EAB8D0 /* MTBProfileEditContactViewController.h */,
 				FA4397A519CB85E000EAB8D0 /* MTBProfileEditContactViewController.m */,
+				FA91DE5A1A8309910067CDB2 /* MTBProfileStatementViewController.h */,
+				FA91DE5B1A8309910067CDB2 /* MTBProfileStatementViewController.m */,
+				FAE8699F1A89588C0036189D /* MTBProfilePrivateEmailViewController.h */,
+				FAE869A01A89588C0036189D /* MTBProfilePrivateEmailViewController.m */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -1573,6 +1570,7 @@
 				FA85C46A176BCBE3002DB170 /* MTBReportHoursViewController.m in Sources */,
 				FA85C46E176BCC0A002DB170 /* MTBProfileViewController.m in Sources */,
 				FAC153C91908969B004B7923 /* DropDownViewCell.m in Sources */,
+				FAE869A11A89588C0036189D /* MTBProfilePrivateEmailViewController.m in Sources */,
 				FA85C475176CEA14002DB170 /* MTBAddMessageViewController.m in Sources */,
 				FA85C47A176D0177002DB170 /* MTBCategoryViewController.m in Sources */,
 				FA85C47D176D0183002DB170 /* MTBSubCategoryViewController.m in Sources */,
@@ -1592,6 +1590,7 @@
 				FA581ACE1784AF8E00175CC4 /* MTBSearchBioViewController.m in Sources */,
 				FAA32DA019CA129100A15A90 /* MTBTaskCategoryServiceTaskViewController.m in Sources */,
 				FAF8D699178602EF002FEC0E /* MTBAddPushpinViewController.m in Sources */,
+				FA91DE5C1A8309910067CDB2 /* MTBProfileStatementViewController.m in Sources */,
 				FACF4AE219E7648B002BBE0A /* MTBChooseMemberViewController.m in Sources */,
 				FA6B60DF19CA0D7B00CC9E79 /* MTBTaskCategoryServiceViewController.m in Sources */,
 				FAF8D6A517871B05002FEC0E /* MTBAddGroupMessageViewController.m in Sources */,
@@ -1616,7 +1615,6 @@
 				FA49CA3E175F85C2009C74AD /* SBJsonParser.m in Sources */,
 				FA49CA3F175F85C2009C74AD /* SBJsonWriter.m in Sources */,
 				FA49CA66175F85F4009C74AD /* LocationAnnotation.m in Sources */,
-				FA224795176A813600CE7C89 /* ImageViewController.m in Sources */,
 				FA224798176A823F00CE7C89 /* MTBItem.m in Sources */,
 				FACCF8BD17726E8C00CD98BD /* TSAlertView.m in Sources */,
 			);

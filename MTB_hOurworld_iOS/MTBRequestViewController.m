@@ -9,7 +9,6 @@
 #import "MTBRequestViewController.h"
 
 #import "SecondViewController.h"
-#import "ImageViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 #import "JSON.h"

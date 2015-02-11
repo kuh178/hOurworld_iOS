@@ -38,6 +38,8 @@
     IBOutlet UIButton *contactEmailBtn;
     IBOutlet UIButton *contactWebBtn;
     
+    IBOutlet UIButton *statementBtn;
+    
     IBOutlet UILabel *shareMyLocLabel;
     IBOutlet UISwitch *shareMyLocSwitch;
     
@@ -108,6 +110,8 @@
 @property (nonatomic, retain) IBOutlet UIButton *contactMobileBtn;
 @property (nonatomic, retain) IBOutlet UIButton *contactEmailBtn;
 @property (nonatomic, retain) IBOutlet UIButton *contactWebBtn;
+
+@property (nonatomic, retain) IBOutlet UIButton *statementBtn;
 
 @property (nonatomic, retain) IBOutlet UILabel *offersLabel;
 @property (nonatomic, retain) IBOutlet UILabel *offersTitleLabel;

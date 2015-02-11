@@ -7,7 +7,6 @@
 //
 
 #import "MTBReportHourTaskCategoryServiceViewController.h"
-#import "ImageViewController.h"
 #import "AFHTTPRequestOperationManager.h"
 #import "JSON.h"
 #import "QuartzCore/QuartzCore.h"

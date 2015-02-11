@@ -7,7 +7,6 @@
 //
 
 #import "MTBSearchProRcvViewController.h"
-#import "ImageViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "MTBTaskDetailViewController.h"
 #import "AFHTTPRequestOperationManager.h"

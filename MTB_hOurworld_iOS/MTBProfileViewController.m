@@ -8,7 +8,6 @@
 
 #import "MTBProfileViewController.h"
 
-#import "ImageViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 #import "AFHTTPRequestOperationManager.h"
@@ -20,6 +19,8 @@
 #import "MTBOffersRequestsViewController.h"
 #import "MTBProfileEditBioViewController.h"
 #import "MTBProfileEditContactViewController.h"
+#import "MTBProfileStatementViewController.h"
+#import "MTBProfilePrivateEmailViewController.h"
 
 #import "CustomIOS7AlertView.h"
 
@@ -40,9 +41,16 @@
 @synthesize contactEmailBtn;
 @synthesize contactWebBtn;
 
+@synthesize statementBtn;
+
 NSMutableArray *offerAry, *requestAry, *badgeArray;
 NSString *creditProvided, *creditReceived;
 NSUserDefaults *userDefault;
+
+bool emailExist = false;
+bool homeExist = false;
+bool mobileExist = false;
+bool webExist = false;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -59,6 +67,8 @@ NSUserDefaults *userDefault;
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     
     activityIndicator.startAnimating;
+    
+    emailExist = homeExist = mobileExist = webExist = false;
     
     height = 0;
     
@@ -86,6 +96,7 @@ NSUserDefaults *userDefault;
         [shareMyLocSwitch setHidden:NO];
         [editContact setHidden:NO];
         [editBio setHidden:NO];
+        [statementBtn setHidden:NO];
     }
     else {
         [reportHourBtn setHidden:YES];
@@ -94,6 +105,7 @@ NSUserDefaults *userDefault;
         [shareMyLocSwitch setHidden:YES];
         [editContact setHidden:YES];
         [editBio setHidden:YES];
+        [statementBtn setHidden:YES];
     }
     
     if ([userDefault boolForKey:@"location"] == TRUE) {
@@ -147,7 +159,7 @@ NSUserDefaults *userDefault;
 }
 
 - (void)showProfile:(id) request {
-
+    
     if ([[request objectForKey:@"success"]boolValue] == TRUE) {
         NSMutableArray *jAry = [NSMutableArray arrayWithCapacity:0];
         [jAry addObjectsFromArray:[request objectForKey:@"results"]];
@@ -179,18 +191,33 @@ NSUserDefaults *userDefault;
         revCount = [[item objectForKey:@"RcvCount"] intValue];
         satPct = [[item objectForKey:@"SatPct"] intValue];
         
+        [contactHomeBtn setEnabled:NO];
+        [contactHomeBtn setAlpha:0.2];
+        [contactMobileBtn setEnabled:NO];
+        [contactMobileBtn setAlpha:0.2];
+        [contactEmailBtn setEnabled:NO];
+        [contactEmailBtn setAlpha:0.2];
+        [contactWebBtn setEnabled:NO];
+        [contactWebBtn setAlpha:0.2];
+        
+        [contactEmailBtn setHidden:NO];
+        [contactHomeBtn setHidden:NO];
+        [contactMobileBtn setHidden:NO];
+        [contactWebBtn setHidden:NO];
+        
+        email1 = home1 = mobile = website = @"";
+        
+        // email should be always on
+        [contactEmailBtn setEnabled:YES];
+        [contactEmailBtn setAlpha:1.0];
+        
+        emailExist = homeExist = mobileExist = webExist = false;
+        
         if (![[item objectForKey:@"ContactArray"] isEqual:[NSNull null]]) {
             NSMutableArray *contactAry = [NSMutableArray arrayWithCapacity:0];
             [contactAry addObjectsFromArray:[item objectForKey:@"ContactArray"]];
             
             contact = @"";
-            
-            email1 = home1 = mobile = website = @"";
-            
-            bool emailExist = false;
-            bool homeExist = false;
-            bool mobileExist = false;
-            bool webExist = false;
             
             for (int i = 0 ; i < [contactAry count] ; i++) {
                 NSDictionary *contactItem = [contactAry objectAtIndex:i];
@@ -218,20 +245,6 @@ NSUserDefaults *userDefault;
                 }
                 
                 contact = [contact stringByAppendingString:[NSString stringWithFormat:@"%@\n", [contactItem objectForKey:@"contactInfo"]]];
-            }
-            
-            [contactEmailBtn setHidden:NO];
-            [contactHomeBtn setHidden:NO];
-            [contactMobileBtn setHidden:NO];
-            [contactWebBtn setHidden:NO];
-            
-            if (emailExist) {
-                [contactEmailBtn setEnabled:YES];
-                [contactEmailBtn setAlpha:1.0];
-            }
-            else {
-                [contactEmailBtn setEnabled:NO];
-                [contactEmailBtn setAlpha:0.2];
             }
             
             if (homeExist) {
@@ -823,6 +836,7 @@ NSUserDefaults *userDefault;
     
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
     if ([[userDefault objectForKey:@"reload"] integerValue] == 1) {
+        
         [self loadProfileInfo]; // need to reload the page
         [userDefault setInteger:0 forKey:@"reload"];
     }
@@ -940,11 +954,10 @@ NSUserDefaults *userDefault;
         MTBProfileEditContactViewController *viewController = (MTBProfileEditContactViewController *)[segue destinationViewController];
         
         NSLog(@"%@ %@ %@ %@", home1, mobile, website, email1);
+    }
+    else if ([[segue identifier] isEqualToString: @"MTBProfileStatementViewController"]) {
         
-        [viewController setHome1:home1];
-        [viewController setMobile:mobile];
-        [viewController setWebsite:website];
-        [viewController setEmail1:email1];
+        MTBProfileStatementViewController *viewController = (MTBProfileStatementViewController *)[segue destinationViewController];
     }
 }
 
@@ -985,7 +998,14 @@ NSUserDefaults *userDefault;
     
     NSLog(@"%@", email1);
     
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"mailto:%@", email1]]];
+    if (![email1 isEqual:@""]) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"mailto:%@", email1]]];
+    }
+    else {
+        MTBProfilePrivateEmailViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MTBProfilePrivateEmailViewController"];
+        [viewController setProfileUserID:memID];
+        [self.navigationController pushViewController:viewController animated:YES];
+    }
 }
 
 -(IBAction)contactWebBtnPressed:(id)sender {

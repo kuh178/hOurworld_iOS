@@ -13,7 +13,6 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "AFHTTPRequestOperationManager.h"
 #import "JSON.h"
-#import "ImageViewController.h"
 
 @interface MTBGroupDetailViewController ()
 
