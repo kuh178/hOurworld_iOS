@@ -10,6 +10,7 @@
 #import "AFHTTPRequestOperationManager.h"
 #import "JSON.h"
 #import "MTBFinalTaskPostViewController.h"
+#import "MTBTaskCategoryServiceTaskViewController.h"
 
 @interface MTBSubCategoryViewController ()
 
@@ -52,7 +53,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    self.screenName = @"SubCategoryViewController"; 
+    self.screenName = @"SubCategoryViewController";
 }
 
 - (void)didReceiveMemoryWarning
@@ -93,6 +94,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // Navigation logic may go here. Create and push another view controller.
+    /*
     NSDictionary *item = [jsonArray objectAtIndex:indexPath.row];
 
 	MTBFinalTaskPostViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MTBFinalTaskPostViewController"];
@@ -103,18 +105,33 @@
     [viewController setIsOffer:isOffer];
     [viewController setIsRequest:isRequest];
     [self.navigationController pushViewController:viewController animated:YES];
+    */
+    
+    NSDictionary *item = [jsonArray objectAtIndex:indexPath.row];
+    
+    MTBTaskCategoryServiceTaskViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MTBTaskCategoryServiceTaskViewController"];
+    
+    [viewController setSvcCat:svcCat];
+    [viewController setSvcCatID:svcCatID];
+    [viewController setService:[item objectForKey:@"Service"]];
+    [viewController setSvcID:[[item objectForKey:@"SvcID"] intValue]];
+    [viewController setIsOffer:isOffer];
+    [viewController setIsRequest:isRequest];
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    self.navigationItem.title = [NSString stringWithFormat:@"2nd step (2/3)"];
+    //self.navigationItem.title = [NSString stringWithFormat:@"2nd step (2/3)"];
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     
     if([isOffer isEqualToString:@"T"]) {
+        self.navigationItem.title = @"Offer service";
         stepLabel.text = @"Pick a service category for your offer";
     }
     else {
+        self.navigationItem.title = @"Request service";
         stepLabel.text = @"Pick a service category for your request";
     }
     
@@ -135,18 +152,28 @@
                              @"accessToken"     :[userDefault objectForKey:@"access_token"],
                              @"EID"             :[userDefault objectForKey:@"EID"],
                              @"memID"           :[userDefault objectForKey:@"memID"],
-                             @"SvcCatID"        :[NSString stringWithFormat:@"%d", svcCatID]};
+                             @"SvcCatID"        :[NSString stringWithFormat:@"%ld", (long)svcCatID]};
     
     [manager POST:@"http://www.hourworld.org/db_mob/auth.php" parameters:params
         constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
         } success:^(AFHTTPRequestOperation *operation, id responseObject) {
     
+            NSLog(@"%@", responseObject);
+            
               jsonArray = [NSMutableArray arrayWithCapacity:0];
               scheduleList = [NSMutableArray arrayWithCapacity:0];
               
               if ([[responseObject objectForKey:@"results"] isEqual:(id)[NSNull null]]) {
                   UIAlertView *dialog = [[UIAlertView alloc]init];
                   [dialog setDelegate:self];
+                  [dialog setTitle:@"Message"];
+                  [dialog setMessage:@"No results found."];
+                  [dialog addButtonWithTitle:@"OK"];
+                  [dialog show];
+              }
+              else if([[responseObject objectForKey:@"results"] count] == 0) {
+                  UIAlertView *dialog = [[UIAlertView alloc]init];
+                  [dialog setDelegate:nil];
                   [dialog setTitle:@"Message"];
                   [dialog setMessage:@"No results found."];
                   [dialog addButtonWithTitle:@"OK"];

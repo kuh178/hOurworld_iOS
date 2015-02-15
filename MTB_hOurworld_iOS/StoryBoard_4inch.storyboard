@@ -132,7 +132,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="A9H-Mu-kAS" kind="push" identifier="MTBTaskCategoryViewController_Offer" id="9dC-zc-EMu"/>
+                                    <segue destination="wGq-0h-KvN" kind="push" identifier="MTBTaskCategoryViewController_Offer" id="8CV-2F-ywu"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Offers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xlG-xI-Srl">
@@ -149,7 +149,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="A9H-Mu-kAS" kind="push" identifier="MTBTaskCategoryViewController_Request" id="IkM-W3-bya"/>
+                                    <segue destination="wGq-0h-KvN" kind="push" identifier="MTBTaskCategoryViewController_Request" id="chs-Mk-ZNK"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Requests" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Jz9-FZ-gEs">
@@ -455,7 +455,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ErX-FF-tF4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1169" y="-1680"/>
+            <point key="canvasLocation" x="1131" y="-1680"/>
         </scene>
         <!--Details-->
         <scene sceneID="Fxr-qY-jqx">
@@ -867,7 +867,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="12" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="185" y="-454"/>
+            <point key="canvasLocation" x="401" y="-568"/>
         </scene>
         <!--Category View Controller-->
         <scene sceneID="Jfw-8v-k92">
@@ -885,7 +885,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="IaX-Qm-e6E">
-                                <rect key="frame" x="0.0" y="51" width="320" height="453"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="Cell" id="NGn-FE-6rT">
@@ -923,7 +923,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lgE-gY-CP2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="704" y="-845"/>
+            <point key="canvasLocation" x="739" y="-845"/>
         </scene>
         <!--Request View Controller-->
         <scene sceneID="H2o-OC-91Z">
@@ -3386,7 +3386,7 @@ We are guided by seven fundamental principles: humanity, impartiality, neutralit
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="T2F-mU-qfw">
-                                <rect key="frame" x="0.0" y="55" width="320" height="449"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="Cell" id="pbt-Yw-RKi">
@@ -3821,7 +3821,7 @@ We are guided by seven fundamental principles: humanity, impartiality, neutralit
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JN7-JJ-yPG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2057" y="-2075"/>
+            <point key="canvasLocation" x="1639" y="-1680"/>
         </scene>
         <!--Task Category View Controller-->
         <scene sceneID="HKx-c1-wAx">
@@ -4244,9 +4244,10 @@ We are guided by seven fundamental principles: humanity, impartiality, neutralit
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="Rr0-5X-j3L"/>
+        <segue reference="WtQ-AD-k0n"/>
         <segue reference="6P6-Sg-2Ue"/>
-        <segue reference="5uK-3d-5Yb"/>
-        <segue reference="IkM-W3-bya"/>
         <segue reference="JHH-c6-caD"/>
+        <segue reference="8CV-2F-ywu"/>
     </inferredMetricsTieBreakers>
 </document>

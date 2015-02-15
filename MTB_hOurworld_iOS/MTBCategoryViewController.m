@@ -58,7 +58,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [jsonArray count];
+    return [scheduleList count];
 }
 
 
@@ -77,7 +77,7 @@
     UILabel *categoryText = (UILabel *)[cell viewWithTag:100];
     
     // display category texts
-    NSDictionary *item = [jsonArray objectAtIndex:indexPath.row];
+    NSDictionary *item = [scheduleList objectAtIndex:indexPath.row];
     [categoryText setText:[item objectForKey:@"SvcCat"]];
     
     return cell;
@@ -85,7 +85,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // Navigation logic may go here. Create and push another view controller.
-    NSDictionary *item = [jsonArray objectAtIndex:indexPath.row];
+    NSDictionary *item = [scheduleList objectAtIndex:indexPath.row];
     
 	MTBSubCategoryViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MTBSubCategoryViewController"];
 	[viewController setSvcCat:[item objectForKey:@"SvcCat"]];
@@ -101,13 +101,16 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    self.navigationItem.title = @"1st step (1/3)";
+    //self.navigationItem.title = @"1st step (1/3)";
+    
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     
     if([isOffer isEqualToString:@"T"]) {
+        self.navigationItem.title = @"Offer category";
         stepLabel.text = @"Pick a category for your offer";
     }
     else {
+        self.navigationItem.title = @"Request category";
         stepLabel.text = @"Pick a category for your request";
     }
     
@@ -137,12 +140,23 @@
         constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
         } success:^(AFHTTPRequestOperation *operation, id responseObject) {
     
-              jsonArray = [NSMutableArray arrayWithCapacity:0];
-              scheduleList = [NSMutableArray arrayWithCapacity:0];
+            NSLog(@"%@", responseObject);
+            
+            jsonArray = [NSMutableArray arrayWithCapacity:0];
+            scheduleList = [NSMutableArray arrayWithCapacity:0];
               
-              [jsonArray addObjectsFromArray:[responseObject objectForKey:@"results"]];
+            [jsonArray addObjectsFromArray:[responseObject objectForKey:@"results"]];
+            
+            for (int i = 0; i < [jsonArray count]; i++) {
+                NSMutableDictionary *item = [jsonArray objectAtIndex:i];
+                
+                if (![[item objectForKey:@"SvcCat"] isEqualToString:@"0 Account Management"]) {
+                    [scheduleList addObject:item];
+                }
+            }
+            
               
-              [tableViewList reloadData];
+            [tableViewList reloadData];
               
           } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
               NSLog(@"Error: %@", operation);

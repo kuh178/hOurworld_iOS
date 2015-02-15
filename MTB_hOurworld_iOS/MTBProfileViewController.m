@@ -685,20 +685,20 @@ bool webExist = false;
         }
         
         //Calculate the expected size based on the font and linebreak mode of your label
-        bioLabel.frame = [self calculateSize:bio Label:bioLabel];
-        addressLabel.frame = [self calculateSize:city Label:addressLabel];
-        summaryLabel.frame = [self calculateSize:activity Label:summaryLabel];
-        offersLabel.frame = [self calculateSize:offerList Label:offersLabel];
-        requestsLabel.frame = [self calculateSize:requestList Label:requestsLabel];
+        bioLabel.frame      = [self calculateSize:bio Label:bioLabel extraHeight:30.0];
+        addressLabel.frame  = [self calculateSize:city Label:addressLabel extraHeight:0.0];
+        summaryLabel.frame  = [self calculateSize:activity Label:summaryLabel extraHeight:0.0];
+        offersLabel.frame   = [self calculateSize:offerList Label:offersLabel extraHeight:0.0];
+        requestsLabel.frame = [self calculateSize:requestList Label:requestsLabel extraHeight:0.0];
         
         bio = [self stringHTMLHandler:bio];
         
-        bioLabel.text = bio;
-        addressLabel.text = [NSString stringWithFormat:@"Lives in %@", city];
-        summaryLabel.text = activity;
-        contactInfo.text = contact;
-        offersLabel.text = offerList;
-        requestsLabel.text = requestList;
+        bioLabel.text       = bio;
+        addressLabel.text   = [NSString stringWithFormat:@"Lives in %@", city];
+        summaryLabel.text   = activity;
+        contactInfo.text    = contact;
+        offersLabel.text    = offerList;
+        requestsLabel.text  = requestList;
         
         NSLog(@"contact : %@", contact);
         
@@ -813,7 +813,7 @@ bool webExist = false;
     return string;
 }
 
-- (CGRect) calculateSize:(NSString *)pInput Label:(UILabel *)pLabel {
+- (CGRect) calculateSize:(NSString *)pInput Label:(UILabel *)pLabel extraHeight:(double)pExtraHeight {
 
     // FLT_MAX here simply means no constraint in height
     CGSize maximumLabelSize = CGSizeMake(296, FLT_MAX);
@@ -821,7 +821,7 @@ bool webExist = false;
     
     //adjust the label the the new height.
     CGRect newFrame = pLabel.frame;
-    newFrame.size.height = expectedLabelSize.height;
+    newFrame.size.height = expectedLabelSize.height + pExtraHeight;
     
     return newFrame;
 }

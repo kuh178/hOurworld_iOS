@@ -217,6 +217,8 @@
     [manager POST:@"http://www.hourworld.org/db_mob/auth.php" parameters:params
         constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
         } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            
+            NSLog(@"%@", responseObject);
     
               if ([[responseObject objectForKey:@"success"] boolValue] == TRUE) {
                   jsonArray           = [NSMutableArray arrayWithCapacity:0];
@@ -233,39 +235,57 @@
                       for (i = 0 ; i < arrayCount; i++) {
                           // get an item
                           NSDictionary *item = [jsonArray objectAtIndex:i];
-                          
                           NSDictionary *locObj = [item objectForKey:@"mobLatLon"];
                           
-                          // xDays is not used in Offers and Requests yet, but probably will be...
-                          // check if xDays has null; if so, assign a default (14 days)
-                          int xDays = 14;
-                          
-                          if ([[locObj objectForKey:@"xDays"] isEqual:[NSNull null]]) {
-                              xDays = 14;
-                          }
-                          else {
-                              xDays = [[locObj objectForKey:@"xDays"] intValue];
-                          }
-                          
-                          MTBItem *tItem;
-                          
-                          NSString *memName = [NSString stringWithFormat:@"%@ %@", [item objectForKey:@"Fname"], [item objectForKey:@"Lname"]];
-                          
-                          if([locObj objectForKey:@"oLat"] != (id)[NSNull null] && [[locObj objectForKey:@"oLat"] intValue] != 0) {
+                          // if SvcCatID and SvcID is 1000, return nothing
+                          if ([[item objectForKey:@"SvcCatID"] integerValue] == 1000 ||
+                              [[item objectForKey:@"SvcID"] integerValue] == 1000) {
                               
-                              tItem = [[MTBItem alloc] initToTask:[[item objectForKey:@"listMbrID"] intValue] Edescr:[item objectForKey:@"Descr"] ESvcCat:[item objectForKey:@"SvcCat"] EMemName: memName ESvcCatID:[[item objectForKey:@"SvcCatID"] intValue] ESvcID:[[item objectForKey:@"SvcID"] intValue] EService:[item objectForKey:@"Service"] ETimestamp:[item objectForKey:@"timestamp"] EProlfileImage:[item objectForKey:@"Profile"] EOLat:[[locObj objectForKey:@"oLat"] doubleValue] EOLon:[[locObj objectForKey:@"oLon"] doubleValue] EDLat:[[locObj objectForKey:@"dLat"] doubleValue] EDLon:[[locObj objectForKey:@"dLon"] doubleValue] EXDays:xDays EEmail1:[item objectForKey:@"Email1"]];
+                              UIAlertView *dialog = [[UIAlertView alloc]init];
+                              [dialog setDelegate:nil];
+                              [dialog setTitle:@"Message"];
+                              [dialog setMessage:@"No search result. Post a task in this category!"];
+                              [dialog addButtonWithTitle:@"OK"];
+                              [dialog show];
                           }
                           else {
-                              tItem = [[MTBItem alloc] initToTask:[[item objectForKey:@"listMbrID"] intValue] Edescr:[item objectForKey:@"Descr"] ESvcCat:[item objectForKey:@"SvcCat"] EMemName:memName ESvcCatID:[[item objectForKey:@"SvcCatID"] intValue] ESvcID:[[item objectForKey:@"SvcID"] intValue] EService:[item objectForKey:@"Service"] ETimestamp:[item objectForKey:@"timestamp"] EProlfileImage:[item objectForKey:@"Profile"] EOLat:0.0 EOLon:0.0 EDLat:0.0 EDLon:0.0 EXDays:xDays EEmail1:[item objectForKey:@"Email1"]];
+                              // xDays is not used in Offers and Requests yet, but probably will be...
+                              // check if xDays has null; if so, assign a default (14 days)
+                              int xDays = 14;
+                              
+                              if ([[locObj objectForKey:@"xDays"] isEqual:[NSNull null]]) {
+                                  xDays = 14;
+                              }
+                              else {
+                                  xDays = [[locObj objectForKey:@"xDays"] intValue];
+                              }
+                              
+                              MTBItem *tItem;
+                              
+                              NSString *memName = [NSString stringWithFormat:@"%@ %@", [item objectForKey:@"Fname"], [item objectForKey:@"Lname"]];
+                              
+                              if([locObj objectForKey:@"oLat"] != (id)[NSNull null] && [[locObj objectForKey:@"oLat"] intValue] != 0) {
+                                  
+                                  tItem = [[MTBItem alloc] initToTask:[[item objectForKey:@"listMbrID"] intValue] Edescr:[item objectForKey:@"Descr"] ESvcCat:[item objectForKey:@"SvcCat"] EMemName: memName ESvcCatID:[[item objectForKey:@"SvcCatID"] intValue] ESvcID:[[item objectForKey:@"SvcID"] intValue] EService:[item objectForKey:@"Service"] ETimestamp:[item objectForKey:@"timestamp"] EProlfileImage:[item objectForKey:@"Profile"] EOLat:[[locObj objectForKey:@"oLat"] doubleValue] EOLon:[[locObj objectForKey:@"oLon"] doubleValue] EDLat:[[locObj objectForKey:@"dLat"] doubleValue] EDLon:[[locObj objectForKey:@"dLon"] doubleValue] EXDays:xDays EEmail1:[item objectForKey:@"Email1"]];
+                              }
+                              else {
+                                  tItem = [[MTBItem alloc] initToTask:[[item objectForKey:@"listMbrID"] intValue] Edescr:[item objectForKey:@"Descr"] ESvcCat:[item objectForKey:@"SvcCat"] EMemName:memName ESvcCatID:[[item objectForKey:@"SvcCatID"] intValue] ESvcID:[[item objectForKey:@"SvcID"] intValue] EService:[item objectForKey:@"Service"] ETimestamp:[item objectForKey:@"timestamp"] EProlfileImage:[item objectForKey:@"Profile"] EOLat:0.0 EOLon:0.0 EDLat:0.0 EDLon:0.0 EXDays:xDays EEmail1:[item objectForKey:@"Email1"]];
+                              }
+                              
+                              [scheduleList addObject:tItem];
+                              [scheduleListCopy addObject:tItem];
+                              [categoryList addObject:[item objectForKey:@"SvcCat"]];
+
                           }
-                          
-                          [scheduleList addObject:tItem];
-                          [scheduleListCopy addObject:tItem];
-                          [categoryList addObject:[item objectForKey:@"SvcCat"]];
                       }
                   }
                   else {
-                      NSLog(@"No data available");
+                      UIAlertView *dialog = [[UIAlertView alloc]init];
+                      [dialog setDelegate:nil];
+                      [dialog setTitle:@"Message"];
+                      [dialog setMessage:@"No search result. Post a task in this category!"];
+                      [dialog addButtonWithTitle:@"OK"];
+                      [dialog show];
                   }
                   
                   // remove duplicates in the categoryList
@@ -296,7 +316,7 @@
                   UIAlertView *dialog = [[UIAlertView alloc]init];
                   [dialog setDelegate:self];
                   [dialog setTitle:@"Message"];
-                  [dialog setMessage:@"No search result"];
+                  [dialog setMessage:@"No search result. Post a task in this category!"];
                   [dialog addButtonWithTitle:@"OK"];
                   [dialog show];
               }

@@ -11,6 +11,7 @@
 #import "AFHTTPRequestOperationManager.h"
 #import "MTBTaskCategoryViewController.h"
 #import "MTBReportHourFromMainViewController.h"
+#import "MTBCategoryViewController.h"
 #import "JSON.h"
 // https://github.com/workshirt/WSCoachMarksView
 #import "WSCoachMarksView.h"
@@ -369,13 +370,15 @@ NSUserDefaults *userDefault;
 {
     if ([[segue identifier] isEqualToString: @"MTBTaskCategoryViewController_Offer"]) {
         
-        MTBTaskCategoryViewController *viewController = (MTBTaskCategoryViewController *)[segue destinationViewController];
+        //MTBTaskCategoryViewController *viewController = (MTBTaskCategoryViewController *)[segue destinationViewController];
+        MTBCategoryViewController *viewController = (MTBCategoryViewController *)[segue destinationViewController];
+        
         [viewController setIsOffer:@"T"];
         [viewController setIsRequest:@"F"];
     }
     else if ([[segue identifier] isEqualToString: @"MTBTaskCategoryViewController_Request"]) {
         
-        MTBTaskCategoryViewController *viewController = (MTBTaskCategoryViewController *)[segue destinationViewController];
+        MTBCategoryViewController *viewController = (MTBCategoryViewController *)[segue destinationViewController];
         [viewController setIsOffer:@"F"];
         [viewController setIsRequest:@"T"];
     }
