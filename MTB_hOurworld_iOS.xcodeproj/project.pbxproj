@@ -237,6 +237,7 @@
 		FA8B28B3176A9A0400216C5C /* MTBItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FA224797176A823E00CE7C89 /* MTBItem.m */; };
 		FA8B28B6176AA17300216C5C /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8B28B5176AA17300216C5C /* MessageCell.m */; };
 		FA8B28B8176ABBE400216C5C /* who_checkin_default.png in Resources */ = {isa = PBXBuildFile; fileRef = FA8B28B7176ABBE400216C5C /* who_checkin_default.png */; };
+		FA8E13841AB676E9007D7A68 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA8E13831AB676E9007D7A68 /* Localizable.strings */; };
 		FA8EB6CD19D79B3600888C49 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA8EB6CC19D79B3600888C49 /* libGoogleAnalyticsServices.a */; };
 		FA8EB6CF19D79C5B00888C49 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FA8EB6CE19D79C5B00888C49 /* libsqlite3.dylib */; };
 		FA91DE5C1A8309910067CDB2 /* MTBProfileStatementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA91DE5B1A8309910067CDB2 /* MTBProfileStatementViewController.m */; };
@@ -566,6 +567,7 @@
 		FA8B28B4176AA17300216C5C /* MessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageCell.h; sourceTree = "<group>"; };
 		FA8B28B5176AA17300216C5C /* MessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageCell.m; sourceTree = "<group>"; };
 		FA8B28B7176ABBE400216C5C /* who_checkin_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = who_checkin_default.png; sourceTree = "<group>"; };
+		FA8E13831AB676E9007D7A68 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = ../Localizable.strings; sourceTree = "<group>"; };
 		FA8EB6C019D79AF000888C49 /* GAI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
 		FA8EB6C119D79AF000888C49 /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
 		FA8EB6C219D79AF000888C49 /* GAIEcommerceFields.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceFields.h; sourceTree = "<group>"; };
@@ -923,6 +925,7 @@
 				FA0B34731851DBA100C34E0F /* StoryBoard_4inch.storyboard */,
 				FACF4AEE19E8D978002BBE0A /* StoryBoard_3.5inch_iOS7.storyboard */,
 				FA4397AB19CB995C00EAB8D0 /* StoryBoard_3.5inch_iOS56.storyboard */,
+				FA8E13831AB676E9007D7A68 /* Localizable.strings */,
 				FA49C9ED175F8514009C74AD /* Supporting Files */,
 			);
 			path = MTB_hOurworld_iOS;
@@ -1430,6 +1433,7 @@
 				FA4397AC19CB995C00EAB8D0 /* StoryBoard_3.5inch_iOS56.storyboard in Resources */,
 				FA2E02D219A537050076EBDA /* hours_03G.png in Resources */,
 				FA43DD2619A5C45B003B7EB2 /* red-cross-logo.jpg in Resources */,
+				FA8E13841AB676E9007D7A68 /* Localizable.strings in Resources */,
 				FA2E02C219A536FC0076EBDA /* months_09G.png in Resources */,
 				FA2E02CE19A537050076EBDA /* hours_01.png in Resources */,
 				FA2E029A19A536EE0076EBDA /* rcv_18G.png in Resources */,

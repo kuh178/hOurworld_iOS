@@ -98,7 +98,7 @@
         userNameLabel.text = tItem.mUserName;
     }
     else {
-        userNameLabel.text = @"No username found";
+        userNameLabel.text = [NSString stringWithFormat:NSLocalizedString(@"No_username_found", nil)];
     }
     
     // description
@@ -106,9 +106,8 @@
         [descriptionLabel setText:tItem.mDescription];
     }
     else {
-        [descriptionLabel setText:@"No description found"];
+        [descriptionLabel setText:[NSString stringWithFormat:NSLocalizedString(@"No_description_found", nil)]];
     }
-    
     
     // timestamp
     if (tItem.mTimestamp != (id)[NSNull null]) {
@@ -116,7 +115,7 @@
         datetimeLabel.text = splitTimestamp[0];
     }
     else {
-        datetimeLabel.text = @"No datetime found";
+        datetimeLabel.text = [NSString stringWithFormat:NSLocalizedString(@"No_datetime_found", nil)];
     }
     
     // user image clicked
@@ -203,9 +202,13 @@
     [super viewWillAppear:animated];
     
     [self.navigationController setNavigationBarHidden:NO animated:animated];
-    self.title = @"Offers";
+    self.title = [NSString stringWithFormat:NSLocalizedString(@"Offers", nil)];
     
-    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: @"Back" style: UIBarButtonItemStylePlain target:nil action:nil];
+    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc]
+                                      initWithTitle: [NSString stringWithFormat:NSLocalizedString(@"Back", nil)]
+                                      style: UIBarButtonItemStylePlain
+                                      target:nil
+                                      action:nil];
     [[self navigationItem] setBackBarButtonItem: newBackButton];
     
     // automatically reload only if there is some insertion or deletion
@@ -298,9 +301,9 @@
                   if (hasItem == false) {
                       UIAlertView *dialog = [[UIAlertView alloc]init];
                       [dialog setDelegate:nil];
-                      [dialog setTitle:@"Message"];
-                      [dialog setMessage:@"No result."];
-                      [dialog addButtonWithTitle:@"OK"];
+                      [dialog setTitle:[NSString stringWithFormat:NSLocalizedString(@"Message", nil)]];
+                      [dialog setMessage:[NSString stringWithFormat:NSLocalizedString(@"No_result", nil)]];
+                      [dialog addButtonWithTitle:[NSString stringWithFormat:NSLocalizedString(@"OK", nil)]];
                       [dialog show];
                   }
                   
@@ -309,9 +312,9 @@
               else {
                   UIAlertView *dialog = [[UIAlertView alloc]init];
                   [dialog setDelegate:self];
-                  [dialog setTitle:@"Message"];
-                  [dialog setMessage:@"No result."];
-                  [dialog addButtonWithTitle:@"OK"];
+                  [dialog setTitle:[NSString stringWithFormat:NSLocalizedString(@"Message", nil)]];
+                  [dialog setMessage:[NSString stringWithFormat:NSLocalizedString(@"No_result", nil)]];
+                  [dialog addButtonWithTitle:[NSString stringWithFormat:NSLocalizedString(@"OK", nil)]];
                   [dialog show];
               }
         
@@ -322,7 +325,11 @@
 
 - (IBAction)pressSearchBtn:(id)sender {
     [Dropobj fadeOut];
-    [self showPopUpWithTitle:@"Select Category" withOption:categoryList xy:CGPointMake(18, 58) size:CGSizeMake(287, 350) isMultiple:NO];
+    [self showPopUpWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Select_Category", nil)]
+                  withOption:categoryList
+                          xy:CGPointMake(18, 58)
+                        size:CGSizeMake(287, 350)
+                  isMultiple:NO];
 }
 
 -(void)showPopUpWithTitle:(NSString*)popupTitle withOption:(NSArray*)arrOptions xy:(CGPoint)point size:(CGSize)size isMultiple:(BOOL)isMultiple{

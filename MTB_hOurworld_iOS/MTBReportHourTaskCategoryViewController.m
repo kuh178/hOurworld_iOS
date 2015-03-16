@@ -94,10 +94,14 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    self.navigationItem.title = @"Pick a category";
+    self.navigationItem.title = [NSString stringWithFormat:NSLocalizedString(@"Pick_Category", nil)];
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     
-    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: @"Back" style: UIBarButtonItemStyleBordered target:nil action:nil];
+    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc]
+                                      initWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Back", nil)]
+                                      style: UIBarButtonItemStyleBordered
+                                      target:nil
+                                      action:nil];
     [[self navigationItem] setBackBarButtonItem: newBackButton];
     
     [super viewWillAppear:animated];

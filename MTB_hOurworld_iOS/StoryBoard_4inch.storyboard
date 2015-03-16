@@ -867,7 +867,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="12" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="401" y="-568"/>
+            <point key="canvasLocation" x="185" y="-484"/>
         </scene>
         <!--Category View Controller-->
         <scene sceneID="Jfw-8v-k92">
@@ -4244,8 +4244,8 @@ We are guided by seven fundamental principles: humanity, impartiality, neutralit
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Rr0-5X-j3L"/>
         <segue reference="WtQ-AD-k0n"/>
+        <segue reference="Rr0-5X-j3L"/>
         <segue reference="6P6-Sg-2Ue"/>
         <segue reference="JHH-c6-caD"/>
         <segue reference="8CV-2F-ywu"/>

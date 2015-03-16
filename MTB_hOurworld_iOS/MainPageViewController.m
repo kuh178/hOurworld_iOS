@@ -50,27 +50,27 @@ NSUserDefaults *userDefault;
         coachMarks = @[
                        @{
                            @"rect": [NSValue valueWithCGRect:(CGRect){37.0f, 211.0f, 118.0f, 91.0f}],
-                           @"caption": @"\"Announcements\" shows a list of services that will be expired in two weeks"
+                           @"caption": [NSString stringWithFormat:NSLocalizedString(@"Help_Announcements", nil)]
                            },
                        @{
                            @"rect": [NSValue valueWithCGRect:(CGRect){193.0f, 211.0f, 70.0f, 91.0f}],
-                           @"caption": @"\"Offers\" shows a list of standing offers by a category"
+                           @"caption": [NSString stringWithFormat:NSLocalizedString(@"Help_Offers", nil)]
                            },
                        @{
                            @"rect": [NSValue valueWithCGRect:(CGRect){55.0f, 322.0f, 80.0f, 91.0f}],
-                           @"caption": @"\"Requests\" shows a list of standing requests by a category"
+                           @"caption": [NSString stringWithFormat:NSLocalizedString(@"Help_Requests", nil)]
                            },
                        @{
                            @"rect": [NSValue valueWithCGRect:(CGRect){193.0f, 322.0f, 70.0f, 91.0f}],
-                           @"caption": @"\"Search\" allows you to search services and members"
+                           @"caption": [NSString stringWithFormat:NSLocalizedString(@"Help_Search", nil)]
                            },
                        @{
                            @"rect": [NSValue valueWithCGRect:(CGRect){60.0f, 433.0f, 70.0f, 91.0f}],
-                           @"caption": @"\"Hours\" allows you to report hours"
+                           @"caption": [NSString stringWithFormat:NSLocalizedString(@"Help_Hours", nil)]
                            },
                        @{
                            @"rect": [NSValue valueWithCGRect:(CGRect){193.0f, 433.0f, 70.0f, 91.0f}],
-                           @"caption": @"\"More\" includes a Group feature, My profile, About this app and Version"
+                           @"caption": [NSString stringWithFormat:NSLocalizedString(@"Help_More", nil)]
                            },
                        ];
     }
@@ -79,27 +79,27 @@ NSUserDefaults *userDefault;
         coachMarks = @[
                        @{
                            @"rect": [NSValue valueWithCGRect:(CGRect){38.0f, 191.0f, 118.0f, 83.0f}],
-                           @"caption": @"\"Announcements\" shows a list of services that will be expired in two weeks"
+                           @"caption": [NSString stringWithFormat:NSLocalizedString(@"Help_Announcements", nil)]
                            },
                        @{
                            @"rect": [NSValue valueWithCGRect:(CGRect){197.0f, 191.0f, 60.0f, 83.0f}],
-                           @"caption": @"\"Offers\" shows a list of standing offers by a category"
+                           @"caption": [NSString stringWithFormat:NSLocalizedString(@"Help_Offers", nil)]
                            },
                        @{
                            @"rect": [NSValue valueWithCGRect:(CGRect){61.0f, 287.0f, 70.0f, 83.0f}],
-                           @"caption": @"\"Requests\" shows a list of standing requests by a category"
+                           @"caption": [NSString stringWithFormat:NSLocalizedString(@"Help_Requests", nil)]
                            },
                        @{
                            @"rect": [NSValue valueWithCGRect:(CGRect){197.0f, 287.0f, 60.0f, 83.0f}],
-                           @"caption": @"\"Search\" allows you to search services and members"
+                           @"caption": [NSString stringWithFormat:NSLocalizedString(@"Help_Search", nil)]
                            },
                        @{
                            @"rect": [NSValue valueWithCGRect:(CGRect){65.0f, 383.0f, 60.0f, 83.0f}],
-                           @"caption": @"\"Hours\" allows you to report hours"
+                           @"caption": [NSString stringWithFormat:NSLocalizedString(@"Help_Hours", nil)]
                            },
                        @{
                            @"rect": [NSValue valueWithCGRect:(CGRect){197.0f, 383.0f, 60.0f, 83.0f}],
-                           @"caption": @"\"More\" includes a Group feature, My profile, About this app and Version"
+                           @"caption": [NSString stringWithFormat:NSLocalizedString(@"Help_More", nil)]
                            },
                        ];
 
@@ -136,7 +136,9 @@ NSUserDefaults *userDefault;
 {
     [self.navigationController setNavigationBarHidden:YES animated:animated];
     
-    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: @"Back" style: UIBarButtonItemStylePlain target:nil action:nil];
+    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc]
+                                      initWithTitle: [NSString stringWithFormat:NSLocalizedString(@"Back", nil)]
+                                      style: UIBarButtonItemStylePlain target:nil action:nil];
     [[self navigationItem] setBackBarButtonItem: newBackButton];
     
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
@@ -200,9 +202,9 @@ NSUserDefaults *userDefault;
                 
                 UIAlertView *dialog = [[UIAlertView alloc]init];
                 [dialog setDelegate:self];
-                [dialog setTitle:@"Message"];
-                [dialog setMessage:@"Your account has been expired. Please login again"];
-                [dialog addButtonWithTitle:@"Login"];
+                [dialog setTitle:[NSString stringWithFormat:NSLocalizedString(@"Message", nil)]];
+                [dialog setMessage:[NSString stringWithFormat:NSLocalizedString(@"Account_Expired", nil)]];
+                [dialog addButtonWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Login", nil)]];
                 [dialog show];
             }
             
@@ -236,9 +238,9 @@ NSUserDefaults *userDefault;
                   
                   UIAlertView *dialog = [[UIAlertView alloc]init];
                   [dialog setDelegate:self];
-                  [dialog setTitle:@"Message"];
-                  [dialog setMessage:@"Your hour has been reported"];
-                  [dialog addButtonWithTitle:@"Close"];
+                  [dialog setTitle:[NSString stringWithFormat:NSLocalizedString(@"Message", nil)]];
+                  [dialog setMessage:[NSString stringWithFormat:NSLocalizedString(@"Hours_Reported", nil)]];
+                  [dialog addButtonWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Close", nil)]];
                   [dialog show];
               }
               else {
@@ -253,7 +255,13 @@ NSUserDefaults *userDefault;
 
 -(IBAction)announcementBtnPressed:(id)sender {
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:nil delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Send email", @"Report hours (1h)",nil];
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle:nil
+                          message:nil
+                          delegate:self
+                          cancelButtonTitle:[NSString stringWithFormat:NSLocalizedString(@"Cancel", nil)]
+                          otherButtonTitles:[NSString stringWithFormat:NSLocalizedString(@"Send_Email", nil)],
+                          [NSString stringWithFormat:NSLocalizedString(@"Report_Hours_1h", nil)],nil];
     [alert show];
 }
 
@@ -282,11 +290,12 @@ NSUserDefaults *userDefault;
 }
 
 -(IBAction)reportHoursBtnPressed:(id)sender {
-    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Message"
-                                                      message:@"Did you provide or receive the service?"
+    UIAlertView *message = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Message", nil)]
+                                                      message:[NSString stringWithFormat:NSLocalizedString(@"Provide_or_Receive", nil)]
                                                      delegate:self
-                                            cancelButtonTitle:@"Cancel"
-                                            otherButtonTitles:@"Provided", @"Received", nil];
+                                            cancelButtonTitle:[NSString stringWithFormat:NSLocalizedString(@"Cancel", nil)]
+                                            otherButtonTitles:[NSString stringWithFormat:NSLocalizedString(@"Provided", nil)],
+                                                                [NSString stringWithFormat:NSLocalizedString(@"Received", nil)], nil];
     [message show];
 }
 
@@ -313,11 +322,11 @@ NSUserDefaults *userDefault;
     else if ([title isEqualToString:@"Send email"]) {
         NSLog(@"Send email");
         
-        NSString *emailTitle = @"Download the hOurworld mobile app now!";
+        NSString *emailTitle = [NSString stringWithFormat:NSLocalizedString(@"Download_Message_Title", nil)];
         // Email Content
         //    NSString *messageBody = @"Here are the links to download either an Android or an iOS hOurworld app.\n\nAndroid : https://play.google.com/store/apps/details?id=edu.psu.ist.mtb_hourworld&hl=en \n\niOS : https://itunes.apple.com/us/app/hourworld/id671499452?mt=8 \n\n";
         
-        NSString *messageBody = @"Hello,<br><br>I want to share this great hOurworld mobile app with you. Download the app now and earn an hour credit!<br><br>Are you an iOS user? Click <a href=\"https://itunes.apple.com/us/app/hourworld/id671499452?mt=8\">here</a> to download!<br><br>Are you an Android user? Click <a href=\"https://play.google.com/store/apps/details?id=edu.psu.ist.mtb_hourworld&hl=en\">here</a> to download! <br><br>If you're not a timebank member, go to the \"Join\" tab here: <a href=\"http://www.hourworld.org/\">www.hourworld.org</a> and select your nearest exchange. You must do this for the mobile app to work. Please be patient after signing up. The administrator will contact you to confirm your identity.";
+        NSString *messageBody = [NSString stringWithFormat:NSLocalizedString(@"Download_Message_Body", nil)];
         
         // To address
         NSArray *toRecipents = [NSArray arrayWithObject:@""];

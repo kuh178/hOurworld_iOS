@@ -66,6 +66,13 @@
     // add a placeholder
     taskDescription.text = @"Add a thorough description";
     taskDescription.textColor = [UIColor lightGrayColor];
+    
+    // initialize locationManager
+    locationManager = [[CLLocationManager alloc] init];
+    
+    // assign this page as a delegate
+    locationManager.delegate = self;
+    [locationManager requestWhenInUseAuthorization];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -101,12 +108,6 @@
 	
 	[mapView setRegion:region animated:FALSE];
 	[mapView regionThatFits:region];
-    
-	// initialize locationManager
-	locationManager = [[CLLocationManager alloc] init];
-	
-	// assign this page as a delegate
-	locationManager.delegate = self;
     
     if(IS_OS_8_OR_LATER) {
         

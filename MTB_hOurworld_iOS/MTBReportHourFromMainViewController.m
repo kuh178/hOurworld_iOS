@@ -60,7 +60,7 @@ int mSvcID = 0;
     note.layer.borderWidth = 1.0f;
     
     // add a placeholder
-    note.text = @"About recipient’s comments about promptness, quality, difficulty, etc. of the task";
+    note.text = [NSString stringWithFormat:NSLocalizedString(@"Report_Hours_Note", nil)];
     note.textColor = [UIColor lightGrayColor];
     
     // initialize "satisfaction" and "reference" to "T"
@@ -97,7 +97,7 @@ int mSvcID = 0;
 
 -(IBAction)pressAddDateBtn:(id)sender {
     
-    [ActionSheetDatePicker showPickerWithTitle:@"Select Date"
+    [ActionSheetDatePicker showPickerWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Select_Date", nil)]
                                 datePickerMode:UIDatePickerModeDate
                                   selectedDate:[NSDate date]
                                      doneBlock:^(ActionSheetDatePicker *picker, id selectedDate, id origin) {
@@ -129,7 +129,7 @@ int mSvcID = 0;
                           @"195 mins", @"210 mins", @"225 mins", @"240 mins",
                           @"255 mins", @"270 mins", @"285 mins", @"300 mins", nil];
     
-    [ActionSheetStringPicker showPickerWithTitle:@"Select Hours"
+    [ActionSheetStringPicker showPickerWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Select_Hours", nil)]
                                             rows:hourArray
                                 initialSelection:0
                                        doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
@@ -217,10 +217,10 @@ int mSvcID = 0;
         
         // check the fields first
         if (addDate != true || addHour != true || mListMemID == 0 || mSvcCatID == 0 || mSvcID == 0) {
-            UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Message"
-                                                              message:@"Please fill out all fields"
+            UIAlertView *message = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Message", nil)]
+                                                              message:[NSString stringWithFormat:NSLocalizedString(@"Fill_out_all_fields", nil)]
                                                              delegate:nil
-                                                    cancelButtonTitle:@"Okay"
+                                                    cancelButtonTitle:[NSString stringWithFormat:NSLocalizedString(@"OK", nil)]
                                                     otherButtonTitles:nil, nil];
             [message show];
         }
@@ -278,9 +278,9 @@ int mSvcID = 0;
         
                         UIAlertView *dialog = [[UIAlertView alloc]init];
                         [dialog setDelegate:self];
-                        [dialog setTitle:@"Message"];
-                        [dialog setMessage:@"Your hour has been reported"];
-                        [dialog addButtonWithTitle:@"Close"];
+                        [dialog setTitle:[NSString stringWithFormat:NSLocalizedString(@"Message", nil)]];
+                        [dialog setMessage:[NSString stringWithFormat:NSLocalizedString(@"Hours_recorded", nil)]];
+                        [dialog addButtonWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Close", nil)]];
                         [dialog show];
         
                         NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
@@ -311,7 +311,7 @@ int mSvcID = 0;
 
 - (void)textViewDidBeginEditing:(UITextView *)textView
 {
-    if ([textView.text isEqualToString:@"About recipient’s comments about promptness, quality, difficulty, etc. of the task"]) {
+    if ([textView.text isEqualToString:[NSString stringWithFormat:NSLocalizedString(@"Report_Hours_Note", nil)]]) {
         textView.text = @"";
         textView.textColor = [UIColor blackColor]; //optional
     }
@@ -325,7 +325,11 @@ int mSvcID = 0;
     
     //self.navigationController.navigationBar.backItem.title = @"Back";
     
-    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: @"Back" style: UIBarButtonItemStyleBordered target:nil action:nil];
+    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc]
+                                      initWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Back", nil)]
+                                      style: UIBarButtonItemStyleBordered
+                                      target:nil
+                                      action:nil];
     [[self navigationItem] setBackBarButtonItem: newBackButton];
     
     [super viewWillAppear:animated];
@@ -391,11 +395,11 @@ int mSvcID = 0;
 }
 
 -(IBAction)pressSubmitBtn:(id)sender {
-    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Message"
-                                                      message:@"Report hours?"
+    UIAlertView *message = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Message", nil)]
+                                                      message:[NSString stringWithFormat:NSLocalizedString(@"Report_Hours?", nil)]
                                                      delegate:self
-                                            cancelButtonTitle:@"Report"
-                                            otherButtonTitles:@"Cancel", nil];
+                                            cancelButtonTitle:[NSString stringWithFormat:NSLocalizedString(@"Report", nil)]
+                                            otherButtonTitles:[NSString stringWithFormat:NSLocalizedString(@"Cancel", nil)], nil];
     [message show];
 }
 

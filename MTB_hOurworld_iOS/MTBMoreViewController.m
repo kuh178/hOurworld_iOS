@@ -69,11 +69,11 @@
 }
 
 -(IBAction)shareAppBtnClicked:(id)sender {
-    NSString *emailTitle = @"Download the hOurworld mobile app now!";
+    NSString *emailTitle = [NSString stringWithFormat:NSLocalizedString(@"Download_Message_Title", nil)];
     // Email Content
     //    NSString *messageBody = @"Here are the links to download either an Android or an iOS hOurworld app.\n\nAndroid : https://play.google.com/store/apps/details?id=edu.psu.ist.mtb_hourworld&hl=en \n\niOS : https://itunes.apple.com/us/app/hourworld/id671499452?mt=8 \n\n";
     
-    NSString *messageBody = @"Hello,<br><br>I want to share this great hOurworld mobile app with you. Download the app now and earn an hour credit!<br><br>Are you an iOS user? Click <a href=\"https://itunes.apple.com/us/app/hourworld/id671499452?mt=8\">here</a> to download!<br><br>Are you an Android user? Click <a href=\"https://play.google.com/store/apps/details?id=edu.psu.ist.mtb_hourworld&hl=en\">here</a> to download! <br><br>If you're not a timebank member, go to the \"Join\" tab here: <a href=\"http://www.hourworld.org/\">www.hourworld.org</a> and select your nearest exchange. You must do this for the mobile app to work. Please be patient after signing up. The administrator will contact you to confirm your identity.";
+    NSString *messageBody = [NSString stringWithFormat:NSLocalizedString(@"Download_Message_Body", nil)];
     
     // To address
     NSArray *toRecipents = [NSArray arrayWithObject:@""];
@@ -119,11 +119,11 @@
     
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
     if ([userDefault boolForKey:@"update"] == TRUE) {
-        UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Message"
-                                                          message:@"Update to the latest version?"
+        UIAlertView *message = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Message", nil)]
+                                                          message:[NSString stringWithFormat:NSLocalizedString(@"Update_Request", nil)]
                                                          delegate:self
-                                                cancelButtonTitle:@"Update"
-                                                otherButtonTitles:@"Cancel", nil];
+                                                cancelButtonTitle:[NSString stringWithFormat:NSLocalizedString(@"Update", nil)]
+                                                otherButtonTitles:[NSString stringWithFormat:NSLocalizedString(@"Cancel", nil)], nil];
         [message show];
     }
     else {
@@ -133,11 +133,11 @@
 
 
 -(IBAction)logoutBtnClicked:(id)sender {
-    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Message"
-                                                      message:@"Proceed to logout?"
+    UIAlertView *message = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Message", nil)]
+                                                      message:[NSString stringWithFormat:NSLocalizedString(@"Logout_Prompt", nil)]
                                                      delegate:self
-                                            cancelButtonTitle:@"Logout"
-                                            otherButtonTitles:@"Cancel", nil];
+                                            cancelButtonTitle:[NSString stringWithFormat:NSLocalizedString(@"Logout", nil)]
+                                            otherButtonTitles:[NSString stringWithFormat:NSLocalizedString(@"Cancel", nil)], nil];
     [message show];
     
 }
@@ -181,12 +181,17 @@
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     self.title = @"More menus";
     
-    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: @"Back" style: UIBarButtonItemStylePlain target:nil action:nil];
+    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc]
+                                      initWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Back", nil)]
+                                      style: UIBarButtonItemStylePlain
+                                      target:nil
+                                      action:nil];
     [[self navigationItem] setBackBarButtonItem: newBackButton];
     
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
     if ([userDefault boolForKey:@"update"] == TRUE) {
-        [updateBtn setTitle:@"New version is available" forState:UIControlStateNormal];
+        [updateBtn setTitle:[NSString stringWithFormat:NSLocalizedString(@"New_version_available", nil)]
+                   forState:UIControlStateNormal];
         [exclamationImage setHidden:NO];
     }
     else {

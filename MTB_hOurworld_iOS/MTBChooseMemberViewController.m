@@ -43,7 +43,11 @@ NSArray *sortedArray;
     [super viewDidAppear:animated];
     self.screenName = @"SearchBioViewController";
     
-    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: @"Back" style: UIBarButtonItemStylePlain target:nil action:nil];
+    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc]
+                                      initWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Back", nil)]
+                                      style: UIBarButtonItemStylePlain
+                                      target:nil
+                                      action:nil];
     [[self navigationItem] setBackBarButtonItem: newBackButton];
 }
 
@@ -123,7 +127,7 @@ NSArray *sortedArray;
 - (void)viewWillAppear:(BOOL)animated
 {
     [self.navigationController setNavigationBarHidden:NO animated:animated];
-    [[self navigationItem] setTitle:@"Choose Member"];
+    [[self navigationItem] setTitle:[NSString stringWithFormat:NSLocalizedString(@"Choose_Member", nil)]];
     [super viewWillAppear:animated];
 }
 

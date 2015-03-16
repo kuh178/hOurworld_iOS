@@ -105,7 +105,7 @@
         userNameLabel.text = tItem.mListMbrName;
     }
     else{
-       userNameLabel.text = @"No username found";
+       userNameLabel.text = [NSString stringWithFormat:NSLocalizedString(@"No_username_found", nil)];
     }
     
     // description
@@ -114,7 +114,7 @@
         [descriptionLabel setText:[self stringByStrippingHTML:tItem.mEblast]];
     }
     else {
-        [descriptionLabel setText:@"No messages found"];
+        [descriptionLabel setText:[NSString stringWithFormat:NSLocalizedString(@"No_messages_found", nil)]];
     }
     
     // timestamp
@@ -123,7 +123,7 @@
         datetimeLabel.text = splitTimestamp[0];
     }
     else {
-        datetimeLabel.text = @"No datetime found";
+        datetimeLabel.text = [NSString stringWithFormat:NSLocalizedString(@"No_datetime_found", nil)];
     }
     
     // xDay
@@ -199,7 +199,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [self.navigationController setNavigationBarHidden:NO animated:animated];
-    self.title = @"Announcements";
+    self.title = [NSString stringWithFormat:NSLocalizedString(@"Announcements", nil)];
     [super viewWillAppear:animated];
 }
 
@@ -249,7 +249,7 @@
                             NSDictionary *item = [jsonArray objectAtIndex:i];
                             
                             // if the description contains "No messages found." continue
-                            if ([[item objectForKey:@"Eblast"] isEqual:@"No messages found."]) {
+                            if ([[item objectForKey:@"Eblast"] isEqual:@"No messages found"]) {
                                 continue;
                             }
                             
@@ -290,7 +290,7 @@
                         UIAlertView *dialog = [[UIAlertView alloc]init];
                         [dialog setDelegate:nil];
                         [dialog setTitle:@"Message"];
-                        [dialog setMessage:@"No result."];
+                        [dialog setMessage:@"No result"];
                         [dialog addButtonWithTitle:@"OK"];
                         [dialog show];
                     }
@@ -300,9 +300,9 @@
                 else {
                     UIAlertView *dialog = [[UIAlertView alloc]init];
                     [dialog setDelegate:self];
-                    [dialog setTitle:@"Message"];
-                    [dialog setMessage:@"No result. (If you see this message multiple times, try logout and re-login)"];
-                    [dialog addButtonWithTitle:@"OK"];
+                    [dialog setTitle:[NSString stringWithFormat:NSLocalizedString(@"Message", nil)]];
+                    [dialog setMessage:[NSString stringWithFormat:NSLocalizedString(@"No_result_2", nil)]];
+                    [dialog addButtonWithTitle:[NSString stringWithFormat:NSLocalizedString(@"OK", nil)]];
                     [dialog show];
                 }
                 
