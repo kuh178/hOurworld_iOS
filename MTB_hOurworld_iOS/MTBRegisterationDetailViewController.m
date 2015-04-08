@@ -97,10 +97,10 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [self.navigationController setNavigationBarHidden:NO animated:animated];
-    [[self navigationItem] setTitle:@"Create an account [2/3]"];
+    [[self navigationItem] setTitle:[NSString stringWithFormat:NSLocalizedString(@"Create_account_2_3", nil)]];
     [super viewWillAppear:animated];
     
-    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: @"Back" style: UIBarButtonItemStyleBordered target:nil action:nil];
+    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: [NSString stringWithFormat:NSLocalizedString(@"Back", nil)] style: UIBarButtonItemStyleBordered target:nil action:nil];
     [[self navigationItem] setBackBarButtonItem: newBackButton];
 }
 

@@ -51,10 +51,10 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    self.navigationItem.title = @"Group details";
+    self.navigationItem.title = [NSString stringWithFormat:NSLocalizedString(@"Group_details", nil)];
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     
-    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: @"Back" style: UIBarButtonItemStyleBordered target:nil action:nil];
+    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: [NSString stringWithFormat:NSLocalizedString(@"Back", nil)] style: UIBarButtonItemStyleBordered target:nil action:nil];
     [[self navigationItem] setBackBarButtonItem: newBackButton];
     
     [super viewWillAppear:animated];
@@ -63,11 +63,11 @@
 }
 
 -(IBAction)leaveGroupBtnClicked:(id)sender {
-    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Message"
-                                                      message:@"Leave this group?"
+    UIAlertView *message = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Message", nil)]
+                                                      message:[NSString stringWithFormat:NSLocalizedString(@"Leave_group", nil)]
                                                      delegate:self
-                                            cancelButtonTitle:@"Leave"
-                                            otherButtonTitles:@"Cancel", nil];
+                                            cancelButtonTitle:[NSString stringWithFormat:NSLocalizedString(@"Leave", nil)]
+                                            otherButtonTitles:[NSString stringWithFormat:NSLocalizedString(@"Cancel", nil)], nil];
     [message show];
 }
 
@@ -79,11 +79,11 @@
         [self.navigationController pushViewController:viewController animated:YES];
     }
     else {
-        UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Message"
-                                                          message:@"Join this group?"
+        UIAlertView *message = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Message", nil)]
+                                                          message:[NSString stringWithFormat:NSLocalizedString(@"Join_group", nil)]
                                                          delegate:self
-                                                cancelButtonTitle:@"Join"
-                                                otherButtonTitles:@"Cancel", nil];
+                                                cancelButtonTitle:[NSString stringWithFormat:NSLocalizedString(@"Join", nil)]
+                                                otherButtonTitles:[NSString stringWithFormat:NSLocalizedString(@"Cancel", nil)], nil];
         [message show];
     }
 }
@@ -92,10 +92,10 @@
     
     NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
     
-    if([title isEqualToString:@"Join"]) {
+    if([title isEqualToString:[NSString stringWithFormat:NSLocalizedString(@"Join", nil)]]) {
         [self groupJoin];
     }
-    else if([title isEqualToString:@"Leave"]) {
+    else if([title isEqualToString:[NSString stringWithFormat:NSLocalizedString(@"Leave", nil)]]) {
         [self groupLeave];
     }
 }

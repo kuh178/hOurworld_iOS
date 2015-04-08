@@ -41,7 +41,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    self.navigationItem.title = @"Add location";
+    self.navigationItem.title = [NSString stringWithFormat:NSLocalizedString(@"Add_location", nil)];
     [super viewWillAppear:animated];
 }
 

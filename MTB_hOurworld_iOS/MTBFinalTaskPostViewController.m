@@ -64,7 +64,7 @@
     taskDescription.layer.borderWidth = 1.0;
     
     // add a placeholder
-    taskDescription.text = @"Add a thorough description";
+    taskDescription.text = [NSString stringWithFormat:NSLocalizedString(@"Add_thorough_description", nil)];
     taskDescription.textColor = [UIColor lightGrayColor];
     
     // initialize locationManager
@@ -138,15 +138,17 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     if([isOffer isEqualToString:@"T"]) {
-        self.navigationItem.title = @"Add Offer";
+        self.navigationItem.title = [NSString stringWithFormat:NSLocalizedString(@"Add_Offer", nil)];
         [self.navigationController setNavigationBarHidden:NO animated:animated];
     }
     else {
-        self.navigationItem.title = @"Add Request";
+        self.navigationItem.title = [NSString stringWithFormat:NSLocalizedString(@"Add_Request", nil)];
         [self.navigationController setNavigationBarHidden:NO animated:animated];
     }
     
-    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: @"Back" style: UIBarButtonItemStyleBordered target:nil action:nil];
+    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc]
+                                      initWithTitle: [NSString stringWithFormat:NSLocalizedString(@"Back", nil)]
+                                      style: UIBarButtonItemStyleBordered target:nil action:nil];
     [[self navigationItem] setBackBarButtonItem: newBackButton];
     
     [super viewWillAppear:animated];
@@ -165,7 +167,7 @@
 
 - (void)textViewDidBeginEditing:(UITextView *)textView
 {
-    if ([textView.text isEqualToString:@"Add a thorough description"]) {
+    if ([textView.text isEqualToString:[NSString stringWithFormat:NSLocalizedString(@"Add_thorough_description", nil)]]) {
         textView.text = @"";
         textView.textColor = [UIColor blackColor]; //optional
     }
@@ -184,12 +186,12 @@
     if([addedDescription isEqual:@""]
        || [addedDescription isEqual:[NSNull null]]
        || [addedDescription rangeOfString:@"null"].location != NSNotFound
-       || [addedDescription isEqualToString:@"Add a thorough description"]) {
+       || [addedDescription isEqualToString:[NSString stringWithFormat:NSLocalizedString(@"Add_thorough_description", nil)]]) {
         UIAlertView *dialog = [[UIAlertView alloc]init];
         [dialog setDelegate:self];
-        [dialog setTitle:@"Message"];
-        [dialog setMessage:@"Please check a description"];
-        [dialog addButtonWithTitle:@"Close"];
+        [dialog setTitle:[NSString stringWithFormat:NSLocalizedString(@"Message", nil)]];
+        [dialog setMessage:[NSString stringWithFormat:NSLocalizedString(@"Please_check_description", nil)]];
+        [dialog addButtonWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Close", nil)]];
         [dialog show];
     }
     else {
@@ -257,9 +259,9 @@
                       
                       UIAlertView *dialog = [[UIAlertView alloc]init];
                       [dialog setDelegate:self];
-                      [dialog setTitle:@"Message"];
-                      [dialog setMessage:@"Failed to post your task. Please try again"];
-                      [dialog addButtonWithTitle:@"Close"];
+                      [dialog setTitle:[NSString stringWithFormat:NSLocalizedString(@"Message", nil)]];
+                      [dialog setMessage:[NSString stringWithFormat:NSLocalizedString(@"Fail_to_post", nil)]];
+                      [dialog addButtonWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Close", nil)]];
                       [dialog show];
                   }
                   

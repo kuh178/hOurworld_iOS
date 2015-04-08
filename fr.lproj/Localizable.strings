@@ -1,0 +1,150 @@
+/*
+ Localizable.strings
+ MTB_hOurworld_iOS
+ 
+ Created by Kyungsik Han on 3/15/15.
+ Copyright (c) 2015 HCI PSU. All rights reserved.
+ */
+
+// [NSString stringWithFormat:NSLocalizedString(@"Back", nil)]
+
+// MainPage
+"Help_Announcements"        = "\"Annonces\" Liste de services qui vont expirer dans 2 semaines";
+"Help_Offers"               = "\"Offres\" Liste des offres disponibles par catégorie";
+"Help_Requests"             = "\"Demandes\" Liste des demandes disponibles par catégorie";
+"Help_Search"               = "\"Recherche\" Pour rechercher des services et des membres";
+"Help_Hours"                = "\"Heures\" Pour enregistrer des heures";
+"Help_More"                 = "\"Plus\" Inclure un Groupe, Mon profil, A propos de cette version";
+
+"Announcements"             = "Annonces";
+"Offers"                    = "Offres";
+"Requests"                  = "Demandes";
+"Search"                    = "Recherche";
+"Hours"                     = "Heures";
+"More"                      = "Plus";
+
+// About page
+"About_hOurworld"           = "A propos d'hOurworld";
+"About_the_app"             = "A propos de l'app";
+"hOurworld_mobile_app"      = "App mobile hOurworld";
+
+// No XXX found message
+"No_username_found"         = "Pas d'utilisateur correspondant";
+"No_messages_found"         = "Aucun message";
+"No_datetime_found"         = "Aucune date/heure";
+"No_description_found"      = "Aucune description";
+"No_result"                 = "Aucun résultat";
+"No_result_2"               = "Aucun résultat. (si vous avez ce message plusieurs fois, essayez de vous reconnecter)";
+
+// Offers and Request
+"Pick_category"             = "Choisir une catégorie";
+"Pick_service"              = "Choisir un service";
+"Pick_category_offer"       = "Choisir une catégorie pour l'offre";
+"Pick_category_request"     = "Choisir une catégorie pour la demande";
+"Pick_service_offer"        = "Choisir une catégorie de service pour l'offre";
+"Pick_service_request"      = "Choisir une catégorie de service pour la demande";
+"Offer_category"            = "Catégorie d'offre";
+"Request_category"          = "Catégorie de demande";
+"Offer_service"             = "Offre";
+"Request_service"           = "Demande";
+"Add_thorough_description"  = "Description détaillée";
+"Add_Offer"                 = "Ajouter l'offre";
+"Add_Request"               = "Ajouter la demande";
+"Please_check_description"  = "Saisir la description";
+"Fail_to_post"              = "Echec de l'envoi. Essayer à nouveau";
+"Add_location"              = "Ajouter un lieu";
+"Edit_task"                 = "Mettre à jour la t‚che";
+"Fail_to_edit"              = "Echec de la mise à jour. Essayer à nouveau";
+"No_username_found"         = "Nom d'utilisateur inconnu";
+"No_description_found"      = "Description absente";
+"No_datetime_found"         = "Date/heure absentes";
+"No_result_found_add_first" = "Aucun résultat. Créer une t‚che dans cette catégorie!";
+
+
+// Report Hours
+"Report_Hours_Note"         = "Commentaires des bénéficiaires sur la rapidité, la qualité, la difficulté, etc. de la t‚che";
+"Select_Date"               = "Choisir une date";
+"Select_Hours"              = "Choisir des heures";
+"Fill_out_all_fields"       = "Renseigner tous les champs";
+"Hours_recorded"            = "Vos heures ont été enregistrées";
+"Report_Hours"              = "Déclarer des heures";
+"Report_Hours?"             = "Heures déclarées?";
+"Report"                    = "Déclarer";
+"Choose_Member"             = "Sélectionner un membre";
+"Pick_Category"             = "Choisir une catégorie";
+"Pick_Service_Category"     = "Choisir un service";
+
+// Search
+"Search"                    = "Rechercher";
+"Please_enter_a_search_term"= "Saisir un critère de recherche";
+
+// Group
+"My_groups"                 = "Mes groupes";
+"Group_list"                = "Liste des groupes";
+"No_groups_found"           = "Aucun groupe";
+"Group_details"             = "Détails du groupe";
+"Leave_group"               = "Quitter ce groupe?";
+"Join_group"                = "Rejoindre ce groupe?";
+"No_messages_found"         = "Aucun message";
+"Send_group_message"        = "Envoyer un message au groupe";
+"Group_message_success"     = "Votre message a été envoyé au groupe!";
+"Group_message_fail"        = "Echec de l'envoi du message au goupe. Essayer à nouveau";
+"Please_check_message"      = "Vérifier le message";
+
+// More
+"Update_Request"            = "Mettre à jour la dernière version?";
+"New_version_available"     = "Une nouvelle version est disponible";
+"Version %@"                = "Version %@";
+
+// hOurworld app intro
+"Intro_message"             = "hOurworld est un réseau d'échange de services contre des heures (Banques de temps) dans lequel vous pouvez fournir un service, capitaliser le temps passé à rendre ce service puis dépenser les heures gagnées pour recevoir les services dont vous avez besoin. Cette application mobile hOurworld est le résultat d'un partenariat entre hOurworld, Le Center for Human Computer Interaction at Pennsylvania State University (PSU), le Palo Alto Research Center (PARC), et l'association TempOh-L'EchangeHeure pour la version française.";
+"Terms_of_service"          = "Conditions d'utilisation";
+"I_understand"              = "Je comprends";
+"Not_participate"           = "Ne participe pas";
+
+// Download hOurworld app message
+"Download_Message_Title"    = "Télécharger l'app mobile hOurworld mobile!";
+"Download_Message_Body"     = "Hello,<br><br>Je veux partager cette super app mobile hOurworld avec vous. Téléchargez l'app maintenant et gagnez une heure de crédit!<br><br>Etes-vous sur iOS? Cliquer <a href=\"https://itunes.apple.com/us/app/hourworld/id671499452?mt=8\">here</a> pour télécharger!<br><br>Etes-vous sous Android? Cliquer <a href=\"https://play.google.com/store/apps/details?id=edu.psu.ist.mtb_hourworld&hl=en\">here</a> pour télécharger! <br><br>Si vous n'&ecirc;tes pas membre d'une banque de temps, allez sur le lien \"Rejoindre\" : <a href=\"http://www.hourworld.org/\">www.hourworld.org</a> et choisissez l'Echange le plus proche. Vous devez faire cela pour que l'app fonctionne. Soyez patient pour la première connexion. L'administrateur vous contactera pour confirmer votre identité.";
+
+// Hours
+"Hours_Reported"            = "Votre heure a été enregistrée";
+"Report_Hours_1h"           = "Heure enregistrée (1h)";
+"Provide_or_Receive"        = "Avez-vous fourni ou reçu le service ?";
+"Provided"                  = "Fourni";
+"Received"                  = "Reçu";
+
+// Login
+"Account_Expired"           = "Votre session s'est terminée. Veuillez vous reconnecter";
+"Login"                     = "Connexion";
+"Login_to_hourworld"        = "Se connecter à hOurworld";
+"Check_account_password"    = "Vérifier votre identifiant/mot de passe";
+"Wrong_account_password"    = "Identifiant ou mot de passe incorect. Essayer à nouveau.";
+
+// Registration
+"Pick_exchange_1_3"         = "Choisir un Echange [1/3]";
+"Create_account_2_3"        = "Créer un compte [2/3]";
+"Create_account_3_3"        = "Créer un compte [3/3]";
+"Registration_success"      = "Votre demande est envoyée! Vous allez recevoir un mail de bienvenue avec les dernières étapes de création de votre compte. Cela peut prendre un jour ou deux.";
+"Registration_fail"         = "Echec de l'enregistrement. Essayer à nouveau";
+"Register"                  = "S'enregistrer";
+"Please_fill_out"           = "Remplir tous les champs";
+"Please_check_password"     = "Vérifier le mot de passe";
+"Register_your_account"     = "Enregistrer votre compte?";
+
+// Logout
+"Logout_Prompt"             = "Se déconnecter?";
+
+// Buttons
+"Back"                      = "Retour";
+"Cancel"                    = "Annuler";
+"Close"                     = "Fermer";
+"Message"                   = "Message";
+"Send_Email"                = "Envoyer un mail";
+"OK"                        = "OK";
+"Update"                    = "Mettre à jour";
+"Logout"                    = "Déconnexion";
+"Leave"                     = "Quitter";
+"Join"                      = "Rejoindre";
+
+// Others
+"Select_Category"           = "Choisir une catégorie";

@@ -92,9 +92,9 @@
     if ([accountTextField.text isEqualToString:@""] || [passwordTextField.text isEqualToString:@""]) {
         UIAlertView *dialog = [[UIAlertView alloc]init];
         [dialog setDelegate:self];
-        [dialog setTitle:@"Message"];
-        [dialog setMessage:@"Please check your account/password"];
-        [dialog addButtonWithTitle:@"OK"];
+        [dialog setTitle:[NSString stringWithFormat:NSLocalizedString(@"Message", nil)]];
+        [dialog setMessage:[NSString stringWithFormat:NSLocalizedString(@"Check_account_password", nil)]];
+        [dialog addButtonWithTitle:[NSString stringWithFormat:NSLocalizedString(@"OK", nil)]];
         [dialog show];
     }
     else {
@@ -140,9 +140,9 @@ constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
             else {
                 UIAlertView *dialog = [[UIAlertView alloc]init];
                 [dialog setDelegate:self];
-                [dialog setTitle:@"Message"];
-                [dialog setMessage:@"Wrong Account/Password. Please try again."];
-                [dialog addButtonWithTitle:@"OK"];
+                [dialog setTitle:[NSString stringWithFormat:NSLocalizedString(@"Message", nil)]];
+                [dialog setMessage:[NSString stringWithFormat:NSLocalizedString(@"Wrong_account_password", nil)]];
+                [dialog addButtonWithTitle:[NSString stringWithFormat:NSLocalizedString(@"OK", nil)]];
                 [dialog show];
             }
                   
@@ -195,7 +195,7 @@ constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
 - (void)viewWillAppear:(BOOL)animated
 {
     [self.navigationController setNavigationBarHidden:NO animated:animated];
-    [[self navigationItem] setTitle:@"Login to hOurworld"];
+    [[self navigationItem] setTitle:[NSString stringWithFormat:NSLocalizedString(@"Login_to_hourworld", nil)]];
     [super viewWillAppear:animated];
 }
 

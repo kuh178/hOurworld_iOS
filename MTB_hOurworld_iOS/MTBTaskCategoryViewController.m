@@ -113,10 +113,10 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    self.navigationItem.title = @"Pick a category";
+    self.navigationItem.title = [NSString stringWithFormat:NSLocalizedString(@"Pick_category", nil)];
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     
-    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: @"Back" style: UIBarButtonItemStyleBordered target:nil action:nil];
+    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: [NSString stringWithFormat:NSLocalizedString(@"Back", nil)] style: UIBarButtonItemStyleBordered target:nil action:nil];
     [[self navigationItem] setBackBarButtonItem: newBackButton];
     
     [super viewWillAppear:animated];
@@ -154,9 +154,9 @@
             if ([responseObject isEqual:[NSNull null]]) {
                 UIAlertView *dialog = [[UIAlertView alloc]init];
                 [dialog setDelegate:self];
-                [dialog setTitle:@"Message"];
-                [dialog setMessage:@"Cannot get the data from the server. (If you see this message multiple times, try logout and re-login)"];
-                [dialog addButtonWithTitle:@"OK"];
+                [dialog setTitle:[NSString stringWithFormat:NSLocalizedString(@"Message", nil)]];
+                [dialog setMessage:[NSString stringWithFormat:NSLocalizedString(@"No_result_2", nil)]];
+                [dialog addButtonWithTitle:[NSString stringWithFormat:NSLocalizedString(@"OK", nil)]];
                 [dialog show];
             }
             else {
@@ -166,9 +166,9 @@
                 if ([responseObject isEqual:[NSNull null]]) {
                     UIAlertView *dialog = [[UIAlertView alloc]init];
                     [dialog setDelegate:nil];
-                    [dialog setTitle:@"Message"];
-                    [dialog setMessage:@"Cannot get the data from the server. Please try again."];
-                    [dialog addButtonWithTitle:@"OK"];
+                    [dialog setTitle:[NSString stringWithFormat:NSLocalizedString(@"Message", nil)]];
+                    [dialog setMessage:[NSString stringWithFormat:NSLocalizedString(@"No_result", nil)]];
+                    [dialog addButtonWithTitle:[NSString stringWithFormat:NSLocalizedString(@"OK", nil)]];
                     [dialog show];
                 }
                 else {

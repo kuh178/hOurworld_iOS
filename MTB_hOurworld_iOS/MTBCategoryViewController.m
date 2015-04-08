@@ -106,16 +106,17 @@
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     
     if([isOffer isEqualToString:@"T"]) {
-        self.navigationItem.title = @"Offer category";
-        stepLabel.text = @"Pick a category for your offer";
+        self.navigationItem.title = [NSString stringWithFormat:NSLocalizedString(@"Offer_category", nil)];
+        stepLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Pick_category_offer", nil)];
     }
     else {
-        self.navigationItem.title = @"Request category";
-        stepLabel.text = @"Pick a category for your request";
+        self.navigationItem.title = [NSString stringWithFormat:NSLocalizedString(@"Request_category", nil)];
+        stepLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Pick_category_request", nil)];
     }
     
 
-    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: @"Back" style: UIBarButtonItemStyleBordered target:nil action:nil];
+    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc]
+                                      initWithTitle: [NSString stringWithFormat:NSLocalizedString(@"Back", nil)] style: UIBarButtonItemStyleBordered target:nil action:nil];
     [[self navigationItem] setBackBarButtonItem: newBackButton];
     
     [super viewWillAppear:animated];

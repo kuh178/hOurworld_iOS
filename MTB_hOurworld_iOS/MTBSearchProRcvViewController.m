@@ -46,7 +46,7 @@
     [super viewDidAppear:animated];
     self.screenName = @"SearchOfferRequestViewController";
     
-    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: @"Back" style: UIBarButtonItemStylePlain target:nil action:nil];
+    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: [NSString stringWithFormat:NSLocalizedString(@"Back", nil)] style: UIBarButtonItemStylePlain target:nil action:nil];
     [[self navigationItem] setBackBarButtonItem: newBackButton];
 }
 
@@ -238,9 +238,9 @@
                   // do nothing
                   UIAlertView *dialog = [[UIAlertView alloc]init];
                   [dialog setDelegate:self];
-                  [dialog setTitle:@"Message"];
-                  [dialog setMessage:@"No search result"];
-                  [dialog addButtonWithTitle:@"OK"];
+                  [dialog setTitle:[NSString stringWithFormat:NSLocalizedString(@"Message", nil)]];
+                  [dialog setMessage:[NSString stringWithFormat:NSLocalizedString(@"No_result", nil)]];
+                  [dialog addButtonWithTitle:[NSString stringWithFormat:NSLocalizedString(@"OK", nil)]];
                   [dialog show];
               }
               

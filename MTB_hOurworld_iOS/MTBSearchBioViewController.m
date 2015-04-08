@@ -44,7 +44,7 @@
     [super viewDidAppear:animated];
     self.screenName = @"SearchBioViewController";
     
-    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: @"Back" style: UIBarButtonItemStylePlain target:nil action:nil];
+    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: [NSString stringWithFormat:NSLocalizedString(@"Back", nil)] style: UIBarButtonItemStylePlain target:nil action:nil];
     [[self navigationItem] setBackBarButtonItem: newBackButton];
 }
 

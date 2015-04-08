@@ -43,7 +43,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    self.navigationItem.title = @"About the app";
+    self.navigationItem.title = [NSString stringWithFormat:NSLocalizedString(@"About_the_app", nil)];
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     
     [super viewWillAppear:animated];

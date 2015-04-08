@@ -1,0 +1,150 @@
+/* 
+  Localizable.strings
+  MTB_hOurworld_iOS
+
+  Created by Kyungsik Han on 3/15/15.
+  Copyright (c) 2015 HCI PSU. All rights reserved.
+*/
+
+// [NSString stringWithFormat:NSLocalizedString(@"Back", nil)]
+
+// MainPage
+"Help_Announcements"        = "\"Announcements\" shows a list of services that will be expired in two weeks";
+"Help_Offers"               = "\"Offers\" shows a list of standing offers by a category";
+"Help_Requests"             = "\"Requests\" shows a list of standing requests by a category";
+"Help_Search"               = "\"Search\" allows you to search services and members";
+"Help_Hours"                = "\"Hours\" allows you to report hours";
+"Help_More"                 = "\"More\" includes a Group feature, My profile, About this app and Version";
+
+"Announcements"             = "Announcements";
+"Offers"                    = "Offers";
+"Requests"                  = "Requests";
+"Search"                    = "Search";
+"Hours"                     = "Hours";
+"More"                      = "More";
+
+// About page
+"About_hOurworld"           = "About hOurworld";
+"About_the_app"             = "About the app";
+"hOurworld_mobile_app"      = "hOurworld mobile app";
+
+// No XXX found message
+"No_username_found"         = "No username found";
+"No_messages_found"         = "No messages found";
+"No_datetime_found"         = "No datetime found";
+"No_description_found"      = "No description found";
+"No_result"                 = "No result found";
+"No_result_2"               = "No result found. (If you see this message multiple times, try logout and re-login)";
+
+// Offers and Request
+"Pick_category"             = "Pick a category";
+"Pick_service"              = "Pick a service";
+"Pick_category_offer"       = "Pick a category for your offer";
+"Pick_category_request"     = "Pick a category for your request";
+"Pick_service_offer"        = "Pick a service category for your offer";
+"Pick_service_request"      = "Pick a service category for your request";
+"Offer_category"            = "Offer category";
+"Request_category"          = "Request category";
+"Offer_service"             = "Offer service";
+"Request_service"           = "Request service";
+"Add_thorough_description"  = "Add a thorough description";
+"Add_Offer"                 = "Add Offer";
+"Add_Request"               = "Add Request";
+"Please_check_description"  = "Please check a description";
+"Fail_to_post"              = "Failed to post your task. Please try again";
+"Add_location"              = "Add location";
+"Edit_task"                 = "Edit task";
+"Fail_to_edit"              = "Failed to edit your task. Please try again";
+"No_username_found"         = "No username found";
+"No_description_found"      = "No description found";
+"No_datetime_found"         = "No datetime found";
+"No_result_found_add_first" = "No search result. Post a task in this category!";
+
+
+// Report Hours
+"Report_Hours_Note"         = "About recipient’s comments about promptness, quality, difficulty, etc. of the task";
+"Select_Date"               = "Select Date";
+"Select_Hours"              = "Select Hours";
+"Fill_out_all_fields"       = "Please fill out all fields";
+"Hours_recorded"            = "Your hour has been reported";
+"Report_Hours"              = "Report hours";
+"Report_Hours?"             = "Report hours?";
+"Report"                    = "Report";
+"Choose_Member"             = "Choose Member";
+"Pick_Category"             = "Pick a category";
+"Pick_Service_Category"     = "Pick a service category";
+
+// Search
+"Search"                    = "Search";
+"Please_enter_a_search_term"= "Please enter a search term";
+
+// Group
+"My_groups"                 = "My groups";
+"Group_list"                = "Group list";
+"No_groups_found"           = "No groups found";
+"Group_details"             = "Group details";
+"Leave_group"               = "Leave this group?";
+"Join_group"                = "Join this group?";
+"No_messages_found"         = "No messages found";
+"Send_group_message"        = "Send a group message";
+"Group_message_success"     = "Your group message has been posted!";
+"Group_message_fail"        = "Failed to post your group message. Please try again";
+"Please_check_message"      = "Please check a message";
+
+// More
+"Update_Request"            = "Update to the latest version?";
+"New_version_available"     = "New version is available";
+"Version %@"                = "Version %@";
+
+// hOurworld app intro
+"Intro_message"             = "hOurworld is a national network of Hour Exchanges (time banks) in which you can provide a service, bank the time taken to provide it and then spend the hours you have earned to get services you want. This hOurworld mobile app is the product of a partnership among hOurworld, the Center for Human Computer Interaction at Pennsylvania State University (PSU), and the Palo Alto Research Center (PARC).";
+"Terms_of_service"          = "Terms of service";
+"I_understand"              = "I understand";
+"Not_participate"           = "Not participate";
+
+// Download hOurworld app message
+"Download_Message_Title"    = "Download the hOurworld mobile app now!";
+"Download_Message_Body"     = "Hello,<br><br>I want to share this great hOurworld mobile app with you. Download the app now and earn an hour credit!<br><br>Are you an iOS user? Click <a href=\"https://itunes.apple.com/us/app/hourworld/id671499452?mt=8\">here</a> to download!<br><br>Are you an Android user? Click <a href=\"https://play.google.com/store/apps/details?id=edu.psu.ist.mtb_hourworld&hl=en\">here</a> to download! <br><br>If you're not a timebank member, go to the \"Join\" tab here: <a href=\"http://www.hourworld.org/\">www.hourworld.org</a> and select your nearest exchange. You must do this for the mobile app to work. Please be patient after signing up. The administrator will contact you to confirm your identity.";
+
+// Hours
+"Hours_Reported"            = "Your hour has been reported";
+"Report_Hours_1h"           = "Report hours (1h)";
+"Provide_or_Receive"        = "Did you provide or receive the service?";
+"Provided"                  = "Provided";
+"Received"                  = "Received";
+
+// Login
+"Account_Expired"           = "Your account has been expired. Please login again";
+"Login"                     = "Login";
+"Login_to_hourworld"        = "Login to hOurworld";
+"Check_account_password"    = "Please check your account/password";
+"Wrong_account_password"    = "Wrong Account/Password. Please try again.";
+
+// Registration
+"Pick_exchange_1_3"         = "Pick an Exchange [1/3]";
+"Create_account_2_3"        = "Create an account [2/3]";
+"Create_account_3_3"        = "Create an account [3/3]";
+"Registration_success"      = "Your Application Has Been Sent! You will receive a welcome email with next steps once your account is setup. This may take a couple days.";
+"Registration_fail"         = "Failed to register. Please try again";
+"Register"                  = "Register";
+"Please_fill_out"           = "Please fill out all fields";
+"Please_check_password"     = "Please check passwords";
+"Register_your_account"     = "Register your account?";
+
+// Logout
+"Logout_Prompt"             = "Proceed to logout?";
+
+// Buttons
+"Back"                      = "Back";
+"Cancel"                    = "Cancel";
+"Close"                     = "Close";
+"Message"                   = "Message";
+"Send_Email"                = "Send Email";
+"OK"                        = "OK";
+"Update"                    = "Update";
+"Logout"                    = "Logout";
+"Leave"                     = "Leave";
+"Join"                      = "Join";
+
+// Others
+"Select_Category"           = "Select Category";

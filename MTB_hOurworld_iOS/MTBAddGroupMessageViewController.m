@@ -36,10 +36,10 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    self.navigationItem.title = @"Send a group message";
+    self.navigationItem.title = [NSString stringWithFormat:NSLocalizedString(@"Send_group_message", nil)];
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     
-    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: @"Back" style: UIBarButtonItemStyleBordered target:nil action:nil];
+    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: [NSString stringWithFormat:NSLocalizedString(@"Back", nil)] style: UIBarButtonItemStyleBordered target:nil action:nil];
     [[self navigationItem] setBackBarButtonItem: newBackButton];
     
     [super viewWillAppear:animated];
@@ -57,9 +57,9 @@
     if([addedMessage isEqual:@""]) {
         UIAlertView *dialog = [[UIAlertView alloc]init];
         [dialog setDelegate:self];
-        [dialog setTitle:@"Message"];
-        [dialog setMessage:@"Please check a message"];
-        [dialog addButtonWithTitle:@"Close"];
+        [dialog setTitle:[NSString stringWithFormat:NSLocalizedString(@"Message", nil)]];
+        [dialog setMessage:[NSString stringWithFormat:NSLocalizedString(@"Please_check_message", nil)]];
+        [dialog addButtonWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Close", nil)]];
         [dialog show];
     }
     else {
@@ -85,9 +85,9 @@
                       
                       UIAlertView *dialog = [[UIAlertView alloc]init];
                       [dialog setDelegate:self];
-                      [dialog setTitle:@"Message"];
-                      [dialog setMessage:@"Your group message has been posted!"];
-                      [dialog addButtonWithTitle:@"Close"];
+                      [dialog setTitle:[NSString stringWithFormat:NSLocalizedString(@"Message", nil)]];
+                      [dialog setMessage:[NSString stringWithFormat:NSLocalizedString(@"Group_message_success", nil)]];
+                      [dialog addButtonWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Close", nil)]];
                       [dialog show];
                       
                       [self.navigationController popViewControllerAnimated:YES];
@@ -97,9 +97,9 @@
                       
                       UIAlertView *dialog = [[UIAlertView alloc]init];
                       [dialog setDelegate:self];
-                      [dialog setTitle:@"Message"];
-                      [dialog setMessage:@"Failed to post your group message. Please try again"];
-                      [dialog addButtonWithTitle:@"Close"];
+                      [dialog setTitle:[NSString stringWithFormat:NSLocalizedString(@"Message", nil)]];
+                      [dialog setMessage:[NSString stringWithFormat:NSLocalizedString(@"Group_message_fail", nil)]];
+                      [dialog addButtonWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Close", nil)]];
                       [dialog show];
                   }
                   

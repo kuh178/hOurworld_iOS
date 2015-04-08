@@ -49,10 +49,10 @@
     NSLog(@"%@", isRequest);
     
     if ([isOffer isEqualToString:@"T"]) {
-        self.title = @"Offers";
+        self.title = [NSString stringWithFormat:NSLocalizedString(@"Offers", nil)];
     }
     else {
-        self.title = @"Requests";
+        self.title = [NSString stringWithFormat:NSLocalizedString(@"Requests", nil)];
     }
     
     [self downloadContent];
@@ -110,7 +110,7 @@
         userNameLabel.text = tItem.mUserName;
     }
     else {
-        userNameLabel.text = @"No username found";
+        userNameLabel.text = [NSString stringWithFormat:NSLocalizedString(@"No_username_found", nil)];
     }
     
     // description
@@ -118,7 +118,7 @@
         [descriptionLabel setText:tItem.mDescription];
     }
     else {
-        [descriptionLabel setText:@"No description found"];
+        [descriptionLabel setText:[NSString stringWithFormat:NSLocalizedString(@"No_description_found", nil)]];
     }
     
     
@@ -128,7 +128,7 @@
         datetimeLabel.text = splitTimestamp[0];
     }
     else {
-        datetimeLabel.text = @"No datetime found";
+        datetimeLabel.text = [NSString stringWithFormat:NSLocalizedString(@"No_datetime_found", nil)];
     }
     
     // user image clicked
@@ -175,7 +175,9 @@
     
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     
-    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: @"Back" style: UIBarButtonItemStylePlain target:nil action:nil];
+    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc]
+                                      initWithTitle: [NSString stringWithFormat:NSLocalizedString(@"Back", nil)]
+                                      style: UIBarButtonItemStylePlain target:nil action:nil];
     [[self navigationItem] setBackBarButtonItem: newBackButton];
     
     // automatically reload only if there is some insertion or deletion
@@ -243,9 +245,9 @@
                               
                               UIAlertView *dialog = [[UIAlertView alloc]init];
                               [dialog setDelegate:nil];
-                              [dialog setTitle:@"Message"];
-                              [dialog setMessage:@"No search result. Post a task in this category!"];
-                              [dialog addButtonWithTitle:@"OK"];
+                              [dialog setTitle:[NSString stringWithFormat:NSLocalizedString(@"Message", nil)]];
+                              [dialog setMessage:[NSString stringWithFormat:NSLocalizedString(@"No_result_found_add_first", nil)]];
+                              [dialog addButtonWithTitle:[NSString stringWithFormat:NSLocalizedString(@"OK", nil)]];
                               [dialog show];
                           }
                           else {
@@ -282,9 +284,9 @@
                   else {
                       UIAlertView *dialog = [[UIAlertView alloc]init];
                       [dialog setDelegate:nil];
-                      [dialog setTitle:@"Message"];
-                      [dialog setMessage:@"No search result. Post a task in this category!"];
-                      [dialog addButtonWithTitle:@"OK"];
+                      [dialog setTitle:[NSString stringWithFormat:NSLocalizedString(@"Message", nil)]];
+                      [dialog setMessage:[NSString stringWithFormat:NSLocalizedString(@"No_result_found_add_first", nil)]];
+                      [dialog addButtonWithTitle:[NSString stringWithFormat:NSLocalizedString(@"OK", nil)]];
                       [dialog show];
                   }
                   
@@ -315,9 +317,9 @@
               else {
                   UIAlertView *dialog = [[UIAlertView alloc]init];
                   [dialog setDelegate:self];
-                  [dialog setTitle:@"Message"];
-                  [dialog setMessage:@"No search result. Post a task in this category!"];
-                  [dialog addButtonWithTitle:@"OK"];
+                  [dialog setTitle:[NSString stringWithFormat:NSLocalizedString(@"Message", nil)]];
+                  [dialog setMessage:[NSString stringWithFormat:NSLocalizedString(@"No_result_found_add_first", nil)]];
+                  [dialog addButtonWithTitle:[NSString stringWithFormat:NSLocalizedString(@"OK", nil)]];
                   [dialog show];
               }
               

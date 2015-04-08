@@ -77,9 +77,9 @@
                   
                   UIAlertView *dialog = [[UIAlertView alloc]init];
                   [dialog setDelegate:self];
-                  [dialog setTitle:@"Message"];
-                  [dialog setMessage:@"Your Application Has Been Sent! You will receive a welcome email with next steps once your account is setup. This may take a couple days."];
-                  [dialog addButtonWithTitle:@"Close"];
+                  [dialog setTitle:[NSString stringWithFormat:NSLocalizedString(@"Message", nil)]];
+                  [dialog setMessage:[NSString stringWithFormat:NSLocalizedString(@"Registration_success", nil)]];
+                  [dialog addButtonWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Close", nil)]];
                   [dialog show];
                   
               }
@@ -88,9 +88,9 @@
                   
                   UIAlertView *dialog = [[UIAlertView alloc]init];
                   [dialog setDelegate:self];
-                  [dialog setTitle:@"Message"];
-                  [dialog setMessage:@"Failed to register. Please try again"];
-                  [dialog addButtonWithTitle:@"Close"];
+                  [dialog setTitle:[NSString stringWithFormat:NSLocalizedString(@"Message", nil)]];
+                  [dialog setMessage:[NSString stringWithFormat:NSLocalizedString(@"Registration_fail", nil)]];
+                  [dialog addButtonWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Close", nil)]];
                   [dialog show];
               }
               
@@ -103,7 +103,7 @@
 {
     NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
     
-    if([title isEqualToString:@"Register"])
+    if([title isEqualToString:[NSString stringWithFormat:NSLocalizedString(@"Register", nil)]])
     {
         [self proceedRegister];
     }
@@ -112,10 +112,10 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [self.navigationController setNavigationBarHidden:NO animated:animated];
-    [[self navigationItem] setTitle:@"Create an account [3/3]"];
+    [[self navigationItem] setTitle:[NSString stringWithFormat:NSLocalizedString(@"Create_account_3_3", nil)]];
     [super viewWillAppear:animated];
     
-    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: @"Back" style: UIBarButtonItemStyleBordered target:nil action:nil];
+    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: [NSString stringWithFormat:NSLocalizedString(@"Back", nil)] style: UIBarButtonItemStyleBordered target:nil action:nil];
     [[self navigationItem] setBackBarButtonItem: newBackButton];
 }
 
@@ -175,26 +175,26 @@
         
         UIAlertView *dialog = [[UIAlertView alloc]init];
         [dialog setDelegate:self];
-        [dialog setTitle:@"Message"];
-        [dialog setMessage:@"Please fill out all fields"];
-        [dialog addButtonWithTitle:@"Close"];
+        [dialog setTitle:[NSString stringWithFormat:NSLocalizedString(@"Message", nil)]];
+        [dialog setMessage:[NSString stringWithFormat:NSLocalizedString(@"Please_fill_out", nil)]];
+        [dialog addButtonWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Close", nil)]];
         [dialog show];
     }
     // check if the password and passwordAgain are the same
     else if (![myPassword isEqualToString:myPasswordAgain]) {
         UIAlertView *dialog = [[UIAlertView alloc]init];
         [dialog setDelegate:self];
-        [dialog setTitle:@"Message"];
-        [dialog setMessage:@"Please check passwords"];
-        [dialog addButtonWithTitle:@"Close"];
+        [dialog setTitle:[NSString stringWithFormat:NSLocalizedString(@"Message", nil)]];
+        [dialog setMessage:[NSString stringWithFormat:NSLocalizedString(@"Please_check_password", nil)]];
+        [dialog addButtonWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Close", nil)]];
         [dialog show];
     }
     else {
-        UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Message"
-                                                          message:@"Register your account?"
+        UIAlertView *message = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Message", nil)]
+                                                          message:[NSString stringWithFormat:NSLocalizedString(@"Register_your_account", nil)]
                                                          delegate:self
-                                                cancelButtonTitle:@"Register"
-                                                otherButtonTitles:@"Cancel", nil];
+                                                cancelButtonTitle:[NSString stringWithFormat:NSLocalizedString(@"Register", nil)]
+                                                otherButtonTitles:[NSString stringWithFormat:NSLocalizedString(@"Cancel", nil)], nil];
         [message show];
     }
 }

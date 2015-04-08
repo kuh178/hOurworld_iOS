@@ -34,14 +34,14 @@
 	// Do any additional setup after loading the view.
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     
-    NSString *messageText = @"hOurworld is a national network of Hour Exchanges (time banks) in which you can provide a service, bank the time taken to provide it and then spend the hours you have earned to get services you want. This hOurworld mobile app is the product of a partnership among hOurworld, the Center for Human Computer Interaction at Pennsylvania State University (PSU), and the Palo Alto Research Center (PARC).";
+    NSString *messageText = [NSString stringWithFormat:NSLocalizedString(@"Intro_message", nil)];
     
     //\n\nResearchers at PSU and PARC want to understand how hOurworld members will use this mobile app and how mobile technology would influences time banking activities and social interaction and engagement. By using this application, you agree to share data from your experiences and uses of it. However you can opt out of this study whenever you want. Your information will be kept confidential in accordance with to HIPAA standards, and that any data that is publicized will be stripped of any personally identifying information. For further information on this study, please contact Dr. Jack Carroll (jmcarroll@psu.edu) or Dr. Victoria Bellotti (Victoria.Bellotti@parc.com).
     
-    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Terms of service"
+    UIAlertView *message = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Terms_of_service", nil)]
                                                       message:messageText
                                                      delegate:self
-                                            cancelButtonTitle:@"I understand"
+                                            cancelButtonTitle:[NSString stringWithFormat:NSLocalizedString(@"I_understand", nil)]
                                             otherButtonTitles:nil];
     message.cancelButtonIndex = -1;
     [message show];
@@ -64,11 +64,11 @@
 {
     NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
     
-    if([title isEqualToString:@"I understand"])
+    if([title isEqualToString:[NSString stringWithFormat:NSLocalizedString(@"I_understand", nil)]])
     {
         
     }
-    else if([title isEqualToString:@"Not participate"])
+    else if([title isEqualToString:[NSString stringWithFormat:NSLocalizedString(@"Not_participate", nil)]])
     {
        
     }

@@ -84,7 +84,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    self.navigationItem.title = @"Group list";
+    self.navigationItem.title = [NSString stringWithFormat:NSLocalizedString(@"Group_list", nil)];
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     [super viewWillAppear:animated];
     
@@ -116,9 +116,9 @@
               else {
                   UIAlertView *dialog = [[UIAlertView alloc]init];
                   [dialog setDelegate:self];
-                  [dialog setTitle:@"Message"];
-                  [dialog setMessage:@"No groups found"];
-                  [dialog addButtonWithTitle:@"OK"];
+                  [dialog setTitle:[NSString stringWithFormat:NSLocalizedString(@"Message", nil)]];
+                  [dialog setMessage:[NSString stringWithFormat:NSLocalizedString(@"No_groups_found", nil)]];
+                  [dialog addButtonWithTitle:[NSString stringWithFormat:NSLocalizedString(@"OK", nil)]];
                   [dialog show];
               }
               

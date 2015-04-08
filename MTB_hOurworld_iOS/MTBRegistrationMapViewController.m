@@ -264,10 +264,10 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [self.navigationController setNavigationBarHidden:NO animated:animated];
-    [[self navigationItem] setTitle:@"Pick an Exchange [1/3]"];
+    [[self navigationItem] setTitle:[NSString stringWithFormat:NSLocalizedString(@"Pick_exchange_1_3", nil)]];
     
     
-    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: @"Back" style: UIBarButtonItemStyleBordered target:nil action:nil];
+    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: [NSString stringWithFormat:NSLocalizedString(@"Back", nil)] style: UIBarButtonItemStyleBordered target:nil action:nil];
     [[self navigationItem] setBackBarButtonItem: newBackButton];
     
     // register for keyboard notifications
