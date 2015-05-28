@@ -12,11 +12,10 @@
 #import <MapKit/MKAnnotation.h>
 #import <CoreLocation/CoreLocation.h>
 #import "LocationAnnotation.h"
-#import "TSAlertView.h"
 #import "GAITrackedViewController.h"
 #import <MessageUI/MessageUI.h>
 
-@interface MTBTaskDetailViewController : GAITrackedViewController <MKMapViewDelegate, CLLocationManagerDelegate, UIAlertViewDelegate, UITextFieldDelegate, TSAlertViewDelegate, UIScrollViewDelegate, UIGestureRecognizerDelegate, MFMailComposeViewControllerDelegate>{
+@interface MTBTaskDetailViewController : GAITrackedViewController <MKMapViewDelegate, CLLocationManagerDelegate, UIAlertViewDelegate, UITextFieldDelegate, UIScrollViewDelegate, UIGestureRecognizerDelegate, MFMailComposeViewControllerDelegate>{
     MTBItem *mItem;
     
     IBOutlet UIImageView *profileImage;

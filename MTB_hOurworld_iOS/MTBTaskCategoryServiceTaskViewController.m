@@ -230,7 +230,7 @@
                   [jsonArray addObjectsFromArray:[responseObject objectForKey:@"results"]];
                   
                   int i;
-                  int arrayCount = [jsonArray count];
+                  int arrayCount = (int)[jsonArray count];
                   
                   if(arrayCount > 0) {
                       // insert new items into the table

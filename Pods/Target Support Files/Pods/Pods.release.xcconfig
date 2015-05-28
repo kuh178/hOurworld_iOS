@@ -1,6 +1,8 @@
+FRAMEWORK_SEARCH_PATHS = "$PODS_FRAMEWORK_BUILD_PATH"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AFNetworking" "${PODS_ROOT}/Headers/Public/ActionSheetPicker-3.0" "${PODS_ROOT}/Headers/Public/SDWebImage" "${PODS_ROOT}/Headers/Public/WSCoachMarksView"
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/AFNetworking" -isystem "${PODS_ROOT}/Headers/Public/ActionSheetPicker-3.0" -isystem "${PODS_ROOT}/Headers/Public/SDWebImage" -isystem "${PODS_ROOT}/Headers/Public/WSCoachMarksView"
-OTHER_LDFLAGS = -ObjC -l"Pods-AFNetworking" -l"Pods-ActionSheetPicker-3.0" -l"Pods-SDWebImage" -l"Pods-WSCoachMarksView" -framework "CoreGraphics" -framework "ImageIO" -framework "MobileCoreServices" -framework "QuartzCore" -framework "Security" -framework "SystemConfiguration" -framework "UIKit"
+LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
+OTHER_CFLAGS = $(inherited) -iquote "$PODS_FRAMEWORK_BUILD_PATH/AFNetworking.framework/Headers" -iquote "$PODS_FRAMEWORK_BUILD_PATH/ActionSheetPicker_3_0.framework/Headers" -iquote "$PODS_FRAMEWORK_BUILD_PATH/SDWebImage.framework/Headers" -iquote "$PODS_FRAMEWORK_BUILD_PATH/WSCoachMarksView.framework/Headers"
+OTHER_LDFLAGS = $(inherited) -ObjC -framework "AFNetworking" -framework "ActionSheetPicker_3_0" -framework "SDWebImage" -framework "WSCoachMarksView"
 OTHER_LIBTOOLFLAGS = $(OTHER_LDFLAGS)
+PODS_FRAMEWORK_BUILD_PATH = $(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Pods
 PODS_ROOT = ${SRCROOT}/Pods

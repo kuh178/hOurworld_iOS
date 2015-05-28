@@ -13,9 +13,9 @@
 #import "QuartzCore/QuartzCore.h"
 #import "MTBProfileViewController.h"
 #import "MTBReportHoursViewController.h"
-#import "TSAlertView.h"
 #import "LargeMapViewController.h"
 #import "MTBTaskEditViewController.h"
+#import "MTBProfilePrivateEmailViewController.h"
 
 @interface MTBTaskDetailViewController ()
 
@@ -326,6 +326,7 @@
 
 -(IBAction)pressReplyBtn:(id)sender {
     
+    /*
     NSString *emailTitle;
     
     if ([mIsOffer isEqualToString:@"T"]) {
@@ -366,6 +367,11 @@
             [self presentViewController:mc animated:YES completion:NULL];
         }
     }
+     */
+    
+    MTBProfilePrivateEmailViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MTBProfilePrivateEmailViewController"];
+    [viewController setProfileUserID:(int)mItem.mUserID];
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 - (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error

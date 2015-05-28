@@ -1,0 +1,780 @@
+
+/* Class = "UIButton"; normalTitle = "Username"; ObjectID = "0Ed-xr-qJT"; */
+"0Ed-xr-qJT.normalTitle" = "Username";
+
+/* Class = "UILabel"; text = "hOurworld"; ObjectID = "0Rx-Om-jYc"; */
+"0Rx-Om-jYc.text" = "hOurworld";
+
+/* Class = "UILabel"; text = "Location"; ObjectID = "0kw-aW-53P"; */
+"0kw-aW-53P.text" = "Location";
+
+/* Class = "UILabel"; text = "group name"; ObjectID = "1He-cO-mTq"; */
+"1He-cO-mTq.text" = "group name";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "1WQ-0H-oWZ"; */
+"1WQ-0H-oWZ.normalTitle" = "Login";
+
+/* Class = "UIButton"; normalTitle = "Logout"; ObjectID = "1ss-F1-u9Z"; */
+"1ss-F1-u9Z.normalTitle" = "Logout";
+
+/* Class = "UIBarButtonItem"; title = "Report"; ObjectID = "2LB-xt-AS3"; */
+"2LB-xt-AS3.title" = "Report";
+
+/* Class = "UILabel"; text = "Loading..."; ObjectID = "2MV-Xe-Tj9"; */
+"2MV-Xe-Tj9.text" = "Loading...";
+
+/* Class = "UILabel"; text = "Location (optional)"; ObjectID = "2Ts-pk-etj"; */
+"2Ts-pk-etj.text" = "Location (optional)";
+
+/* Class = "UITextView"; text = "(814) 123-1234"; ObjectID = "2eP-c1-NOa"; */
+"2eP-c1-NOa.text" = "(814) 123-1234";
+
+/* Class = "UILabel"; text = "Private?"; ObjectID = "2lo-3L-XlP"; */
+"2lo-3L-XlP.text" = "Private?";
+
+/* Class = "UILabel"; text = "username"; ObjectID = "2zr-RP-oub"; */
+"2zr-RP-oub.text" = "username";
+
+/* Class = "UIBarButtonItem"; title = "Logout"; ObjectID = "3MQ-0X-1vA"; */
+"3MQ-0X-1vA.title" = "Logout";
+
+/* Class = "UILabel"; text = "Phone"; ObjectID = "3NY-Iv-7rO"; */
+"3NY-Iv-7rO.text" = "Phone";
+
+/* Class = "UISegmentedControl"; 3qi-hv-PCi.segmentTitles[0] = "Yes"; ObjectID = "3qi-hv-PCi"; */
+"3qi-hv-PCi.segmentTitles[0]" = "Yes";
+
+/* Class = "UISegmentedControl"; 3qi-hv-PCi.segmentTitles[1] = "No"; ObjectID = "3qi-hv-PCi"; */
+"3qi-hv-PCi.segmentTitles[1]" = "No";
+
+/* Class = "UINavigationItem"; title = "Edit bio"; ObjectID = "3wL-X4-AcV"; */
+"3wL-X4-AcV.title" = "Edit bio";
+
+/* Class = "UILabel"; text = "Send a group message"; ObjectID = "48m-6y-fWQ"; */
+"48m-6y-fWQ.text" = "Send a group message";
+
+/* Class = "UILabel"; text = "Press the map for two seconds to add a pushpin"; ObjectID = "4EN-QD-xe7"; */
+"4EN-QD-xe7.text" = "Press the map for two seconds to add a pushpin";
+
+/* Class = "UILabel"; text = "Step description"; ObjectID = "4Ie-80-Cif"; */
+"4Ie-80-Cif.text" = "Step description";
+
+/* Class = "UITextField"; placeholder = "Phone number"; ObjectID = "4cY-IG-2ru"; */
+"4cY-IG-2ru.placeholder" = "Phone number";
+
+/* Class = "UILabel"; text = "datetime"; ObjectID = "5JU-LE-urY"; */
+"5JU-LE-urY.text" = "datetime";
+
+/* Class = "UILabel"; text = "description"; ObjectID = "5Kh-cq-5WN"; */
+"5Kh-cq-5WN.text" = "description";
+
+/* Class = "UIButton"; normalTitle = "Edit"; ObjectID = "5Z8-kT-978"; */
+"5Z8-kT-978.normalTitle" = "Edit";
+
+/* Class = "UILabel"; text = "username"; ObjectID = "5op-vt-7hV"; */
+"5op-vt-7hV.text" = "username";
+
+/* Class = "UILabel"; text = "Task service type"; ObjectID = "66V-gz-9cT"; */
+"66V-gz-9cT.text" = "Task service type";
+
+/* Class = "UILabel"; text = "user name"; ObjectID = "6FS-eJ-6NY"; */
+"6FS-eJ-6NY.text" = "user name";
+
+/* Class = "UIBarButtonItem"; title = "Report hours  "; ObjectID = "6gH-bo-y5E"; */
+"6gH-bo-y5E.title" = "Report hours  ";
+
+/* Class = "UILabel"; text = "Announcements"; ObjectID = "6gX-76-ZCg"; */
+"6gX-76-ZCg.text" = "Announcements";
+
+/* Class = "UIBarButtonItem"; title = "Report hours  "; ObjectID = "6zV-Rz-zXK"; */
+"6zV-Rz-zXK.title" = "Report hours  ";
+
+/* Class = "UILabel"; text = "Home address"; ObjectID = "7LM-Qr-bb4"; */
+"7LM-Qr-bb4.text" = "Home address";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "7Pw-ib-98H"; */
+"7Pw-ib-98H.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Web"; ObjectID = "7fv-A1-bO4"; */
+"7fv-A1-bO4.normalTitle" = "Web";
+
+/* Class = "UILabel"; text = "Top five members"; ObjectID = "8f6-Lf-fIY"; */
+"8f6-Lf-fIY.text" = "Top five members";
+
+/* Class = "UIButton"; normalTitle = "Add date"; ObjectID = "8jq-PK-Blb"; */
+"8jq-PK-Blb.normalTitle" = "Add date";
+
+/* Class = "UILabel"; text = "Expiration (I need this in)"; ObjectID = "8zA-Ws-07a"; */
+"8zA-Ws-07a.text" = "Expiration (I need this in)";
+
+/* Class = "UILabel"; text = "username"; ObjectID = "9Yu-VY-1Mq"; */
+"9Yu-VY-1Mq.text" = "username";
+
+/* Class = "UIButton"; normalTitle = "Credit History"; ObjectID = "9pw-mJ-e9i"; */
+"9pw-mJ-e9i.normalTitle" = "Credit History";
+
+/* Class = "UILabel"; text = "description"; ObjectID = "AVi-8v-b9a"; */
+"AVi-8v-b9a.text" = "description";
+
+/* Class = "UILabel"; text = "1 hour"; ObjectID = "AcL-bk-JI6"; */
+"AcL-bk-JI6.text" = "1 hour";
+
+/* Class = "UILabel"; text = "156 hours volunteered by 57 members"; ObjectID = "Adh-tp-jfX"; */
+"Adh-tp-jfX.text" = "156 hours volunteered by 57 members";
+
+/* Class = "UIButton"; normalTitle = "Groups"; ObjectID = "AwL-77-HyY"; */
+"AwL-77-HyY.normalTitle" = "Groups";
+
+/* Class = "UITextField"; placeholder = "Street"; ObjectID = "AzH-H5-QaZ"; */
+"AzH-H5-QaZ.placeholder" = "Street";
+
+/* Class = "UISegmentedControl"; B1U-pb-52b.segmentTitles[0] = "T"; ObjectID = "B1U-pb-52b"; */
+"B1U-pb-52b.segmentTitles[0]" = "T";
+
+/* Class = "UISegmentedControl"; B1U-pb-52b.segmentTitles[1] = "F"; ObjectID = "B1U-pb-52b"; */
+"B1U-pb-52b.segmentTitles[1]" = "F";
+
+/* Class = "UILabel"; text = "username"; ObjectID = "BAp-kF-3eQ"; */
+"BAp-kF-3eQ.text" = "username";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "BH0-JF-Wzd"; */
+"BH0-JF-Wzd.text" = "Label";
+
+/* Class = "UILabel"; text = "The National Science Foundation (NSF) has funded a team of researchers at the Palo Alto Research Center (PARC), and the Pennsylvania State University (PSU) to conduct scientific research into timebanking. Their goal is to understand timebanking practices and the role that technology plays in enabling them and to develop new innovative technologies to make it much easier to do and more popular. This material is based upon work supported by the National Science Foundation under Grant No. IIS-1218544\n\nThe hOurworld founders and software architects have agreed to support this research free of charge.\n\nAll the Best,\nHEP, hOurworld, PARC and PSU"; ObjectID = "BQs-s5-pIe"; */
+"BQs-s5-pIe.text" = "The National Science Foundation (NSF) has funded a team of researchers at the Palo Alto Research Center (PARC), and the Pennsylvania State University (PSU) to conduct scientific research into timebanking. Their goal is to understand timebanking practices and the role that technology plays in enabling them and to develop new innovative technologies to make it much easier to do and more popular. This material is based upon work supported by the National Science Foundation under Grant No. IIS-1218544\n\nThe hOurworld founders and software architects have agreed to support this research free of charge.\n\nAll the Best,\nHEP, hOurworld, PARC and PSU";
+
+/* Class = "UIButton"; normalTitle = "Next step"; ObjectID = "BU5-4i-TLs"; */
+"BU5-4i-TLs.normalTitle" = "Next step";
+
+/* Class = "UIButton"; normalTitle = "About hOurworld"; ObjectID = "BWl-0a-HtH"; */
+"BWl-0a-HtH.normalTitle" = "About hOurworld";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "BXu-Xm-w9L"; */
+"BXu-Xm-w9L.normalTitle" = "Submit";
+
+/* Class = "UIButton"; normalTitle = "Add location"; ObjectID = "Bis-rM-qiM"; */
+"Bis-rM-qiM.normalTitle" = "Add location";
+
+/* Class = "UINavigationItem"; title = "Details"; ObjectID = "CPH-4e-fkL"; */
+"CPH-4e-fkL.title" = "Details";
+
+/* Class = "UILabel"; text = "timestamp"; ObjectID = "CjP-qo-EZR"; */
+"CjP-qo-EZR.text" = "timestamp";
+
+/* Class = "UIBarButtonItem"; title = "Report"; ObjectID = "D2w-ES-ibj"; */
+"D2w-ES-ibj.title" = "Report";
+
+/* Class = "UILabel"; text = "21 hours"; ObjectID = "D8n-Lt-zTp"; */
+"D8n-Lt-zTp.text" = "21 hours";
+
+/* Class = "UILabel"; text = "description"; ObjectID = "D9s-vH-pME"; */
+"D9s-vH-pME.text" = "description";
+
+/* Class = "UILabel"; text = "Reported hours"; ObjectID = "DrC-wx-9dx"; */
+"DrC-wx-9dx.text" = "Reported hours";
+
+/* Class = "UITextField"; placeholder = "Type password again"; ObjectID = "DrR-5T-FZV"; */
+"DrR-5T-FZV.placeholder" = "Type password again";
+
+/* Class = "UILabel"; text = "Leave a note"; ObjectID = "EGl-cx-Dd1"; */
+"EGl-cx-Dd1.text" = "Leave a note";
+
+/* Class = "UILabel"; text = "Refs"; ObjectID = "EK9-7n-dZN"; */
+"EK9-7n-dZN.text" = "Refs";
+
+/* Class = "UILabel"; text = "Would you be willing to be contacted by other members to provide a reference?"; ObjectID = "EWG-u3-ez7"; */
+"EWG-u3-ez7.text" = "Would you be willing to be contacted by other members to provide a reference?";
+
+/* Class = "UITextField"; placeholder = "Year (yyyy)"; ObjectID = "EcS-F9-6CZ"; */
+"EcS-F9-6CZ.placeholder" = "Year (yyyy)";
+
+/* Class = "UILabel"; text = "Would you be willing to be contacted by other members to provide a reference?"; ObjectID = "Egf-zj-d74"; */
+"Egf-zj-d74.text" = "Would you be willing to be contacted by other members to provide a reference?";
+
+/* Class = "UIButton"; normalTitle = "Mobile"; ObjectID = "F4M-x7-lCj"; */
+"F4M-x7-lCj.normalTitle" = "Mobile";
+
+/* Class = "UITextField"; placeholder = "abc@gmail.com"; ObjectID = "FMW-Ay-QGv"; */
+"FMW-Ay-QGv.placeholder" = "abc@gmail.com";
+
+/* Class = "UILabel"; text = "Press the map for two seconds to add a pushpin"; ObjectID = "FWD-Oq-khy"; */
+"FWD-Oq-khy.text" = "Press the map for two seconds to add a pushpin";
+
+/* Class = "UILabel"; text = "10 hours"; ObjectID = "FeY-5l-HM8"; */
+"FeY-5l-HM8.text" = "10 hours";
+
+/* Class = "UITextView"; text = "linda@hourworld.org"; ObjectID = "Fh1-K4-DrU"; */
+"Fh1-K4-DrU.text" = "linda@hourworld.org";
+
+/* Class = "UILabel"; text = "Location"; ObjectID = "FrD-oc-S8G"; */
+"FrD-oc-S8G.text" = "Location";
+
+/* Class = "UIBarButtonItem"; title = "See Requests"; ObjectID = "GKs-aP-Rnb"; */
+"GKs-aP-Rnb.title" = "See Requests";
+
+/* Class = "UIButton"; normalTitle = "Date completed"; ObjectID = "GN5-lk-FZ3"; */
+"GN5-lk-FZ3.normalTitle" = "Date completed";
+
+/* Class = "UIButton"; normalTitle = "Home"; ObjectID = "GOg-BD-Uh9"; */
+"GOg-BD-Uh9.normalTitle" = "Home";
+
+/* Class = "UIBarButtonItem"; title = "Add location"; ObjectID = "GfL-iF-NN9"; */
+"GfL-iF-NN9.title" = "Add location";
+
+/* Class = "UITextView"; text = "description"; ObjectID = "GzZ-cd-swJ"; */
+"GzZ-cd-swJ.text" = "description";
+
+/* Class = "UILabel"; text = "Service"; ObjectID = "HF6-in-u9E"; */
+"HF6-in-u9E.text" = "Service";
+
+/* Class = "UILabel"; text = "Password"; ObjectID = "HVR-4P-FQx"; */
+"HVR-4P-FQx.text" = "Password";
+
+/* Class = "UIBarButtonItem"; title = "Reply"; ObjectID = "Hub-9K-aaw"; */
+"Hub-9K-aaw.title" = "Reply";
+
+/* Class = "UILabel"; text = "Top five members"; ObjectID = "I0X-in-u5o"; */
+"I0X-in-u5o.text" = "Top five members";
+
+/* Class = "UISegmentedControl"; IcD-7g-d6L.segmentTitles[0] = "T"; ObjectID = "IcD-7g-d6L"; */
+"IcD-7g-d6L.segmentTitles[0]" = "T";
+
+/* Class = "UISegmentedControl"; IcD-7g-d6L.segmentTitles[1] = "F"; ObjectID = "IcD-7g-d6L"; */
+"IcD-7g-d6L.segmentTitles[1]" = "F";
+
+/* Class = "UILabel"; text = "Task service type"; ObjectID = "J7k-we-Z1Y"; */
+"J7k-we-Z1Y.text" = "Task service type";
+
+/* Class = "UILabel"; text = "Type"; ObjectID = "JHO-hl-Mlr"; */
+"JHO-hl-Mlr.text" = "Type";
+
+/* Class = "UINavigationItem"; title = "Details"; ObjectID = "JNk-as-ony"; */
+"JNk-as-ony.title" = "Details";
+
+/* Class = "UIButton"; normalTitle = "Statement"; ObjectID = "JmF-bb-jUQ"; */
+"JmF-bb-jUQ.normalTitle" = "Statement";
+
+/* Class = "UILabel"; text = "Step description"; ObjectID = "JsN-In-DJB"; */
+"JsN-In-DJB.text" = "Step description";
+
+/* Class = "UILabel"; text = "Requests"; ObjectID = "Jz9-FZ-gEs"; */
+"Jz9-FZ-gEs.text" = "Requests";
+
+/* Class = "UILabel"; text = "Phone number"; ObjectID = "K6Y-fB-Odw"; */
+"K6Y-fB-Odw.text" = "Phone number";
+
+/* Class = "UIBarButtonItem"; title = "Submit   "; ObjectID = "K7e-gH-zgV"; */
+"K7e-gH-zgV.title" = "Submit   ";
+
+/* Class = "UILabel"; text = "Description"; ObjectID = "KAl-vC-T7X"; */
+"KAl-vC-T7X.text" = "Description";
+
+/* Class = "UILabel"; text = "State College, PA"; ObjectID = "KJA-ij-BWf"; */
+"KJA-ij-BWf.text" = "State College, PA";
+
+/* Class = "UILabel"; text = "Completed date"; ObjectID = "KcL-Ll-dtY"; */
+"KcL-Ll-dtY.text" = "Completed date";
+
+/* Class = "UILabel"; text = "Description"; ObjectID = "L7T-MY-WHr"; */
+"L7T-MY-WHr.text" = "Description";
+
+/* Class = "UILabel"; text = "username"; ObjectID = "L8V-s6-7i1"; */
+"L8V-s6-7i1.text" = "username";
+
+/* Class = "UILabel"; text = "Group name"; ObjectID = "LxN-8F-U98"; */
+"LxN-8F-U98.text" = "Group name";
+
+/* Class = "UILabel"; text = "Date"; ObjectID = "MDC-oU-fm2"; */
+"MDC-oU-fm2.text" = "Date";
+
+/* Class = "UITextField"; placeholder = "  Add a subject here"; ObjectID = "MiD-cJ-vSJ"; */
+"MiD-cJ-vSJ.placeholder" = "  Add a subject here";
+
+/* Class = "UISegmentedControl"; N27-WG-J17.segmentTitles[0] = "T"; ObjectID = "N27-WG-J17"; */
+"N27-WG-J17.segmentTitles[0]" = "T";
+
+/* Class = "UISegmentedControl"; N27-WG-J17.segmentTitles[1] = "F"; ObjectID = "N27-WG-J17"; */
+"N27-WG-J17.segmentTitles[1]" = "F";
+
+/* Class = "UILabel"; text = "Description"; ObjectID = "NQJ-vu-EAy"; */
+"NQJ-vu-EAy.text" = "Description";
+
+/* Class = "UILabel"; text = "hOurworld is a national network of Hour Exchanges (time banks) where you can provide a service, bank that time and then spend the hours you've earned to get services you want."; ObjectID = "Nc9-4j-jTJ"; */
+"Nc9-4j-jTJ.text" = "hOurworld is a national network of Hour Exchanges (time banks) where you can provide a service, bank that time and then spend the hours you've earned to get services you want.";
+
+/* Class = "UILabel"; text = "This task will be expired in ?? days"; ObjectID = "Nr5-Pz-dyp"; */
+"Nr5-Pz-dyp.text" = "This task will be expired in ?? days";
+
+/* Class = "UITextView"; text = "http://www.hourworld.org/"; ObjectID = "O0M-RX-ZjO"; */
+"O0M-RX-ZjO.text" = "http://www.hourworld.org/";
+
+/* Class = "UITextField"; placeholder = "First name"; ObjectID = "O8L-Qp-af3"; */
+"O8L-Qp-af3.placeholder" = "First name";
+
+/* Class = "UIButton"; normalTitle = "Edit"; ObjectID = "O9D-ld-4CH"; */
+"O9D-ld-4CH.normalTitle" = "Edit";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "OOL-Xq-qmq"; */
+"OOL-Xq-qmq.title" = "Back";
+
+/* Class = "UIButton"; normalTitle = "Update"; ObjectID = "OT3-Du-5Pi"; */
+"OT3-Du-5Pi.normalTitle" = "Update";
+
+/* Class = "UILabel"; text = "3 hours"; ObjectID = "OVQ-Xu-0dU"; */
+"OVQ-Xu-0dU.text" = "3 hours";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "OYR-pS-h9c"; */
+"OYR-pS-h9c.text" = "Email";
+
+/* Class = "UITextField"; placeholder = "123-123-1234"; ObjectID = "Oge-VF-iea"; */
+"Oge-VF-iea.placeholder" = "123-123-1234";
+
+/* Class = "UILabel"; text = "description"; ObjectID = "OnM-ec-uki"; */
+"OnM-ec-uki.text" = "description";
+
+/* Class = "UILabel"; text = "Provider name"; ObjectID = "Otb-hz-NMq"; */
+"Otb-hz-NMq.text" = "Provider name";
+
+/* Class = "UILabel"; text = "Service"; ObjectID = "PFo-0V-fyg"; */
+"PFo-0V-fyg.text" = "Service";
+
+/* Class = "UIButton"; normalTitle = "My profile"; ObjectID = "PhK-ic-ERR"; */
+"PhK-ic-ERR.normalTitle" = "My profile";
+
+/* Class = "UIButton"; normalTitle = "Del"; ObjectID = "PiH-Yc-X6v"; */
+"PiH-Yc-X6v.normalTitle" = "Del";
+
+/* Class = "UIButton"; normalTitle = "Edit"; ObjectID = "Pjg-p6-wQh"; */
+"Pjg-p6-wQh.normalTitle" = "Edit";
+
+/* Class = "UILabel"; text = "Group members"; ObjectID = "PlQ-nF-sDc"; */
+"PlQ-nF-sDc.text" = "Group members";
+
+/* Class = "UINavigationItem"; title = "Service lists"; ObjectID = "Poj-uM-3QN"; */
+"Poj-uM-3QN.title" = "Service lists";
+
+/* Class = "UILabel"; text = "Service Category"; ObjectID = "PwV-ni-bfZ"; */
+"PwV-ni-bfZ.text" = "Service Category";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "PyV-T5-xBK"; */
+"PyV-T5-xBK.placeholder" = "Password";
+
+/* Class = "UILabel"; text = "2 hours"; ObjectID = "Q1Q-5F-E9j"; */
+"Q1Q-5F-E9j.text" = "2 hours";
+
+/* Class = "UILabel"; text = "Mobile"; ObjectID = "Qhk-Cz-9St"; */
+"Qhk-Cz-9St.text" = "Mobile";
+
+/* Class = "UILabel"; text = "Account"; ObjectID = "QiO-sK-PZd"; */
+"QiO-sK-PZd.text" = "Account";
+
+/* Class = "UILabel"; text = "7 hours"; ObjectID = "RH6-ZU-CAG"; */
+"RH6-ZU-CAG.text" = "7 hours";
+
+/* Class = "UIButton"; normalTitle = "Edit"; ObjectID = "RPL-YI-Rp2"; */
+"RPL-YI-Rp2.normalTitle" = "Edit";
+
+/* Class = "UILabel"; text = "Hours"; ObjectID = "RdE-w2-7YV"; */
+"RdE-w2-7YV.text" = "Hours";
+
+/* Class = "UILabel"; text = "Home"; ObjectID = "RiO-Tw-YFX"; */
+"RiO-Tw-YFX.text" = "Home";
+
+/* Class = "UILabel"; text = "Private?"; ObjectID = "Rth-9k-9u3"; */
+"Rth-9k-9u3.text" = "Private?";
+
+/* Class = "UIButton"; normalTitle = "Share this app"; ObjectID = "SJe-G7-17X"; */
+"SJe-G7-17X.normalTitle" = "Share this app";
+
+/* Class = "UILabel"; text = "Ver. 1.0.24"; ObjectID = "Si5-bg-GGL"; */
+"Si5-bg-GGL.text" = "Ver. 1.0.24";
+
+/* Class = "UILabel"; text = "4 hours"; ObjectID = "Skg-85-tA0"; */
+"Skg-85-tA0.text" = "4 hours";
+
+/* Class = "UILabel"; text = "Activity"; ObjectID = "Tcg-9q-Uqx"; */
+"Tcg-9q-Uqx.text" = "Activity";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "Twu-3T-t2g"; */
+"Twu-3T-t2g.title" = "Back";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "TxP-y2-osh"; */
+"TxP-y2-osh.text" = "Name";
+
+/* Class = "UIButton"; normalTitle = "Credit History"; ObjectID = "UBE-kS-KRq"; */
+"UBE-kS-KRq.normalTitle" = "Credit History";
+
+/* Class = "UIBarButtonItem"; title = "Submit the location  "; ObjectID = "VV1-53-s6k"; */
+"VV1-53-s6k.title" = "Submit the location  ";
+
+/* Class = "UIButton"; normalTitle = "Del"; ObjectID = "Vds-Xl-Tfa"; */
+"Vds-Xl-Tfa.normalTitle" = "Del";
+
+/* Class = "UILabel"; text = "Website"; ObjectID = "Vff-3M-tKN"; */
+"Vff-3M-tKN.text" = "Website";
+
+/* Class = "UILabel"; text = "Contact"; ObjectID = "Vg9-i9-3Lu"; */
+"Vg9-i9-3Lu.text" = "Contact";
+
+/* Class = "UILabel"; text = "Description"; ObjectID = "VoP-6y-sRT"; */
+"VoP-6y-sRT.text" = "Description";
+
+/* Class = "UILabel"; text = "Bio"; ObjectID = "WGS-8Z-EwW"; */
+"WGS-8Z-EwW.text" = "Bio";
+
+/* Class = "UITextField"; placeholder = "City"; ObjectID = "WGU-lg-Rh4"; */
+"WGU-lg-Rh4.placeholder" = "City";
+
+/* Class = "UIButton"; normalTitle = "Join hOurworld"; ObjectID = "WHX-ue-ZN7"; */
+"WHX-ue-ZN7.normalTitle" = "Join hOurworld";
+
+/* Class = "UILabel"; text = "Service name"; ObjectID = "X4J-Qv-dAo"; */
+"X4J-Qv-dAo.text" = "Service name";
+
+/* Class = "UILabel"; text = "I would like to donate my time (optional)"; ObjectID = "XN2-qD-atb"; */
+"XN2-qD-atb.text" = "I would like to donate my time (optional)";
+
+/* Class = "UITextField"; placeholder = "Month (mm)"; ObjectID = "XOx-xQ-8Ya"; */
+"XOx-xQ-8Ya.placeholder" = "Month (mm)";
+
+/* Class = "UILabel"; text = "datetime"; ObjectID = "Xm6-bo-Fo0"; */
+"Xm6-bo-Fo0.text" = "datetime";
+
+/* Class = "UIBarButtonItem"; title = "Remove"; ObjectID = "Y2O-Ne-DZ4"; */
+"Y2O-Ne-DZ4.title" = "Remove";
+
+/* Class = "UITextField"; placeholder = "Last name"; ObjectID = "Y4R-jh-KdJ"; */
+"Y4R-jh-KdJ.placeholder" = "Last name";
+
+/* Class = "UITextField"; placeholder = "123-123-1234"; ObjectID = "Y4v-h0-iaA"; */
+"Y4v-h0-iaA.placeholder" = "123-123-1234";
+
+/* Class = "UILabel"; text = "Completed date"; ObjectID = "YD2-9m-1SV"; */
+"YD2-9m-1SV.text" = "Completed date";
+
+/* Class = "UIButton"; normalTitle = "Add location"; ObjectID = "YFI-1U-8nK"; */
+"YFI-1U-8nK.normalTitle" = "Add location";
+
+/* Class = "UILabel"; text = "datetime"; ObjectID = "YdU-hU-FHx"; */
+"YdU-hU-FHx.text" = "datetime";
+
+/* Class = "UILabel"; text = "3 hours"; ObjectID = "YeV-xp-uRg"; */
+"YeV-xp-uRg.text" = "3 hours";
+
+/* Class = "UILabel"; text = "Private?"; ObjectID = "Ypc-hD-NU3"; */
+"Ypc-hD-NU3.text" = "Private?";
+
+/* Class = "UIBarButtonItem"; title = "Save changes  "; ObjectID = "Z4d-rf-KmY"; */
+"Z4d-rf-KmY.title" = "Save changes  ";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ZSw-Bl-ZLL"; */
+"ZSw-Bl-ZLL.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "Choose Member"; ObjectID = "Zrj-Fv-Hnl"; */
+"Zrj-Fv-Hnl.title" = "Choose Member";
+
+/* Class = "UILabel"; text = "Hours"; ObjectID = "Zwx-au-WNO"; */
+"Zwx-au-WNO.text" = "Hours";
+
+/* Class = "UILabel"; text = "Website"; ObjectID = "aMg-mL-sEk"; */
+"aMg-mL-sEk.text" = "Website";
+
+/* Class = "UITextField"; placeholder = "Day (dd)"; ObjectID = "aOu-OZ-kGa"; */
+"aOu-OZ-kGa.placeholder" = "Day (dd)";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "aWj-Rc-kZm"; */
+"aWj-Rc-kZm.text" = "Email";
+
+/* Class = "UILabel"; text = "Peace, abundance and sharing through equality in exchange"; ObjectID = "ahk-3N-qTI"; */
+"ahk-3N-qTI.text" = "Peace, abundance and sharing through equality in exchange";
+
+/* Class = "UILabel"; text = "datetime"; ObjectID = "auM-9i-k1C"; */
+"auM-9i-k1C.text" = "datetime";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "ayZ-Vm-BMr"; */
+"ayZ-Vm-BMr.title" = "Back";
+
+/* Class = "UILabel"; text = "Description"; ObjectID = "azt-qe-MjC"; */
+"azt-qe-MjC.text" = "Description";
+
+/* Class = "UIButton"; normalTitle = "Hours spent"; ObjectID = "bSK-fE-Ei5"; */
+"bSK-fE-Ei5.normalTitle" = "Hours spent";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "c0C-mA-0TD"; */
+"c0C-mA-0TD.title" = "Back";
+
+/* Class = "UITextView"; text = "hOurworld is a national network of Hour Exchanges (time banks) in which you can provide a service, bank the time taken to provide it and then spend the hours you have earned to get services you want. This hOurworld mobile app is the product of a partnership among hOurworld, the Center for Human Computer Interaction at Pennsylvania State University (PSU), and the Palo Alto Research Center (PARC). \n\nResearchers at PSU and PARC want to understand how hOurworld members will use this mobile app and how mobile technology would influences time banking activities and social interaction and engagement. By using this application, you agree to share data from your experiences and uses of it. However you can opt out of this study whenever you want. Your information will be kept confidential in accordance with to HIPAA standards, and that any data that is publicized will be stripped of any personally identifying information. For further information on this study, please contact Dr. Jack Carroll (jmcarroll@psu.edu) or Dr. Victoria Bellotti (Victoria.Bellotti@parc.com)."; ObjectID = "c0Z-7f-YZ6"; */
+"c0Z-7f-YZ6.text" = "hOurworld is a national network of Hour Exchanges (time banks) in which you can provide a service, bank the time taken to provide it and then spend the hours you have earned to get services you want. This hOurworld mobile app is the product of a partnership among hOurworld, the Center for Human Computer Interaction at Pennsylvania State University (PSU), and the Palo Alto Research Center (PARC). \n\nResearchers at PSU and PARC want to understand how hOurworld members will use this mobile app and how mobile technology would influences time banking activities and social interaction and engagement. By using this application, you agree to share data from your experiences and uses of it. However you can opt out of this study whenever you want. Your information will be kept confidential in accordance with to HIPAA standards, and that any data that is publicized will be stripped of any personally identifying information. For further information on this study, please contact Dr. Jack Carroll (jmcarroll@psu.edu) or Dr. Victoria Bellotti (Victoria.Bellotti@parc.com).";
+
+/* Class = "UILabel"; text = "Were you satisfied with the service you received?"; ObjectID = "c32-Ig-dne"; */
+"c32-Ig-dne.text" = "Were you satisfied with the service you received?";
+
+/* Class = "UIBarButtonItem"; title = "Remove"; ObjectID = "cQD-cZ-KHq"; */
+"cQD-cZ-KHq.title" = "Remove";
+
+/* Class = "UILabel"; text = "Search"; ObjectID = "caQ-Kz-qel"; */
+"caQ-Kz-qel.text" = "Search";
+
+/* Class = "UILabel"; text = "Were you satisfied with the service you received?"; ObjectID = "d0I-uZ-EGl"; */
+"d0I-uZ-EGl.text" = "Were you satisfied with the service you received?";
+
+/* Class = "UIButton"; normalTitle = "Del"; ObjectID = "dhZ-Gk-2a9"; */
+"dhZ-Gk-2a9.normalTitle" = "Del";
+
+/* Class = "UILabel"; text = "Leave a note"; ObjectID = "dyE-Ax-NPF"; */
+"dyE-Ax-NPF.text" = "Leave a note";
+
+/* Class = "UILabel"; text = "Hours"; ObjectID = "e17-Gq-U51"; */
+"e17-Gq-U51.text" = "Hours";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "e1T-af-aMf"; */
+"e1T-af-aMf.normalTitle" = "Login";
+
+/* Class = "UIButton"; normalTitle = "Hours spent"; ObjectID = "e71-nY-8Qf"; */
+"e71-nY-8Qf.normalTitle" = "Hours spent";
+
+/* Class = "UILabel"; text = "Birthdate (mm/dd/yyyy)"; ObjectID = "eRF-GG-Ul0"; */
+"eRF-GG-Ul0.text" = "Birthdate (mm/dd/yyyy)";
+
+/* Class = "UITextField"; placeholder = "Bio"; ObjectID = "eVb-UP-iVU"; */
+"eVb-UP-iVU.placeholder" = "Bio";
+
+/* Class = "UIButton"; normalTitle = "About this app"; ObjectID = "ei1-Yy-ZBt"; */
+"ei1-Yy-ZBt.normalTitle" = "About this app";
+
+/* Class = "UILabel"; text = "Private?"; ObjectID = "es3-Jn-Kel"; */
+"es3-Jn-Kel.text" = "Private?";
+
+/* Class = "UIButton"; normalTitle = "Date completed"; ObjectID = "fHV-qn-irI"; */
+"fHV-qn-irI.normalTitle" = "Date completed";
+
+/* Class = "UITextField"; placeholder = "Zip code"; ObjectID = "fOr-9D-nZw"; */
+"fOr-9D-nZw.placeholder" = "Zip code";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "flc-G1-mFb"; */
+"flc-G1-mFb.title" = "Back";
+
+/* Class = "UILabel"; text = "Username"; ObjectID = "fnX-fc-wcT"; */
+"fnX-fc-wcT.text" = "Username";
+
+/* Class = "UILabel"; text = "Category"; ObjectID = "fzY-De-ith"; */
+"fzY-De-ith.text" = "Category";
+
+/* Class = "UILabel"; text = "Password"; ObjectID = "gD9-rh-OKQ"; */
+"gD9-rh-OKQ.text" = "Password";
+
+/* Class = "UIButton"; normalTitle = "Email"; ObjectID = "gNu-lh-otb"; */
+"gNu-lh-otb.normalTitle" = "Email";
+
+/* Class = "UILabel"; text = "Service"; ObjectID = "gcn-H7-7ST"; */
+"gcn-H7-7ST.text" = "Service";
+
+/* Class = "UIButton"; normalTitle = "Search"; ObjectID = "gre-4D-obB"; */
+"gre-4D-obB.normalTitle" = "Search";
+
+/* Class = "UILabel"; text = "group name"; ObjectID = "h0j-1N-juw"; */
+"h0j-1N-juw.text" = "group name";
+
+/* Class = "UILabel"; text = "More"; ObjectID = "hGX-Av-lVe"; */
+"hGX-Av-lVe.text" = "More";
+
+/* Class = "UILabel"; text = "Leave a note"; ObjectID = "hNv-2U-9kx"; */
+"hNv-2U-9kx.text" = "Leave a note";
+
+/* Class = "UITextField"; placeholder = "State"; ObjectID = "hiL-y1-S2S"; */
+"hiL-y1-S2S.placeholder" = "State";
+
+/* Class = "UIBarButtonItem"; title = "Search groups"; ObjectID = "hpY-eD-FrK"; */
+"hpY-eD-FrK.title" = "Search groups";
+
+/* Class = "UILabel"; text = "Bio"; ObjectID = "iIc-dF-G3w"; */
+"iIc-dF-G3w.text" = "Bio";
+
+/* Class = "UITextView"; text = "(207) 232-7938"; ObjectID = "j62-Eo-zcW"; */
+"j62-Eo-zcW.text" = "(207) 232-7938";
+
+/* Class = "UIButton"; normalTitle = "Choose recipient"; ObjectID = "jCq-NK-82z"; */
+"jCq-NK-82z.normalTitle" = "Choose recipient";
+
+/* Class = "UIButton"; normalTitle = "Edit"; ObjectID = "jaC-X2-tkT"; */
+"jaC-X2-tkT.normalTitle" = "Edit";
+
+/* Class = "UILabel"; text = "Service category"; ObjectID = "jwA-ZN-oZL"; */
+"jwA-ZN-oZL.text" = "Service category";
+
+/* Class = "UIButton"; normalTitle = "Choose member"; ObjectID = "k3f-q5-IW3"; */
+"k3f-q5-IW3.normalTitle" = "Choose member";
+
+/* Class = "UIButton"; normalTitle = "Edit"; ObjectID = "k75-oV-7Qd"; */
+"k75-oV-7Qd.normalTitle" = "Edit";
+
+/* Class = "UIBarButtonItem"; title = "Post"; ObjectID = "k9O-BW-jRU"; */
+"k9O-BW-jRU.title" = "Post";
+
+/* Class = "UILabel"; text = "Email address"; ObjectID = "kHU-8m-i3l"; */
+"kHU-8m-i3l.text" = "Email address";
+
+/* Class = "UILabel"; text = "Location"; ObjectID = "l5F-f7-fTm"; */
+"l5F-f7-fTm.text" = "Location";
+
+/* Class = "UILabel"; text = "Receiver name"; ObjectID = "lNa-hD-xyC"; */
+"lNa-hD-xyC.text" = "Receiver name";
+
+/* Class = "UITextField"; placeholder = "Enter a search term"; ObjectID = "loK-5j-YFs"; */
+"loK-5j-YFs.placeholder" = "Enter a search term";
+
+/* Class = "UIButton"; normalTitle = "username"; ObjectID = "m3K-iU-bIZ"; */
+"m3K-iU-bIZ.normalTitle" = "username";
+
+/* Class = "UILabel"; text = "Receiver"; ObjectID = "mZt-zN-eZ5"; */
+"mZt-zN-eZ5.text" = "Receiver";
+
+/* Class = "UIBarButtonItem"; title = "Save all changes and Publish  "; ObjectID = "mte-QD-i5S"; */
+"mte-QD-i5S.title" = "Save all changes and Publish  ";
+
+/* Class = "UILabel"; text = "Location (optional)"; ObjectID = "n2s-R1-zCz"; */
+"n2s-R1-zCz.text" = "Location (optional)";
+
+/* Class = "UITextField"; placeholder = "abc@mail.com"; ObjectID = "n8U-HD-tXp"; */
+"n8U-HD-tXp.placeholder" = "abc@mail.com";
+
+/* Class = "UILabel"; text = "Location (optional)"; ObjectID = "nNJ-LT-uTt"; */
+"nNJ-LT-uTt.text" = "Location (optional)";
+
+/* Class = "UILabel"; text = "Share my location"; ObjectID = "nWF-0h-H9N"; */
+"nWF-0h-H9N.text" = "Share my location";
+
+/* Class = "UISegmentedControl"; nXp-cb-OZe.segmentTitles[0] = "Yes"; ObjectID = "nXp-cb-OZe"; */
+"nXp-cb-OZe.segmentTitles[0]" = "Yes";
+
+/* Class = "UISegmentedControl"; nXp-cb-OZe.segmentTitles[1] = "No"; ObjectID = "nXp-cb-OZe"; */
+"nXp-cb-OZe.segmentTitles[1]" = "No";
+
+/* Class = "UIBarButtonItem"; title = "Save changes  "; ObjectID = "nrH-Jb-DxQ"; */
+"nrH-Jb-DxQ.title" = "Save changes  ";
+
+/* Class = "UILabel"; text = "username"; ObjectID = "obA-Jl-0Db"; */
+"obA-Jl-0Db.text" = "username";
+
+/* Class = "UILabel"; text = "1 hour"; ObjectID = "pXB-Xq-oa2"; */
+"pXB-Xq-oa2.text" = "1 hour";
+
+/* Class = "UILabel"; text = "Address"; ObjectID = "pbd-ah-DdD"; */
+"pbd-ah-DdD.text" = "Address";
+
+/* Class = "UISegmentedControl"; pjN-Yy-Hkn.segmentTitles[0] = "T"; ObjectID = "pjN-Yy-Hkn"; */
+"pjN-Yy-Hkn.segmentTitles[0]" = "T";
+
+/* Class = "UISegmentedControl"; pjN-Yy-Hkn.segmentTitles[1] = "F"; ObjectID = "pjN-Yy-Hkn"; */
+"pjN-Yy-Hkn.segmentTitles[1]" = "F";
+
+/* Class = "UITextField"; placeholder = "http://www.hourworld.org/"; ObjectID = "q2V-PU-2Ob"; */
+"q2V-PU-2Ob.placeholder" = "http://www.hourworld.org/";
+
+/* Class = "UILabel"; text = "Category"; ObjectID = "qTZ-I5-omm"; */
+"qTZ-I5-omm.text" = "Category";
+
+/* Class = "UIBarButtonItem"; title = "Join this group"; ObjectID = "qeY-yX-bZh"; */
+"qeY-yX-bZh.title" = "Join this group";
+
+/* Class = "UILabel"; text = "The American Red Cross prevents and alleviates human suffering in the face of emergencies by mobilizing the power of volunteers and the generosity of donors.\n\nWe are guided by seven fundamental principles: humanity, impartiality, neutrality, independence, voluntary service, unity and universality."; ObjectID = "qea-XV-JUT"; */
+"qea-XV-JUT.text" = "The American Red Cross prevents and alleviates human suffering in the face of emergencies by mobilizing the power of volunteers and the generosity of donors.\n\nWe are guided by seven fundamental principles: humanity, impartiality, neutrality, independence, voluntary service, unity and universality.";
+
+/* Class = "UIBarButtonItem"; title = "Leave this group"; ObjectID = "qed-h9-tr6"; */
+"qed-h9-tr6.title" = "Leave this group";
+
+/* Class = "UILabel"; text = "Category"; ObjectID = "rwE-Iz-baL"; */
+"rwE-Iz-baL.text" = "Category";
+
+/* Class = "UIButton"; normalTitle = "See all"; ObjectID = "sGv-gR-t2F"; */
+"sGv-gR-t2F.normalTitle" = "See all";
+
+/* Class = "UITextField"; placeholder = "  Add an email message here"; ObjectID = "sNT-07-mGD"; */
+"sNT-07-mGD.placeholder" = "  Add an email message here";
+
+/* Class = "UILabel"; text = "username"; ObjectID = "sV2-FM-hoO"; */
+"sV2-FM-hoO.text" = "username";
+
+/* Class = "UIButton"; normalTitle = "14 days"; ObjectID = "sau-4K-30Z"; */
+"sau-4K-30Z.normalTitle" = "14 days";
+
+/* Class = "UILabel"; text = "Date and time"; ObjectID = "slR-06-GHY"; */
+"slR-06-GHY.text" = "Date and time";
+
+/* Class = "UILabel"; text = "Description"; ObjectID = "sqv-uu-Dzn"; */
+"sqv-uu-Dzn.text" = "Description";
+
+/* Class = "UIBarButtonItem"; title = "Reply"; ObjectID = "t06-ca-IlX"; */
+"t06-ca-IlX.title" = "Reply";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "tAv-xm-qDK"; */
+"tAv-xm-qDK.title" = "Back";
+
+/* Class = "UIBarButtonItem"; title = "See Offers"; ObjectID = "tGd-W4-y2B"; */
+"tGd-W4-y2B.title" = "See Offers";
+
+/* Class = "UILabel"; text = "Provider"; ObjectID = "tOT-g5-Uao"; */
+"tOT-g5-Uao.text" = "Provider";
+
+/* Class = "UILabel"; text = "45 hours donated by 14 members"; ObjectID = "tjY-RW-ZLN"; */
+"tjY-RW-ZLN.text" = "45 hours donated by 14 members";
+
+/* Class = "UILabel"; text = "Local Red Cross"; ObjectID = "uFp-oV-Ss6"; */
+"uFp-oV-Ss6.text" = "Local Red Cross";
+
+/* Class = "UILabel"; text = "5 hours"; ObjectID = "uo0-6v-iPt"; */
+"uo0-6v-iPt.text" = "5 hours";
+
+/* Class = "UINavigationItem"; title = "Edit contact"; ObjectID = "vhG-VC-FfG"; */
+"vhG-VC-FfG.title" = "Edit contact";
+
+/* Class = "UILabel"; text = "Group name"; ObjectID = "w8X-yy-mNH"; */
+"w8X-yy-mNH.text" = "Group name";
+
+/* Class = "UISegmentedControl"; wBp-gs-QFO.segmentTitles[0] = "Yes"; ObjectID = "wBp-gs-QFO"; */
+"wBp-gs-QFO.segmentTitles[0]" = "Yes";
+
+/* Class = "UISegmentedControl"; wBp-gs-QFO.segmentTitles[1] = "No"; ObjectID = "wBp-gs-QFO"; */
+"wBp-gs-QFO.segmentTitles[1]" = "No";
+
+/* Class = "UILabel"; text = "search item"; ObjectID = "wE5-Jg-y8N"; */
+"wE5-Jg-y8N.text" = "search item";
+
+/* Class = "UILabel"; text = "description"; ObjectID = "wOv-7v-IiR"; */
+"wOv-7v-IiR.text" = "description";
+
+/* Class = "UIButton"; normalTitle = "See all"; ObjectID = "wWy-Ud-Z63"; */
+"wWy-Ud-Z63.normalTitle" = "See all";
+
+/* Class = "UISegmentedControl"; wtu-vq-Q2D.segmentTitles[0] = "Yes"; ObjectID = "wtu-vq-Q2D"; */
+"wtu-vq-Q2D.segmentTitles[0]" = "Yes";
+
+/* Class = "UISegmentedControl"; wtu-vq-Q2D.segmentTitles[1] = "No"; ObjectID = "wtu-vq-Q2D"; */
+"wtu-vq-Q2D.segmentTitles[1]" = "No";
+
+/* Class = "UITextView"; text = "description"; ObjectID = "xdw-Dg-dN9"; */
+"xdw-Dg-dN9.text" = "description";
+
+/* Class = "UIButton"; normalTitle = "Choose category"; ObjectID = "xhF-fz-645"; */
+"xhF-fz-645.normalTitle" = "Choose category";
+
+/* Class = "UILabel"; text = "Offers"; ObjectID = "xlG-xI-Srl"; */
+"xlG-xI-Srl.text" = "Offers";
+
+/* Class = "UILabel"; text = "datetime"; ObjectID = "yDn-AE-Uvx"; */
+"yDn-AE-Uvx.text" = "datetime";
+
+/* Class = "UIButton"; normalTitle = "Share this app and timebanking with your friends and earn an hour credit! (Click here)"; ObjectID = "ytL-aA-d8C"; */
+"ytL-aA-d8C.normalTitle" = "Share this app and timebanking with your friends and earn an hour credit! (Click here)";
+
+/* Class = "UILabel"; text = "Location"; ObjectID = "yyH-tB-80x"; */
+"yyH-tB-80x.text" = "Location";
+
+/* Class = "UIBarButtonItem"; title = "Edit"; ObjectID = "z2a-LE-Bp5"; */
+"z2a-LE-Bp5.title" = "Edit";
+
+/* Class = "UIButton"; normalTitle = "Add hour"; ObjectID = "zh4-xT-KOs"; */
+"zh4-xT-KOs.normalTitle" = "Add hour";
+
+/* Class = "UIBarButtonItem"; title = "Messages"; ObjectID = "zkf-KT-HbZ"; */
+"zkf-KT-HbZ.title" = "Messages";

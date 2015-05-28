@@ -16,8 +16,9 @@
 #import "AFHTTPRequestOperationManager.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "AFHTTPRequestOperationManager.h"
-#import "TSAlertView.h"
 #import "JSON.h"
+
+#import "MTBProfilePrivateEmailViewController.h"
 
 @interface MTBMessageDetailViewController ()
 
@@ -509,6 +510,7 @@ NSUserDefaults *userDefault;
             }
     }
     else if ([title isEqualToString:@"Email"]) {
+        /*
         // To address
         if ([mItem.mEmail isEqual:[NSNull null]]) {
             UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Message"
@@ -541,6 +543,11 @@ NSUserDefaults *userDefault;
                 [self presentViewController:mc animated:YES completion:NULL];
             }
         }
+         */
+        
+        MTBProfilePrivateEmailViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MTBProfilePrivateEmailViewController"];
+        [viewController setProfileUserID:(int)mItem.mUserID];
+        [self.navigationController pushViewController:viewController animated:YES];
     }
     else if([title isEqualToString:@"Text"]) {
         //check if the device can send text messages

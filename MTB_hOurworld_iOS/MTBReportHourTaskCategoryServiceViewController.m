@@ -100,7 +100,7 @@
     // Navigation logic may go here. Create and push another view controller.
     NSDictionary *item = [jsonArray objectAtIndex:indexPath.row];
 
-    [self.delegate addServiceViewController:self didFinishEnteringItem:svcCat SvcCatID:svcCatID Service:[item objectForKey:@"Service"] SvcID:[[item objectForKey:@"SvcID"] intValue]];
+    [self.delegate addServiceViewController:self didFinishEnteringItem:svcCat SvcCatID:(int)svcCatID Service:[item objectForKey:@"Service"] SvcID:[[item objectForKey:@"SvcID"] intValue]];
     [self.navigationController popViewControllerAnimated:YES];
 }
 

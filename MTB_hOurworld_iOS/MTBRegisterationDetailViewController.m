@@ -83,7 +83,7 @@
         [viewController setMyBirthDay:myBirthDay];
         [viewController setMyBirthYear:myBirthYear];
         [viewController setMyEmail:myEmail];
-        [viewController setMemID:memID];
+        [viewController setMemID:(int)memID];
         [self.navigationController pushViewController:viewController animated:YES];
     }
 }

@@ -1,0 +1,6 @@
+framework module WSCoachMarksView {
+  umbrella header "Pods-WSCoachMarksView-umbrella.h"
+
+  export *
+  module * { export * }
+}
